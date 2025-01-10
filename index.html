@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="description" content="ignitedcms PHP cms">
+    <meta name="keywords" content="PHP,cms">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>IgnitedCMS | A modern minimal cms</title>
+    <!-- custom css specific to main css -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href='resources/assets/css/output.css' />
+    <link rel="stylesheet" href='resources/assets/datatables/datatables.css' />
+
+    <!-- vue 2 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+
+    <!-- sortable -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.4.2/Sortable.min.js"></script>
+
+     <!-- Include Quill stylesheet -->
+     <link href="https://cdn.quilljs.com/1.0.0/quill.snow.css" rel="stylesheet">
+
+      <style>
+      [v-cloak] {
+         display: none;
+      }
+      </style>
+</head>
+<body class="bg-white dark:bg-darker">
+    <div id="app" class="">
+      <small-menu ref="jx">
+      </small-menu>
+      <div class="banner text-center top-0 z-10 sticky h-a p-4 bg-white  border-b border-[--gray]">
+         <badge variant="primary">New</badge>&nbsp; &nbsp; 
+          <a href="ignited-commerce.html" class="underline"> Ignited Commerce coming soon! </a> 
+      </div>
+      <div class="default-container">
+         <div class="row">
+            <div class="col h-e v-a">
+               <div>
+                  <a href="index.html">
+                     <img src="resources/assets/images/ignitedcms-logo.svg" class="w-[150px]"></img>
+                  </a>
+               </div>
+               <div class="menu hide-tablet">
+                  <ul class="rm-list-styles">
+                     <li class="inline underline">
+                        <a href="index.html">IgnitedCMS</a>
+                     </li>
+                     <li class="inline underline ml-2">
+                        <a href="kamijs.html">Kamijs</a>
+                     </li>
+                     <li class="inline underline ml-2">
+                        <a href="go-zen.html">Gozen</a>
+                     </li>
+                     
+                     <li class="inline underline ml-2">
+                        <a href="blog.html">Blog</a>
+                     </li>
+                     <li class="inline underline ml-2">
+                        <a href="about.html">About</a>
+                     </li>
+                     <li class="inline underline ml-2">
+                        <a href="contact.html">Contact</a>
+                     </li>
+                  </ul>
+               </div>
+
+              <button class="hamburger show-tablet" @click="toggleMenu">
+                  <div class="v-a">
+                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 inline">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 9h16.5m-16.5 6.75h16.5" />
+                     </svg>
+                     <div class="ml-3 inline-block">Menu</div>
+                  </div>
+
+               </button> 
+
+
+
+            </div>
+         </div>
+
+   
+
+    
+
+<div class="gap"></div>
+         <div class="row">
+            <div class="col medium-container">
+               <div class="md:text-6xl text-black font-medium text-2xl">Create bespoke Laravel frontend applications in <span class="highlight">record time</span> </div>
+            </div>
+         </div>
+         <div class="row">
+            <div class="col medium-container text-lg">
+               IgnitedCMS is a content management system for building frontend customer facing websites. 
+               It comes with support for testing, modern tooling, an ecosystem of official packages, and more.
+               All available with <span class="highlight">Laravel </span>
+            </div>
+         </div>
+         <div class="row">
+            <div class="col">
+               <a href="documentation.html">
+                  <button-component variant="primary">
+                    Go to docs 
+                  </button-component>
+               </a>
+
+        <a href="https://github.com/ignitedcms/ignitedcms" target="_blank">
+            <button-component variant="outline" class="ml-2 mt-4">
+            Github
+            </button-component>
+         </a>              
+            </div>
+         </div>
+
+         <div class="row">
+            <div class="col">
+               <pre class="code p-6">
+composer create-project laravel/laravel example-app
+cd example-app
+composer require ignitedcms/ignitedcms
+
+               <pre>
+            </div>
+         </div>
+
+         <div class="row">
+            <div class="col">
+             <h4 class="text-center">Jam packed with <span class="highlight">features</span></h4>
+            </div>
+         </div>
+         <div class="row">
+            <div class="col-4 panel">
+               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                 <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
+               </svg>
+
+            <h5 >Email</h5>
+            Full email SMTP control so that you can easily send email templates. Setup includes 'Sendgrid' and others
+            </div>
+
+            <div class="col-4 panel">
+               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z" />
+               </svg>
+
+
+            <h5 >Authentication</h5>
+            Full baked authentication out of the box with password hashing. Includes email password reseting.
+            </div>
+
+            <div class="col-4 panel">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M6 13.5V3.75m0 9.75a1.5 1.5 0 0 1 0 3m0-3a1.5 1.5 0 0 0 0 3m0 3.75V16.5m12-3V3.75m0 9.75a1.5 1.5 0 0 1 0 3m0-3a1.5 1.5 0 0 0 0 3m0 3.75V16.5m-6-9V3.75m0 3.75a1.5 1.5 0 0 1 0 3m0-3a1.5 1.5 0 0 0 0 3m0 9.75V10.5" />
+</svg>
+
+
+            <h5 >Page builders</h5>
+            Rapidly prototype your pages and easily add content inside your backend
+            </div>
+            
+         </div>
+         <div class="row">
+            <div class="col-4 panel">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" />
+</svg>
+
+
+            <h5 >Secure</h5>
+            Never suffer the headache of a Wordpress exploit again, our content management system is engineered for security
+            </div>
+
+            <div class="col-4 panel">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z" />
+</svg>
+
+
+
+            <h5 >Lightweight</h5>
+            Built with Vuejs and a Laravel core our CMS is superlight and a breeze to use and easy to extend.
+            </div>
+
+            <div class="col-4 panel">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z" />
+</svg>
+
+
+            <h5 >User access</h5>
+            Easily set and customize permissions so users only have access to the parts they need
+            </div>
+            
+         </div>
+
+         <div class="row">
+            <div class="col-4 panel">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5" />
+</svg>
+
+
+            <h5 >Github</h5>
+            Download the latest source code from Github for FREE and stay up to date via composer
+            </div>
+
+            <div class="col-4 panel">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 0 0 6 3.75v16.5a2.25 2.25 0 0 0 2.25 2.25h7.5A2.25 2.25 0 0 0 18 20.25V3.75a2.25 2.25 0 0 0-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" />
+</svg>
+
+
+
+            <h5 >Mobile ready</h5>
+            Our CMS is mobile ready and beautiful to use on all tablets and devices
+
+
+            </div>
+
+            <div class="col-4 panel">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+</svg>
+
+
+            <h5>
+            E-commerce
+            </h5>
+            Easily configure Stripe for one-off or subscription payments out of the box
+            using Laravel Cashier
+            </div>
+            
+         </div>
+
+         <div class="bg-white">
+                <div class="default-container">
+                    <!--templates-->
+                    <div class="row">
+                        <div class="col-12">
+                            <h3 class="text-center mt-3">Testimonials</h3>
+                        </div>
+                    </div>
+                    <div class="row p-2">
+                        <div class="col-6">
+                            <div class="row">
+                                <div class="col-2">
+                                    <avatar src="https://www.ignitedcms.com/img/lady.png">
+                                    </avatar>
+                                </div>
+                                <div class="col-10">
+                                    <h6>Helen Spiby</h6>
+                                    <p class="text-muted">
+                                     A joy to use with a gorgeous interface
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="row">
+                                <div class="col-2">
+                                    <avatar src="https://www.ignitedcms.com/img/man.jpg">
+                                    </avatar>
+
+                                </div>
+                                <div class="col-10">
+                                    <h6>John Bolton</h6>
+                                    <p class="text-muted">
+                                       IMO IgnitedCMS takes Laravel
+                                       to the next level. Minimal in
+                                       design and easy to bolt onto your
+                                       existing SaaS application
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+         <div class="panel">
+            <div class="row">
+               <div class="col">
+                  <h3 class="text-center">FAQ</h3>
+                  <accordion>
+                     <accordion-item title="What is it?">
+                        <p class="text-muted">
+                        IgnitedCMS is a micro content management system built on a Laravel 11 core,
+                         its aim is simple. To easily allow you to create a frontend customer facing
+                         website with SEO friendly routing etc. It can drop right into your existing 
+                         Laravel Project.
+                        </p>
+                     </accordion-item>
+                     <accordion-item title="Will this remain free?">
+                        <p class="text-muted">
+                        Yes, we built this with the community in mind. It is our promise to you 
+                        that this will always remain open to the public
+                        </p>
+                     </accordion-item>
+                     <accordion-item title="Where is the download?">
+                        <p class="text-muted">
+                           Currently this is in development, we aim to ship a beta version soon
+                            and it will be available via composer. Version 1.0.0
+                        </p>
+                     </accordion-item>
+                     <accordion-item title="Automatic routing">
+                        <p class="text-muted">
+                        Let the site generate all your routes for you. The engine uses the unique way 
+                        in which you create content and section types to intelligently generate all
+                         routing for you. Taking away any headaches and offering SEO friendly
+                         routing for web crawlers.
+                        </p>
+                     </accordion-item>
+                     <accordion-item title="Why?">
+                        <p class="text-muted">
+                        I was often dis-satisfied with headless CMS options,
+                         slow loading pages, confusing route setups and limited 
+                         features requiring a paid option so IgnitedCMS was born.
+                        </p>
+                     </accordion-item>
+
+
+
+
+
+                  </accordion>
+               </div>
+            </div>
+         </div>
+
+         <div class="gap"></div>
+
+      </div>
+
+
+
+            
+            
+            
+
+
+<div class="border-b border-[--gray]"></div>
+
+<div class="footer default-container bg-white min-h-[300px] p-6">
+      <div class="mb-8"></div>
+      <div class="row">
+         <div class="col-4">
+            <div class="text-sm">
+               <div class="mb-4">
+                  <a href="index.html">
+                    
+                     <img src="resources/assets/images/ignitedcms-logo.svg" alt="logo" class="w-[150px]"></img>
+                  </a>
+               </div>
+               IgnitedCMS is not yet another CMS. 
+               Instead, we have written IgnitedCMS from the ground up on top of Laravel to be simple, elegant, and opinionated.
+            </div>
+         </div>
+         <div class="col-5"></div>
+         <div class="col-3">
+            <h5>Disclaimers</h5>
+            <a href="terms-of-use.html" class="underline">Terms of use</a>
+            <br>
+            <a href="changelog.html" class="underline">Changelog</a>
+            <br>
+            <a href="Roadmap.html" class="underline">Roadmap</a>
+         </div>
+      </div>
+   </div>
+   
+</div>
+</div>
+
+
+ <!-- Click out must go before all other scripts -->
+<script src="resources/assets/js/click-outside.js"></script>
+<script src="resources/assets/js/tabs.js"></script>
+<script src="resources/assets/js/buttons.js"></script>
+<script src="resources/assets/js/badges.js"></script>
+<script src="resources/assets/js/avatar.js"></script>
+<script src="resources/assets/js/modals.js"></script>
+<script src="resources/assets/js/dropdown.js"></script>
+<script src="resources/assets/js/datepicker.js"></script>
+<script src="resources/assets/js/accordions.js"></script>
+<script src="resources/assets/js/switch.js"></script>
+<script src="resources/assets/js/range-sliders.js"></script>
+<script src="resources/assets/js/small-menu.js"></script>
+<script src="resources/assets/js/toasts.js"></script>
+<script src="resources/assets/js/menu.js"></script>
+<script src="resources/assets/js/mobile-menu.js"></script>
+
+ <!-- Include the Quill library -->
+ <script src="resources/assets/js/quill.js"></script>
+<script src="resources/assets/js/quill-vue.js"></script>
+
+<script src="resources/assets/datatables/jquery.min.js"></script>
+<script src="resources/assets/datatables/jquery.dataTables.min.js"></script>
+
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            message: 'Hello',
+            show:false,
+            title: 'Sortable items',
+            things: [{
+                    title: "Item 1"
+                },
+                {
+                    title: "Item 2"
+                },
+                {
+                    title: "Item 3"
+                }
+            ]
+        },
+        methods: {
+            toggle () {
+                this.show = !this.show
+            },
+            toggleMenu()
+            {
+               this.$refs.jx.toggle();
+            },
+            addItem: function () {
+                var id = Math.floor((Math.random() * 100) + 4);
+                this.things.push({
+                    id: id,
+                    title: 'Random item ' + id
+                });
+            }
+        },
+                
+    })
+</script>
+
+<script>
+       $('#example').dataTable({
+          "iDisplayLength": 20
+       });
+    </script>
+
+
+
+
+<!-- end feather icons js lib -->
+<script src="https://unpkg.com/feather-icons"></script>
+<script>
+    feather.replace({
+        class: "font-primary",
+    });
+
+</script>
+
+<!-- Initialize Quill editor -->
+
+
+
+
+</body>
+
+</html>
