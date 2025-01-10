@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="description" content="ignitedcms PHP cms">
+    <meta name="keywords" content="PHP,cms">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>IgnitedCMS | A modern minimal cms</title>
+    <!-- custom css specific to main css -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href='resources/assets/css/output.css' />
+    <link rel="stylesheet" href='resources/assets/datatables/datatables.css' />
+
+    <!-- vue 2 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+
+    <!-- sortable -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.4.2/Sortable.min.js"></script>
+
+     <!-- Include Quill stylesheet -->
+     <link href="https://cdn.quilljs.com/1.0.0/quill.snow.css" rel="stylesheet">
+
+      <style>
+      [v-cloak] {
+         display: none;
+      }
+      </style>
+</head>
+<body class="bg-white dark:bg-darker">
+    <div id="app" class="">
+      <small-menu ref="jx">
+      </small-menu>
+      <div class="banner text-center top-0 z-10 sticky h-a p-4 bg-white  border-b border-[--gray]">
+         <badge variant="primary">New</badge>&nbsp; &nbsp; 
+          <a href="ignited-commerce.html" class="underline"> Ignited Commerce coming soon! </a> 
+      </div>
+      <div class="default-container">
+         <div class="row">
+            <div class="col h-e v-a">
+               <div>
+                  <a href="index.html">
+                     <img src="resources/assets/images/ignitedcms-logo.svg" class="w-[150px]"></img>
+                  </a>
+               </div>
+               <div class="menu hide-tablet">
+                  <ul class="rm-list-styles">
+                     <li class="inline underline">
+                        <a href="index.html">IgnitedCMS</a>
+                     </li>
+                     <li class="inline underline ml-2">
+                        <a href="kamijs.html">Kamijs</a>
+                     </li>
+                     <li class="inline underline ml-2">
+                        <a href="go-zen.html">Gozen</a>
+                     </li>
+                     
+                     <li class="inline underline ml-2">
+                        <a href="blog.html">Blog</a>
+                     </li>
+                     <li class="inline underline ml-2">
+                        <a href="about.html">About</a>
+                     </li>
+                     <li class="inline underline ml-2">
+                        <a href="contact.html">Contact</a>
+                     </li>
+                  </ul>
+               </div>
+
+              <button class="hamburger show-tablet" @click="toggleMenu">
+                  <div class="v-a">
+                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 inline">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 9h16.5m-16.5 6.75h16.5" />
+                     </svg>
+                     <div class="ml-3 inline-block">Menu</div>
+                  </div>
+
+               </button> 
+
+
+
+            </div>
+         </div>
+
+   
+
+    
+<div class="default-container" >
+   <div class="gap"></div>
+   <div class="row">
+            <div class="col medium-container">
+               <div class="text-6xl text-black font-medium">Blog</div>
+            </div>
+         </div>
+         <div class="row">
+            <div class="col small-container text-lg">
+               Read the <span class="highlight"> latest news </span>, framework releases, tips, and sometimes tutorials from the IgnitedCMS team.
+            </div>
+
+         </div>
+
+         <div class="gap"></div> 
+   
+         <a href="blog/package-dev.html" class="hover:underline">
+            <div class="row p-4 border-b border-[--gray]">
+               <div class="col-6">
+                  <h4>Package development Laravel</h4>
+               </div>
+               <div class="col-6 text-sm">
+               Here we'll talk about the pain points of package development in Laravel and how to overcome them               </div>
+            </div>
+         </a>
+      
+
+
+        <a href="blog/mac-obsolescence.html" class="hover:underline">
+            <div class="row p-4 border-b border-[--gray]">
+               <div class="col-6">
+                  <h4>Mac and planned obsolescence</h4>
+               </div>
+               <div class="col-6 text-sm">
+               Mac and its 'planned&nbsp;obsolescence policy.' Click to find out more.               </div>
+            </div>
+         </a>
+      
+
+
+        <a href="blog/visual-query-builder.html" class="hover:underline">
+            <div class="row p-4 border-b border-[--gray]">
+               <div class="col-6">
+                  <h4>Visual query builder</h4>
+               </div>
+               <div class="col-6 text-sm">
+               Ever wondered if there was an easier way to build your SQL perhaps without eloquent. Well now there is.               </div>
+            </div>
+         </a>
+      
+
+
+        <a href="blog/qwerty-keyboards.html" class="hover:underline">
+            <div class="row p-4 border-b border-[--gray]">
+               <div class="col-6">
+                  <h4>qwerty keyboards</h4>
+               </div>
+               <div class="col-6 text-sm">
+               This one is all about qwerty keyboards and why you should care. Honestly it is kinda profound.               </div>
+            </div>
+         </a>
+      
+
+
+        <a href="blog/feature-creep.html" class="hover:underline">
+            <div class="row p-4 border-b border-[--gray]">
+               <div class="col-6">
+                  <h4>Feature Creep</h4>
+               </div>
+               <div class="col-6 text-sm">
+               Let's talk about feature creep and how it affects our decisions to keep moving forward.               </div>
+            </div>
+         </a>
+      
+
+
+        <a href="blog/programming-2024.html" class="hover:underline">
+            <div class="row p-4 border-b border-[--gray]">
+               <div class="col-6">
+                  <h4>Programming in 2024</h4>
+               </div>
+               <div class="col-6 text-sm">
+               Is programming in 2024 still relevant? Or is AI going to render it obsolete?               </div>
+            </div>
+         </a>
+      
+
+
+        <a href="blog/agi.html" class="hover:underline">
+            <div class="row p-4 border-b border-[--gray]">
+               <div class="col-6">
+                  <h4>agi and fusion</h4>
+               </div>
+               <div class="col-6 text-sm">
+               The elusive journey               </div>
+            </div>
+         </a>
+      
+
+
+        <a href="blog/desktop-app.html" class="hover:underline">
+            <div class="row p-4 border-b border-[--gray]">
+               <div class="col-6">
+                  <h4>Building desktop apps</h4>
+               </div>
+               <div class="col-6 text-sm">
+               Read more on why I think QT is one of the best tools for building desktop apps.               </div>
+            </div>
+         </a>
+      
+
+
+        <a href="blog/civil-war.html" class="hover:underline">
+            <div class="row p-4 border-b border-[--gray]">
+               <div class="col-6">
+                  <h4>Civil war</h4>
+               </div>
+               <div class="col-6 text-sm">
+               Read more               </div>
+            </div>
+         </a>
+      
+
+
+        <a href="blog/linux-misses-the-mark.html" class="hover:underline">
+            <div class="row p-4 border-b border-[--gray]">
+               <div class="col-6">
+                  <h4>Linux misses the mark</h4>
+               </div>
+               <div class="col-6 text-sm">
+               Linux is great for open source but it always seems to miss the mark. Find out why.               </div>
+            </div>
+         </a>
+      
+
+
+        <a href="blog/component-libraries.html" class="hover:underline">
+            <div class="row p-4 border-b border-[--gray]">
+               <div class="col-6">
+                  <h4>Component libraries</h4>
+               </div>
+               <div class="col-6 text-sm">
+               Writing a component library is HARD               </div>
+            </div>
+         </a>
+      
+
+
+        <a href="blog/open-source.html" class="hover:underline">
+            <div class="row p-4 border-b border-[--gray]">
+               <div class="col-6">
+                  <h4>Open source?</h4>
+               </div>
+               <div class="col-6 text-sm">
+               Just because you can should you?               </div>
+            </div>
+         </a>
+      
+
+
+        <a href="blog/ai-utopia.html" class="hover:underline">
+            <div class="row p-4 border-b border-[--gray]">
+               <div class="col-6">
+                  <h4>AI Utopia</h4>
+               </div>
+               <div class="col-6 text-sm">
+               AI news tends to lean towards doom, let's talk about the otherside.               </div>
+            </div>
+         </a>
+      
+
+
+        <a href="blog/finish-what-you-start.html" class="hover:underline">
+            <div class="row p-4 border-b border-[--gray]">
+               <div class="col-6">
+                  <h4>Finish what you start</h4>
+               </div>
+               <div class="col-6 text-sm">
+               Read more               </div>
+            </div>
+         </a>
+      
+
+
+        <a href="blog/pick-your-poison.html" class="hover:underline">
+            <div class="row p-4 border-b border-[--gray]">
+               <div class="col-6">
+                  <h4>The Pointless Tech Stack Debate: Pick Your Poison and Move On</h4>
+               </div>
+               <div class="col-6 text-sm">
+               Who are you arguing with?               </div>
+            </div>
+         </a>
+      
+
+
+        <a href="blog/gold-rush.html" class="hover:underline">
+            <div class="row p-4 border-b border-[--gray]">
+               <div class="col-6">
+                  <h4>During a gold rush, sell shovels</h4>
+               </div>
+               <div class="col-6 text-sm">
+               Who's actually making money these days?               </div>
+            </div>
+         </a>
+      
+
+
+        <a href="blog/chasing-the-dragon.html" class="hover:underline">
+            <div class="row p-4 border-b border-[--gray]">
+               <div class="col-6">
+                  <h4>Chasing the dragon - Javascript</h4>
+               </div>
+               <div class="col-6 text-sm">
+               Here we'll explore the issue with javascript, and modern day apps.               </div>
+            </div>
+         </a>
+      
+
+
+        <a href="blog/laravel.html" class="hover:underline">
+            <div class="row p-4 border-b border-[--gray]">
+               <div class="col-6">
+                  <h4>Laravel</h4>
+               </div>
+               <div class="col-6 text-sm">
+               We have some news to announce. Laravel 11, the world's most popular PHP framework will be shipping with IgnitedCMS!               </div>
+            </div>
+         </a>
+      
+
+
+        <a href="blog/simple-is-always-better.html" class="hover:underline">
+            <div class="row p-4 border-b border-[--gray]">
+               <div class="col-6">
+                  <h4>Simplicity</h4>
+               </div>
+               <div class="col-6 text-sm">
+               Have we over stepped the mark when it comes to over engineering?               </div>
+            </div>
+         </a>
+      
+
+
+  
+   <div class="gap"></div>
+
+
+</div>
+</div>
+<div class="border-b border-[--gray]"></div>
+
+<div class="footer default-container bg-white min-h-[300px] p-6">
+      <div class="mb-8"></div>
+      <div class="row">
+         <div class="col-4">
+            <div class="text-sm">
+               <div class="mb-4">
+                  <a href="index.html">
+                    
+                     <img src="resources/assets/images/ignitedcms-logo.svg" alt="logo" class="w-[150px]"></img>
+                  </a>
+               </div>
+               IgnitedCMS is not yet another CMS. 
+               Instead, we have written IgnitedCMS from the ground up on top of Laravel to be simple, elegant, and opinionated.
+            </div>
+         </div>
+         <div class="col-5"></div>
+         <div class="col-3">
+            <h5>Disclaimers</h5>
+            <a href="terms-of-use.html" class="underline">Terms of use</a>
+            <br>
+            <a href="changelog.html" class="underline">Changelog</a>
+            <br>
+            <a href="Roadmap.html" class="underline">Roadmap</a>
+         </div>
+      </div>
+   </div>
+   
+</div>
+</div>
+
+
+ <!-- Click out must go before all other scripts -->
+<script src="resources/assets/js/click-outside.js"></script>
+<script src="resources/assets/js/tabs.js"></script>
+<script src="resources/assets/js/buttons.js"></script>
+<script src="resources/assets/js/badges.js"></script>
+<script src="resources/assets/js/avatar.js"></script>
+<script src="resources/assets/js/modals.js"></script>
+<script src="resources/assets/js/dropdown.js"></script>
+<script src="resources/assets/js/datepicker.js"></script>
+<script src="resources/assets/js/accordions.js"></script>
+<script src="resources/assets/js/switch.js"></script>
+<script src="resources/assets/js/range-sliders.js"></script>
+<script src="resources/assets/js/small-menu.js"></script>
+<script src="resources/assets/js/toasts.js"></script>
+<script src="resources/assets/js/menu.js"></script>
+<script src="resources/assets/js/mobile-menu.js"></script>
+
+ <!-- Include the Quill library -->
+ <script src="resources/assets/js/quill.js"></script>
+<script src="resources/assets/js/quill-vue.js"></script>
+
+<script src="resources/assets/datatables/jquery.min.js"></script>
+<script src="resources/assets/datatables/jquery.dataTables.min.js"></script>
+
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            message: 'Hello',
+            show:false,
+            title: 'Sortable items',
+            things: [{
+                    title: "Item 1"
+                },
+                {
+                    title: "Item 2"
+                },
+                {
+                    title: "Item 3"
+                }
+            ]
+        },
+        methods: {
+            toggle () {
+                this.show = !this.show
+            },
+            toggleMenu()
+            {
+               this.$refs.jx.toggle();
+            },
+            addItem: function () {
+                var id = Math.floor((Math.random() * 100) + 4);
+                this.things.push({
+                    id: id,
+                    title: 'Random item ' + id
+                });
+            }
+        },
+                
+    })
+</script>
+
+<script>
+       $('#example').dataTable({
+          "iDisplayLength": 20
+       });
+    </script>
+
+
+
+
+<!-- end feather icons js lib -->
+<script src="https://unpkg.com/feather-icons"></script>
+<script>
+    feather.replace({
+        class: "font-primary",
+    });
+
+</script>
+
+<!-- Initialize Quill editor -->
+
+
+
+
+</body>
+
+</html>

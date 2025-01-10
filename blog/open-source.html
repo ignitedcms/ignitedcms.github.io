@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="description" content="ignitedcms PHP cms">
+    <meta name="keywords" content="PHP,cms">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>IgnitedCMS | A modern minimal cms</title>
+    <!-- custom css specific to main css -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href='../resources/assets/css/output.css' />
+    <link rel="stylesheet" href='../resources/assets/datatables/datatables.css' />
+
+    <!-- vue 2 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+
+    <!-- sortable -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.4.2/Sortable.min.js"></script>
+
+     <!-- Include Quill stylesheet -->
+     <link href="https://cdn.quilljs.com/1.0.0/quill.snow.css" rel="stylesheet">
+
+      <style>
+      [v-cloak] {
+         display: none;
+      }
+      </style>
+</head>
+<body class="bg-white dark:bg-darker">
+    <div id="app" class="">
+      <small-menu ref="jx">
+      </small-menu>
+      <div class="banner text-center top-0 z-10 sticky h-a p-4 bg-white  border-b border-[--gray]">
+         <badge variant="primary">New</badge>&nbsp; &nbsp; 
+          <a href="../ignited-commerce.html" class="underline"> Ignited Commerce coming soon! </a> 
+      </div>
+      <div class="default-container">
+         <div class="row">
+            <div class="col h-e v-a">
+               <div>
+                  <a href="../index.html">
+                     <img src="../resources/assets/images/ignitedcms-logo.svg" class="w-[150px]"></img>
+                  </a>
+               </div>
+               <div class="menu hide-tablet">
+                  <ul class="rm-list-styles">
+                     <li class="inline underline">
+                        <a href="../index.html">IgnitedCMS</a>
+                     </li>
+                     <li class="inline underline ml-2">
+                        <a href="../kamijs.html">Kamijs</a>
+                     </li>
+                     <li class="inline underline ml-2">
+                        <a href="../go-zen.html">Gozen</a>
+                     </li>
+                     
+                     <li class="inline underline ml-2">
+                        <a href="../blog.html">Blog</a>
+                     </li>
+                     <li class="inline underline ml-2">
+                        <a href="../about.html">About</a>
+                     </li>
+                     <li class="inline underline ml-2">
+                        <a href="../contact.html">Contact</a>
+                     </li>
+                  </ul>
+               </div>
+
+              <button class="hamburger show-tablet" @click="toggleMenu">
+                  <div class="v-a">
+                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 inline">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 9h16.5m-16.5 6.75h16.5" />
+                     </svg>
+                     <div class="ml-3 inline-block">Menu</div>
+                  </div>
+
+               </button> 
+
+
+
+            </div>
+         </div>
+
+   
+
+    
+<div class="medium-container">
+    <div class="gap"></div>
+    
+    <div class="row">
+        <div class="col-12 m-t">
+            <h2> Open source? </h2>
+        </div>
+    </div>
+    
+            <div class="row">
+        <div class="col-12 m-t">
+            <p>Here's the thing. As developers, there's a push for everything to be MIT, open sourced.</p><p><br></p><p>But just because you can, either because you have the time, or maybe you just happen to be altruistic, should you?</p><p><br></p><p>There's a reason why you shouldn't. Open source projects, regardless of whether you think they are good or bad, have worked hard to gain popularity, sometimes pushing the boundaries of what we thought was technologically possible.</p><p><br></p><p>They are in there own right to sell something that is monetised. At the end of the day, people need to make money to survive. Everyone has their own right to impose whatever restrictions they want on the things they create.</p><p><br></p><p>Here, I want to talk about, not whether or not monetisation is a bad thing. It's really not.</p><p><br></p><p>Here I want to specifically talk about, the people who have the free time, and technical expertise to freely open source a paid offering, by some individual or company.</p><p><br></p><p>I don't think it is a good idea, you're stepping on someone else's toes. You are laying waste to what someone may have invested months maybe even years of hard work, sweat and tears.</p><p><br></p><p>As always, being self aware helps you appreciate this.</p><p><br></p><p>TLDR, it's OK for a company or team to make money, let them have their cake and eat it.</p>        </div>
+    </div>
+
+                    <div class="gap"></div>
+
+
+
+</div>
+</div>
+<div class="border-b border-[--gray]"></div>
+
+<div class="footer default-container bg-white min-h-[300px] p-6">
+      <div class="mb-8"></div>
+      <div class="row">
+         <div class="col-4">
+            <div class="text-sm">
+               <div class="mb-4">
+                  <a href="../index.html">
+                    
+                     <img src="../resources/assets/images/ignitedcms-logo.svg" alt="logo" class="w-[150px]"></img>
+                  </a>
+               </div>
+               IgnitedCMS is not yet another CMS. 
+               Instead, we have written IgnitedCMS from the ground up on top of Laravel to be simple, elegant, and opinionated.
+            </div>
+         </div>
+         <div class="col-5"></div>
+         <div class="col-3">
+            <h5>Disclaimers</h5>
+            <a href="../terms-of-use.html" class="underline">Terms of use</a>
+            <br>
+            <a href="../changelog.html" class="underline">Changelog</a>
+            <br>
+            <a href="../Roadmap.html" class="underline">Roadmap</a>
+         </div>
+      </div>
+   </div>
+   
+</div>
+</div>
+
+
+ <!-- Click out must go before all other scripts -->
+<script src="../resources/assets/js/click-outside.js"></script>
+<script src="../resources/assets/js/tabs.js"></script>
+<script src="../resources/assets/js/buttons.js"></script>
+<script src="../resources/assets/js/badges.js"></script>
+<script src="../resources/assets/js/avatar.js"></script>
+<script src="../resources/assets/js/modals.js"></script>
+<script src="../resources/assets/js/dropdown.js"></script>
+<script src="../resources/assets/js/datepicker.js"></script>
+<script src="../resources/assets/js/accordions.js"></script>
+<script src="../resources/assets/js/switch.js"></script>
+<script src="../resources/assets/js/range-sliders.js"></script>
+<script src="../resources/assets/js/small-menu.js"></script>
+<script src="../resources/assets/js/toasts.js"></script>
+<script src="../resources/assets/js/menu.js"></script>
+<script src="../resources/assets/js/mobile-menu.js"></script>
+
+ <!-- Include the Quill library -->
+ <script src="../resources/assets/js/quill.js"></script>
+<script src="../resources/assets/js/quill-vue.js"></script>
+
+<script src="../resources/assets/datatables/jquery.min.js"></script>
+<script src="../resources/assets/datatables/jquery.dataTables.min.js"></script>
+
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            message: 'Hello',
+            show:false,
+            title: 'Sortable items',
+            things: [{
+                    title: "Item 1"
+                },
+                {
+                    title: "Item 2"
+                },
+                {
+                    title: "Item 3"
+                }
+            ]
+        },
+        methods: {
+            toggle () {
+                this.show = !this.show
+            },
+            toggleMenu()
+            {
+               this.$refs.jx.toggle();
+            },
+            addItem: function () {
+                var id = Math.floor((Math.random() * 100) + 4);
+                this.things.push({
+                    id: id,
+                    title: 'Random item ' + id
+                });
+            }
+        },
+                
+    })
+</script>
+
+<script>
+       $('#example').dataTable({
+          "iDisplayLength": 20
+       });
+    </script>
+
+
+
+
+<!-- end feather icons js lib -->
+<script src="https://unpkg.com/feather-icons"></script>
+<script>
+    feather.replace({
+        class: "font-primary",
+    });
+
+</script>
+
+<!-- Initialize Quill editor -->
+
+
+
+
+</body>
+
+</html>

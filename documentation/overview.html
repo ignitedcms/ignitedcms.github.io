@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="description" content="ignitedcms PHP cms">
+    <meta name="keywords" content="PHP,cms">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>IgnitedCMS | A modern minimal cms</title>
+    <!-- custom css specific to main css -->
+
+    <link rel="stylesheet" href='../resources/assets/css/output.css' />
+    <link rel="stylesheet" href='../resources/assets/datatables/datatables.css' />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+
+    <!-- vue 2 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+    <!-- sortable -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.4.2/Sortable.min.js"></script>
+
+     <!-- Include Quill stylesheet -->
+     <link href="https://cdn.quilljs.com/1.0.0/quill.snow.css" rel="stylesheet">
+
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+      <style>
+      [v-cloak] {
+         display: none;
+      }
+
+      .checked {
+         color: orange;
+      }
+
+      .splide__pagination__page.is-active {
+          background: #333;
+          transform: scale(1.4);
+          z-index: 1;
+      }
+
+      </style>
+</head>
+
+<body class="h-screen v-screen bg-white dark:bg-dark">
+    <div class="main" id="app">
+       
+   
+
+   
+
+
+
+    
+<sidebar theme="light">
+            <ul slot="header" class="rm-list-styles">
+            <div class="test">
+   <div id="side_nav" class="sidebar" >
+      <a href="../index.html">
+      <img alt="ignitedcms logo" src="../resources/assets/images/ignitedcms-logo.svg" style="width:150px;" class="mb-4"></img>
+      </a>
+      <h5 class="m-t">Introduction</h5>
+      <ul class="rm-list-styles">
+         <li class=""><a href="../documentation.html">About IgnitedCMS</a></li>
+      </ul>
+      <h5 class="m-t">Installation</h5>
+      <ul class="rm-list-styles">
+         <li class=""><a href="requirements.html">Requirements</a></li>
+         <li class=""><a href="installation.html">Installation</a></li>
+         <li class=""><a href="installation-issues.html">Install Issues</a></li>
+      </ul>
+      <h5 class="m-t">System overview</h5>
+      <ul class="rm-list-styles">
+         <li class=""><a href="directory-structure.html">Directory Structure</a></li>
+         <li class=""><a href="overview.html">Overview</a></li>
+         <li class=""><a href="fields.html">Fields</a></li>
+         <li class=""><a href="section-types.html">Section types</a></li>
+         <li class=""><a href="entries.html">Entries</a></li>
+         <li class=""><a href="useful-functions.html">Useful functions</a></li>
+         <li class=""><a href="magic-routing.html">Magic routing</a></li>
+         <li class=""><a href="ip-throttling.html">IP throttling</a></li>
+         <li class=""><a href="search-function.html">Searching content</a></li>
+         <li class=""><a href="auth.html">Auth</a></li>
+      </ul>
+      <h5 class="m-t">Section types</h5>
+      <ul class="rm-list-styles">
+         <li class=""><a href="singles.html">Singles </a></li>
+         <li class=""><a href="multiples.html">Multiples</a></li>
+         <li class=""><a href="globals.html">Globals</a></li>
+         <li class=""><a href="trees.html">Trees</a></li>
+         <li class=""><a href="adding-external.html">Adding external CSS JS files</a>
+         </li>
+      </ul>
+      <h5 class="m-t">Fields in depth</h5>
+      <ul class="rm-list-styles">
+         <li class=""><a href="text-fields.html">Text fields </a></li>
+         <li class=""><a href="number-fields.html">Number fields </a></li>
+         <li class=""><a href="multiline-fields.html">Multiline fields</a></li>
+         <li class=""><a href="drop-downs.html">Drop downs</a></li>
+         <li class=""><a href="checkboxes.html">Checkboxes</a></li>
+         <li class=""><a href="switches.html">Switches</a></li>
+         <li class=""><a href="date-fields.html">Dates</a></li>
+         <li class=""><a href="rich-text-boxes.html">Rich text boxes</a></li>
+         <li class=""><a href="file-uploads.html">File uploads</a></li>
+         <li class=""><a href="matrix-fields.html">Matrix fields</a></li>
+      </ul>
+      <h5 class="m-t">Dashboard settings</h5>
+      <ul class="rm-list-styles">
+         <li class=""><a href="profile.html">Profile</a></li>
+         <li class=""><a href="email.html">Email</a></li>
+         <li class=""><a href="permissions.html">Permissions</a></li>
+         <li class=""><a href="users.html">Users</a></li>
+         <li class=""><a href="database.html">Database</a></li>
+         <li class=""><a href="asset-library.html">Asset library</a></li>
+         <li class=""><a href="chunked-uploader.html">Chunked uploader</a></li>
+         <li class=""><a href="payment-gateway.html">Payment gateway</a></li>
+         <li class=""><a href="site-settings.html">Site settings</a></li>
+      </ul>
+      
+      <h5 class="m-t">Getting your site ready to go live</h5>
+      <ul class="rm-list-styles">
+         <li class=""><a href="changing-default-urls.html">Changing the database url
+               paths</a>
+         </li>
+         <li class=""><a href="setting-default-route.html">Setting the default route
+               (entry
+               point) </a>
+         </li>
+         <li class=""><a href="htaccess.html">htaccess considerations</a></li>
+      </ul>
+      
+   </div>
+   <div  class="sidebar-fixed fade-in" :style={display:bar}   id="sidebar-fixed" @click.stop>
+
+      <a href="../index.html">
+      <img alt="ignitedcms logo" src="../resources/assets/images/ignitedcms-logo.svg" style="width:150px;"></img>
+      </a>
+      <h5 class="m-t">Introduction</h5>
+      <ul class="rm-list-styles">
+         <li class=""><a href="../documentation.html">About IgnitedCMS</a></li>
+      </ul>
+      <h5 class="m-t">Installation</h5>
+      <ul class="rm-list-styles">
+         <li class=""><a href="requirements.html">Requirements</a></li>
+         <li class=""><a href="installation.html">Installation</a></li>
+         <li class=""><a href="installation-issues.html">Install Issues</a></li>
+      </ul>
+      <h5 class="m-t">System overview</h5>
+      <ul class="rm-list-styles">
+         <li class=""><a href="directory-structure.html">Directory Structure</a></li>
+         <li class=""><a href="overview.html">Overview</a></li>
+         <li class=""><a href="fields.html">Fields</a></li>
+         <li class=""><a href="section-types.html">Section types</a></li>
+         <li class=""><a href="entries.html">Entries</a></li>
+         <li class=""><a href="useful-functions.html">Useful functions</a></li>
+         <li class=""><a href="magic-routing.html">Magic routing</a></li>
+         <li class=""><a href="ip-throttling.html">IP throttling</a></li>
+         <li class=""><a href="search-function.html">Searching content</a></li>
+         <li class=""><a href="auth.html">Auth</a></li>
+      </ul>
+      <h5 class="m-t">Section types</h5>
+      <ul class="rm-list-styles">
+         <li class=""><a href="singles.html">Singles </a></li>
+         <li class=""><a href="multiples.html">Multiples</a></li>
+         <li class=""><a href="globals.html">Globals</a></li>
+         <li class=""><a href="trees.html">Trees</a></li>
+         <li class=""><a href="adding-external.html">Adding external CSS JS files</a>
+         </li>
+      </ul>
+      <h5 class="m-t">Fields in depth</h5>
+      <ul class="rm-list-styles">
+         <li class=""><a href="text-fields.html">Text fields </a></li>
+         <li class=""><a href="number-fields.html">Number fields </a></li>
+         <li class=""><a href="multiline-fields.html">Multiline fields</a></li>
+         <li class=""><a href="drop-downs.html">Drop downs</a></li>
+         <li class=""><a href="checkboxes.html">Checkboxes</a></li>
+         <li class=""><a href="switches.html">Switches</a></li>
+         <li class=""><a href="date-fields.html">Dates</a></li>
+         <li class=""><a href="rich-text-boxes.html">Rich text boxes</a></li>
+         <li class=""><a href="file-uploads.html">File uploads</a></li>
+         <li class=""><a href="matrix-fields.html">Matrix fields</a></li>
+      </ul>
+      <h5 class="m-t">Dashboard settings</h5>
+      <ul class="rm-list-styles">
+         <li class=""><a href="profile.html">Profile</a></li>
+         <li class=""><a href="email.html">Email</a></li>
+         <li class=""><a href="permissions.html">Permissions</a></li>
+         <li class=""><a href="users.html">Users</a></li>
+         <li class=""><a href="database.html">Database</a></li>
+         <li class=""><a href="asset-library.html">Asset library</a></li>
+         <li class=""><a href="chunked-uploader.html">Chunked uploader</a></li>
+         <li class=""><a href="payment-gateway.html">Payment gateway</a></li>
+         <li class=""><a href="site-settings.html">Site settings</a></li>
+      </ul>
+      <h5 class="m-t">Getting your site ready to go live</h5>
+      <ul class="rm-list-styles">
+         <li class=""><a href="changing-default-urls.html">Changing the database url
+               paths</a>
+         </li>
+         <li class=""><a href="setting-default-route.html">Setting the default route
+               (entry
+               point) </a>
+         </li>
+         <li class=""><a href="htaccess.html">htaccess considerations</a></li>
+      </ul>
+      
+   </div>
+</div>
+            </ul>
+         
+
+         <div class="row">
+            <div class="col-12 text-dark">
+                     <div class="row">
+      <div class="col-12 mt">
+         <h3>Overview</h3><p>Once you familiarise yourself with the concepts of fields, sections and entries you can start writing your own front end templates. At the heart of the IgnitedCMS engine is a simplified template engine. A front end way of getting data out and dumping it to your views.</p><p><br></p><p>There are only a few rules you need to know when creating your own templates. You must include a <span class="ql-font-monospace">layout.blade.php</span>  file which lives in the views folder, under custom. You can of course customise this to your own style and even include external css and js files.</p><p><br></p><p>But you MUST not rename or delete this file. It is the heart, if you like, of the main engine. As soon a you create a <span class="ql-font-monospace">section</span>, the name of your <span class="ql-font-monospace">section</span> will form the PHP name. For example,if you created a <span class="ql-font-monospace">section</span> called home, you need to create a PHP file called <span class="ql-font-monospace">home.blade.php </span>inside your custom folder.</p><p><br></p>      </div>
+   </div>
+                                 <div class="row">
+      <div class="col-12 m-t">
+         <pre class="code">resources
+   - views
+       - custom 
+          - layout.blade.php
+          - home.blade.php</pre>
+      </div>
+   </div>
+                     <div class="row">
+      <div class="col-12 mt">
+         <p>Let's say you have a text field in your section called title.</p><p><br></p><p>To output this in <span class="ql-font-monospace">home.blade.php</span> all you would do is first create a <span class="ql-font-monospace">layout.blade.php</span></p><p>file</p>      </div>
+   </div>
+                                    <div class="row">
+      <div class="col-12 m-t">
+         <pre class="code"><div v-pre>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+
+    &lt;head&gt;
+        &lt;meta charset=&quot;UTF-8&quot;&gt;
+        &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+        &lt;title&gt;title&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        @yield(&#039;content&#039;)
+    &lt;/body&gt;
+&lt;/html&gt;</div></pre>
+      </div>
+   </div>
+                  <div class="row">
+      <div class="col-12 mt">
+         <p>And a <span class="ql-font-monospace">home.blade.php</span> file</p>      </div>
+   </div>
+                                    <div class="row">
+      <div class="col-12 m-t">
+         <pre class="code"><div v-pre>@extends(&#039;custom.layout&#039;)
+@section(&#039;content&#039;)
+
+     {{ $title }}
+
+@endsection</div></pre>
+      </div>
+   </div>
+               <div class="gap"></div>
+            </div>
+            
+         </div>
+            
+            
+         </sidebar>
+
+      
+ 
+
+
+
+
+
+
+</div>
+
+
+<!-- Click out must go before all other scripts -->
+<script src="../resources/assets/js/click-outside.js"></script>
+<script src="../resources/assets/js/focus-trap.js"></script>
+<script src="../resources/assets/js/dark-mode.js"></script>
+<script src="../resources/assets/js/alerts.js"></script>
+<script src="../resources/assets/js/tabs.js"></script>
+<script src="../resources/assets/js/buttons.js"></script>
+<script src="../resources/assets/js/badges.js"></script>
+<script src="../resources/assets/js/breadcrumbs.js"></script>
+<script src="../resources/assets/js/avatar.js"></script>
+<script src="../resources/assets/js/tooltip.js"></script>
+<script src="../resources/assets/js/popover.js"></script>
+<script src="../resources/assets/js/modals.js"></script>
+<script src="../resources/assets/js/dropdown.js"></script>
+<script src="../resources/assets/js/file-upload.js"></script>
+<script src="../resources/assets/js/datepicker.js"></script>
+<script src="../resources/assets/js/accordions.js"></script>
+<script src="../resources/assets/js/switch.js"></script>
+<script src="../resources/assets/js/sidebar.js"></script>
+<script src="../resources/assets/js/range-sliders.js"></script>
+<script src="../resources/assets/js/toasts.js"></script>
+<script src="../resources/assets/js/menu.js"></script>
+<script src="../resources/assets/js/mobile-menu.js"></script>
+<script src="../resources/assets/js/sheet.js"></script>
+<script src="../resources/assets/js/password.js"></script>
+<script src="../resources/assets/js/combobox.js"></script>
+<script src="../resources/assets/js/input-otp.js"></script>
+
+<!-- Include the Quill library -->
+<script src="../resources/assets/js/quill.js"></script>
+<script src="../resources/assets/js/quill-vue.js"></script>
+
+<script src="../resources/assets/datatables/jquery.min.js"></script>
+<script src="../resources/assets/datatables/jquery.dataTables.min.js"></script>
+
+<script src="../resources/assets/js/sortable.js"></script>
+<script src="../resources/assets/js/splide.min.js"></script>
+<script src="../resources/assets/js/small-menu.js"></script>
+<script src="../resources/assets/js/carousel.js"></script>
+
+<!-- end feather icons js lib -->
+
+<script>
+        /*                                                                          
+        |---------------------------------------------------------------            
+        | Base entry point                                                
+        |---------------------------------------------------------------            
+        |                                                                           
+        */       
+        Vue.use(window.VueQuillEditor);
+        var app = new Vue(
+        {
+           el: '#app',
+           data:
+           {
+              message: 'Add Items. . . ',
+              show: false,
+              dark:false,
+              foo:'hello',
+              bar: 'none',
+              otp:'',
+              items: [
+                    { id: 1, text: 'Item 1' },
+                    { id: 2, text: 'Item 2' },
+                    { id: 3, text: 'Item 3' },
+                    { id: 4, text: 'Item 4' },
+                    { id: 5, text: 'Item 5' }
+                ],
+              myquill: 'Hello',
+              editorOption: {
+                     modules: {
+                     toolbar: [
+                       ['bold', 'italic', 'underline' ],
+                       ['blockquote'],
+                       [{ 'header': 1 }, { 'header': 2 }],
+                       [{ 'list': 'ordered' }, { 'list': 'bullet' }],
+                       [{ 'align': [] }],
+                       ['clean'],
+                       ['link']
+                     ]
+                   },
+                   // theme: 'snow'
+                }
+           },
+           methods:
+           {
+            showToast() {
+                this.$refs.toast.showToast(3000);
+                this.$refs.toast2.showToast(4000);
+            },
+            toggleMenu(){
+              this.$refs.jx.toggle();
+
+             },
+             toggle_sidemenu()
+             {
+                this.show = !this.show;
+                if (this.show) 
+                {
+                    this.bar = 'block'
+                }
+                else
+                {
+                    this.bar = 'none'
+                }
+             },
+              away()
+              {
+                 this.show = false;
+                 this.bar = 'none'
+              },
+              onEditorBlur(quill) {
+                    console.log('editor blur!', quill)
+                },
+                onEditorFocus(quill) {
+                    console.log('editor focus!', quill)
+                },
+                onEditorReady(quill) {
+                    console.log('editor ready!', quill)
+                }
+           },
+           computed: {
+                editor() {
+                    return this.$refs.quillEditor.quill
+                }
+            },
+           mounted()
+           {
+               
+           }
+        });    
+    </script>
+
+
+<script>
+         const ctx = document.getElementById('myChart');
+
+         Chart.defaults.font.family = 'Instrument Sans';
+         Chart.defaults.font.size = 14;
+
+         //Change from 'bar' to 'line' etc
+         new Chart(ctx, {
+           type: 'bar',
+           data: {
+             labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+             datasets: [{
+               label: '# of Votes',
+               data: [12, 19, 3, 5, 2, 3],
+               borderWidth: 1,
+               borderColor: '#292F3E',
+               backgroundColor: '#292F3E',
+             }]
+           },
+           options: {
+             responsive: true,
+             scales: {
+               y: {
+                 beginAtZero: true
+               }
+             }
+           }
+         });
+      </script>
+
+
+<script>
+    $('#example').dataTable({
+        "iDisplayLength": 20
+    });
+</script>
+
+
+
+
+
+
+</body>
+
+</html>
