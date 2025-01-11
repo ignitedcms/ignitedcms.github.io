@@ -33,12 +33,12 @@ Vue.component("small-menu", {
    </svg>
   </button>
      <div class="text-center text-2xl">
-     <div><a href="https://www.ignitedcms.com/home" class="hover:text-black">IgnitedCMS</a></div>
-     <div><a href="https://www.ignitedcms.com/kamijs" class="hover:text-black">Kamijs</a></div>
-     <div><a href="https://www.ignitedcms.com/go-zen" class="hover:text-black">Gozen</a></div>
-     <div><a href="https://www.ignitedcms.com/blog" class="hover:text-black">Blog</a></div>
-     <div><a href="https://www.ignitedcms.com/about" class="hover:text-black">About</a></div>
-     <div><a href="https://www.ignitedcms.com/contact" class="hover:text-black">Contact</a></div>
+     <div><a href="index.html" class="hover:text-black">IgnitedCMS</a></div>
+     <div><a href="kamijs.html" class="hover:text-black">Kamijs</a></div>
+     <div><a href="go-zen.html" class="hover:text-black">Gozen</a></div>
+     <div><a href="blog.html" class="hover:text-black">Blog</a></div>
+     <div><a href="about.html" class="hover:text-black">About</a></div>
+     <div><a href="contact.html" class="hover:text-black">Contact</a></div>
      </div>
   </div>
   `,
