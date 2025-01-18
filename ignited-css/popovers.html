@@ -173,7 +173,10 @@
             
 	        <div class="row">
         <div class="col-12 m-t">
-			<h3>Popovers</h3><p>These are useful for quickly showing additional information, or even embedded forms. Popovers have automatic focus trapping and are fully accessible.</p>        </div>
+			<h3>Popovers</h3><p>These are useful for quickly showing additional information, or even embedded forms. Popovers have automatic focus trapping and are fully accessible.</p>
+         
+         
+        </div>
          </div>
 	
     
@@ -190,10 +193,10 @@
     
             <div class="row">
             <div class="col-12 m-t">
-                <div class="row min-h-[300px] border border-[--gray] rounded-[--big-radius]">
+                <div class="row min-h-[300px] border border-[--gray] rounded-[--big-radius]" style="min-height:600px;">
              <div class="col v-a h-a">
-                <popover width="300px">
-                   <popover-trigger class="p-2 border border-[--gray] rounded-md text-sm bg-white text-black">
+                <popover width="300px" halfwidth="-150px">
+                   <popover-trigger class="btn-white">
                       Open popover
                    </popover-trigger>
                    <popover-content>
@@ -265,8 +268,8 @@
 	
 	        <div class="row">
             <div class="col-12 m-t">
-               <pre class="code">&lt;popover width=&quot;300px&quot;&gt;
-   &lt;popover-trigger class=&quot;p-2 border border-[--gray] rounded-md text-sm bg-white text-black&quot;&gt;
+               <pre class="code">&lt;popover width=&quot;300px&quot;&gt; halfwidth=&quot;-150px&quot;&gt; 
+   &lt;popover-trigger class=&quot;btn-white&quot;&gt;
       Open popover
    &lt;/popover-trigger&gt;
    &lt;popover-content&gt;
