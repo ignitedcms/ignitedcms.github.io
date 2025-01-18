@@ -31,8 +31,8 @@
         <?php
         if (isset($_POST['submit'])) {
             $directory = rtrim($_POST['directory'], '/');
-            $original = trim($_POST['original']);
-            $replacement = trim($_POST['replacement']);
+            $original = $_POST['original'];
+            $replacement = $_POST['replacement'];
             $results = [];
 
             // Validate directory
@@ -58,10 +58,14 @@
                     continue;
                 }
 
-                // Create pattern that matches the string regardless of whitespace
+                // Create pattern that matches across multiple lines
                 $pattern = preg_quote($original, '/');
+                // Replace newlines in the pattern with \s* to match any whitespace
+                $pattern = str_replace(["\r\n", "\n", "\r"], '\s*', $pattern);
+                // Replace spaces with \s* to match any whitespace
                 $pattern = str_replace(' ', '\s*', $pattern);
-                $pattern = '/(' . $pattern . ')/i';
+                // Add modifiers: i=case insensitive, s=dot matches newline, m=multiline mode
+                $pattern = '/(' . $pattern . ')/ism';
 
                 // Perform replacement using preg_replace
                 $newContent = preg_replace($pattern, $replacement, $content);
@@ -87,4 +91,4 @@
         ?>
     </div>
 </body>
-</html>
+</html>v
