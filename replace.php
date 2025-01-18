@@ -31,8 +31,8 @@
         <?php
         if (isset($_POST['submit'])) {
             $directory = rtrim($_POST['directory'], '/');
-            $original = $_POST['original'];
-            $replacement = $_POST['replacement'];
+            $original = trim($_POST['original']);
+            $replacement = trim($_POST['replacement']);
             $results = [];
 
             // Validate directory
@@ -43,7 +43,7 @@
 
             // Get all HTML files
             $files = glob($directory . '/*.html');
-            
+
             if (empty($files)) {
                 echo "<div class='result'>No HTML files found in the specified directory.</div>";
                 exit;
@@ -52,15 +52,20 @@
             // Process each file
             foreach ($files as $file) {
                 $content = file_get_contents($file);
-                
+
                 if ($content === false) {
                     $results[] = "Error reading file: " . basename($file);
                     continue;
                 }
 
-                // Perform replacement
-                $newContent = str_replace($original, $replacement, $content);
-                
+                // Create pattern that matches the string regardless of whitespace
+                $pattern = preg_quote($original, '/');
+                $pattern = str_replace(' ', '\s*', $pattern);
+                $pattern = '/(' . $pattern . ')/i';
+
+                // Perform replacement using preg_replace
+                $newContent = preg_replace($pattern, $replacement, $content);
+
                 // Write new content directly to file
                 if (file_put_contents($file, $newContent) === false) {
                     $results[] = "Error writing to file: " . basename($file);
