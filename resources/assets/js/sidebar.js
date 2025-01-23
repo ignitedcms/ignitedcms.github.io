@@ -86,7 +86,8 @@ Vue.component('sidebar', {
     return {
        colorVariants:{
          dark:'bg-dark text-white',
-         light:'bg-white'
+         light:'bg-white',
+         gray:'bg-light-gray'
        },
       show: false,
       dark: false,

@@ -36,6 +36,8 @@ Vue.component("button-component", {
         outline:
           "text-black bg-white  border border-[--gray] hover:bg-gray-200 transition ease-in-out duration-500",
         secondary: "bg-gray-200 text-black ",
+        ghost:
+          "text-black bg-transparent  hover:bg-gray-200 transition ease-in-out duration-500"
       },
     };
   },

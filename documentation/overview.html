@@ -141,15 +141,15 @@
             </ul>
          
 
-         <div class="row">
-            <div class="col-12 text-dark">
+         <div class="foo">
+            <div class="foo">
                      <div class="row">
       <div class="col-12 mt">
          <h3>Overview</h3><p>Once you familiarise yourself with the concepts of fields, sections and entries you can start writing your own front end templates. At the heart of the IgnitedCMS engine is a simplified template engine. A front end way of getting data out and dumping it to your views.</p><p><br></p><p>There are only a few rules you need to know when creating your own templates. You must include a <span class="ql-font-monospace">layout.blade.php</span>  file which lives in the views folder, under custom. You can of course customise this to your own style and even include external css and js files.</p><p><br></p><p>But you MUST not rename or delete this file. It is the heart, if you like, of the main engine. As soon a you create a <span class="ql-font-monospace">section</span>, the name of your <span class="ql-font-monospace">section</span> will form the PHP name. For example,if you created a <span class="ql-font-monospace">section</span> called home, you need to create a PHP file called <span class="ql-font-monospace">home.blade.php </span>inside your custom folder.</p><p><br></p>      </div>
    </div>
-                                 <div class="row">
-      <div class="col-12 m-t">
-         <pre class="code">resources
+                                 <div class="foo">
+<div class="foo">
+<pre class="code">resources
    - views
        - custom 
           - layout.blade.php
@@ -160,9 +160,9 @@
       <div class="col-12 mt">
          <p>Let's say you have a text field in your section called title.</p><p><br></p><p>To output this in <span class="ql-font-monospace">home.blade.php</span> all you would do is first create a <span class="ql-font-monospace">layout.blade.php</span></p><p>file</p>      </div>
    </div>
-                                    <div class="row">
-      <div class="col-12 m-t">
-         <pre class="code"><div v-pre>&lt;!DOCTYPE html&gt;
+                                    <div class="foo">
+<div class="foo">
+<pre class="code"><div v-pre>&lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;en&quot;&gt;
 
     &lt;head&gt;
@@ -181,9 +181,9 @@
       <div class="col-12 mt">
          <p>And a <span class="ql-font-monospace">home.blade.php</span> file</p>      </div>
    </div>
-                                    <div class="row">
-      <div class="col-12 m-t">
-         <pre class="code"><div v-pre>@extends(&#039;custom.layout&#039;)
+                                    <div class="foo">
+<div class="foo">
+<pre class="code"><div v-pre>@extends(&#039;custom.layout&#039;)
 @section(&#039;content&#039;)
 
      {{ $title }}

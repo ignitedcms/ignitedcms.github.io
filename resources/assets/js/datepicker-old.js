@@ -145,54 +145,44 @@ Vue.component('datepicker', {
 
               </button>
             </div>
-            <table class="w-full rm-btn-styles" role="grid" aria-labelled="">
-              <thead>
-              <tr class="h-e text-sm space-x-1 mx-[5px]">
-                <th class="dark:hover:bg-darkest dark:text-white w-[14.2857142857%] text-center font-normal" aria-label="Sunday">Su</th>
-                <th class="dark:hover:bg-darkest dark:text-white w-[14.2857142857%] text-center font-normal" aria-label="Monday">Mo</th>
-                <th class="dark:hover:bg-darkest dark:text-white w-[14.2857142857%] text-center font-normal" aria-label="Tuesday">Tu</th>
-                <th class="dark:hover:bg-darkest dark:text-white w-[14.2857142857%] text-center font-normal" aria-label="Wednesday">We</th>
-                <th class="dark:hover:bg-darkest dark:text-white w-[14.2857142857%] text-center font-normal" aria-label="Thursday">Th</th>
-                <th class="dark:hover:bg-darkest dark:text-white w-[14.2857142857%] text-center font-normal" aria-label="Friday">Fr</th>
-                <th class="dark:hover:bg-darkest dark:text-white w-[14.2857142857%] text-center font-normal" aria-label="Saturday">Sa</th>
-              </tr>
-              </thead>
-              <tbody role="rowgroup">
+            <div class="rm-btn-styles">
+              <div class="h-e text-sm space-x-1 mx-[5px]">
+                <div class="dark:hover:bg-darkest dark:text-white w-[14.2857142857%] text-center">Su</div>
+                <div class="dark:hover:bg-darkest dark:text-white w-[14.2857142857%] text-center">Mo</div>
+                <div class="dark:hover:bg-darkest dark:text-white w-[14.2857142857%] text-center">Tu</div>
+                <div class="dark:hover:bg-darkest dark:text-white w-[14.2857142857%] text-center">We</div>
+                <div class="dark:hover:bg-darkest dark:text-white w-[14.2857142857%] text-center">Th</div>
+                <div class="dark:hover:bg-darkest dark:text-white w-[14.2857142857%] text-center">Fr</div>
+                <div class="dark:hover:bg-darkest dark:text-white w-[14.2857142857%] text-center">Sa</div>
+              </div>
               <button
                 class="rm-btn-styles w-full"
                 @focus="calendarFocused"
                 ref="datepicker"
                 @click.prevent
               >
-                <tr v-for="(row, rowIndex) in calendar" :key="rowIndex" class="flex w-full">
-                  <td role="presentation" 
-                  class="
-                  relative
-                  p-0
-                  ">
+                <div v-for="(row, rowIndex) in calendar" :key="rowIndex" class="w-full">
                   <button
                     v-for="(cell, cellIndex) in row"
                     :key="cell.date"
                     @click="selectDate(cell)"
-                    role="gridcell"
-                    class="
-                    inline-flex
-                    items-center
-                    justify-center
-                    gap-2
-                    whitespace-nowrap
-                    rounded-md
+                    class="flex 
+                    justify-center 
+                    items-center 
+                    flex-row 
+                    flex-wrap 
+                    text-gray-600 
                     text-sm
-                    min-w-[33px]
-                    min-h-[33px]
-                    hover:bg-[--gray]
+                    hover:bg-[--light-gray]
                     hover:text-black
                     hover:rounded-[--small-radius]
                     dark:text-white
                     dark:hover:bg-dark
                     dark:hover:border border-slate-200
-
-                    "
+                    relative 
+                    float-left 
+                    w-[14.2857142857%] 
+                    min-h-[34px]"
                     :class="{
                       'current-date dark:bg-slate-400': isCurrentDate(cell),
                       focused: isFocused(rowIndex, cellIndex)
@@ -203,12 +193,9 @@ Vue.component('datepicker', {
                   >
                     {{ cell.date }}
                   </button>
-                  </td>
-                </tr>
+                </div>
               </button>
-              </tbody>
-            </table>
-
+            </div>
           </focus-trap>
         </div>
     </div>
@@ -408,4 +395,3 @@ Vue.component('datepicker', {
     },
   },
 });
-

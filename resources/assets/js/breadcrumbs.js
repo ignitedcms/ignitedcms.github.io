@@ -21,11 +21,8 @@ Vue.component('breadcrumb', {
     flex
     px-2
     py-3
-    bg-white
-    border
-    border-[--gray]
+    bg-transparent
     rounded-[--small-radius]
-    shadow-sm
     dark:bg-darkest
     dark:border-slate-600
     dark:text-white

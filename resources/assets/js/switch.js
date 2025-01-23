@@ -12,7 +12,7 @@
 */
 
 Vue.component('switch-ios', {
-  props: ['name', 'value'],
+  props: ['name', 'value', 'message'],
   template: `
   <div>
      <div class=""></div>

@@ -23,7 +23,8 @@ Vue.component('tabs', {
       bg-gray-100
       p-1
       rounded-[--small-radius]
-      dark:bg-dark" 
+      dark:border border-slate-600
+      dark:bg-darker" 
 
       role="tablist">
       <button
@@ -31,7 +32,7 @@ Vue.component('tabs', {
         v-for='(tab, index) in tabs'
         :id="'tab-' +uniqueId+ index"
         role="tab"
-        :class='{"bg-white shadow-md dark:bg-darkest dark:text-white": (index == currentIndex)}'
+        :class='{"bg-white shadow-md dark:bg-darkest dark:text-white ": (index == currentIndex)}'
         :aria-selected='index === currentIndex ? "true" : "false"'
         :aria-controls="'tabpanel-'+uniqueId + index"
         :tabindex="currentIndex === index ? 0 : -1"

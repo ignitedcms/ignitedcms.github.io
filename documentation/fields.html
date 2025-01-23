@@ -141,8 +141,8 @@
             </ul>
          
 
-         <div class="row">
-            <div class="col-12 text-dark">
+         <div class="foo">
+            <div class="foo">
                      <div class="row">
       <div class="col-12 mt">
          <h3>Fields</h3><p>Fields are a pretty simple concept. These are your inputs in the backend.</p>      </div>
@@ -154,52 +154,52 @@
                                        <div class="row">
       <div class="col-12 m-t">
          <div class="panel">
-            <p>(Field names&nbsp;<strong>MUST</strong>&nbsp;be unique and must not contain numbers or spaces.)</p><p>You can NOT use the following names: [<span class="ql-font-monospace">url,content,id,section,field,entrytitle,entryid</span>] - these are system reserved names</p>         </div>
+            <p>(Field names&nbsp;<strong>MUST</strong>&nbsp;be unique and must not contain numbers or spaces.)</p><p>You can NOT use the following names: [<span class="ql-font-monospace">url, content, id, section, field, entrytitle, entryid</span>] - these are system reserved names</p>         </div>
       </div>
    </div>
                <div class="row">
       <div class="col-12 mt">
          <h4>Plain text</h4>      </div>
    </div>
-                                    <div class="row">
-      <div class="col-12 m-t">
-         <pre class="code"><div v-pre>{{ $fieldHandle }}</div></pre>
+                                    <div class="foo">
+<div class="foo">
+<pre class="code"><div v-pre>{{ $fieldHandle }}</div></pre>
       </div>
    </div>
                   <div class="row">
       <div class="col-12 mt">
          <h4>Rich text</h4>      </div>
    </div>
-                                    <div class="row">
-      <div class="col-12 m-t">
-         <pre class="code"><div v-pre>{{ $fieldHandle }}</div></pre>
+                                    <div class="foo">
+<div class="foo">
+<pre class="code"><div v-pre>{{ $fieldHandle }}</div></pre>
       </div>
    </div>
                   <div class="row">
       <div class="col-12 mt">
          <h4>Date</h4>      </div>
    </div>
-                                    <div class="row">
-      <div class="col-12 m-t">
-         <pre class="code"><div v-pre>{{ $fieldHandle }}</div></pre>
+                                    <div class="foo">
+<div class="foo">
+<pre class="code"><div v-pre>{{ $fieldHandle }}</div></pre>
       </div>
    </div>
                   <div class="row">
       <div class="col-12 mt">
          <h4>Number</h4>      </div>
    </div>
-                                    <div class="row">
-      <div class="col-12 m-t">
-         <pre class="code"><div v-pre>{{ $fieldHandle }}</div></pre>
+                                    <div class="foo">
+<div class="foo">
+<pre class="code"><div v-pre>{{ $fieldHandle }}</div></pre>
       </div>
    </div>
                   <div class="row">
       <div class="col-12 mt">
          <h4>File Upload</h4><p>(this returns the file upload url and an alt title if needed)</p>      </div>
    </div>
-                                    <div class="row">
-      <div class="col-12 m-t">
-         <pre class="code"><div v-pre>{{ $fieldHandle[&#039;url&#039;] }}
+                                    <div class="foo">
+<div class="foo">
+<pre class="code"><div v-pre>{{ $fieldHandle[&#039;url&#039;] }}
 {{ $fieldHandle[&#039;title&#039;] }}</div></pre>
       </div>
    </div>
@@ -207,36 +207,36 @@
       <div class="col-12 mt">
          <h4>Drop downs</h4>      </div>
    </div>
-                                    <div class="row">
-      <div class="col-12 m-t">
-         <pre class="code"><div v-pre>{{ $fieldHandle }}</div></pre>
+                                    <div class="foo">
+<div class="foo">
+<pre class="code"><div v-pre>{{ $fieldHandle }}</div></pre>
       </div>
    </div>
                   <div class="row">
       <div class="col-12 mt">
          <h4>Checkboxes</h4><p>(Returns a csv string)</p>      </div>
    </div>
-                                    <div class="row">
-      <div class="col-12 m-t">
-         <pre class="code"><div v-pre>{{ $fieldHandle }}</div></pre>
+                                    <div class="foo">
+<div class="foo">
+<pre class="code"><div v-pre>{{ $fieldHandle }}</div></pre>
       </div>
    </div>
                   <div class="row">
       <div class="col-12 mt">
          <h4>Switches</h4><p>(returns 'on' or 'off')</p>      </div>
    </div>
-                                    <div class="row">
-      <div class="col-12 m-t">
-         <pre class="code"><div v-pre>{{ $fieldHandle }}</div></pre>
+                                    <div class="foo">
+<div class="foo">
+<pre class="code"><div v-pre>{{ $fieldHandle }}</div></pre>
       </div>
    </div>
                   <div class="row">
       <div class="col-12 mt">
          <h4>Matrix</h4>      </div>
    </div>
-                                    <div class="row">
-      <div class="col-12 m-t">
-         <pre class="code"><div v-pre>@foreach ($matrixHandle as $row)
+                                    <div class="foo">
+<div class="foo">
+<pre class="code"><div v-pre>@foreach ($matrixHandle as $row)
     @if( not_empty(&#039;fieldHandle&#039;, $row))
           {{  print_content(&#039;fieldHandle&#039;, $row) }}
      @endif
