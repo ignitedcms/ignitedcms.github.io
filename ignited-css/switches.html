@@ -185,20 +185,22 @@
 
 	
     
-            <div class="row">
+         <div class="row">
             <div class="col-12 m-t">
-                <div class="form-group v-a h-a border p-4" style="min-height:300px;">  
-<div class="row">
-   <div class="col">
-      <div class="form-group">
-         <switch-ios name="a" value="checked" ></switch-ios>
-      </div>
-        <div class="form-group">
-         <switch-ios name="b" value="" ></switch-ios>
-      </div>
-   </div>
-</div>
-</div>            </div>
+               <div class="form-group v-a h-a border p-4" style="min-height:300px;">  
+                  <div class="row">
+                     <div class="col">
+                        <div class="form-group">
+                           <div class="col v-a h-a space-x-2">
+                              <switch-ios name="a" value="checked" id="airplane-mode" ></switch-ios>
+                              <label for="airplane-mode">Airplane mode</label>
+                           </div>
+                        </div>
+
+                     </div>
+                  </div>
+               </div>            
+            </div>
          </div>
 	
 
@@ -216,16 +218,12 @@
 	
 	        <div class="foo">
 <div class="foo">
-<pre class="code">&lt;div class=&quot;row&quot;&gt;
-   &lt;div class=&quot;col&quot;&gt;
-      &lt;div class=&quot;form-group&quot;&gt;
-         &lt;switch-ios name=&quot;a&quot; value=&quot;checked&quot; &gt;&lt;/switch-ios&gt;
-      &lt;/div&gt;
-        &lt;div class=&quot;form-group&quot;&gt;
-         &lt;switch-ios name=&quot;b&quot; value=&quot;&quot; &gt;&lt;/switch-ios&gt;
-      &lt;/div&gt;
-   &lt;/div&gt;
-&lt;/div&gt;</pre>
+<pre class="code">
+&lt;div class=&quot;col v-a h-a space-x-2&quot;&gt;
+   &lt;switch-ios name=&quot;a&quot; value=&quot;checked&quot; id=&quot;airplane-mode&quot; &gt;&lt;/switch-ios&gt;
+   &lt;label for=&quot;airplane-mode&quot;&gt;Airplane mode&lt;/label&gt;
+&lt;/div&gt;
+</pre>
             </div>
          </div>        
 	

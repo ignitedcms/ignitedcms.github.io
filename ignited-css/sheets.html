@@ -170,11 +170,63 @@
             
 	        <div class="row">
         <div class="col-12 m-t">
-			<h4>Sheets</h4><p>This provides a handy way for displaying a drawer on the right hand side. It accepts a slot, so you can fill it with whatever content you wish.</p>        </div>
+			<h4>Sheets</h4><p>This provides a handy way for displaying a drawer on the right, left, top or bottom hand side. It accepts a slot, so you can fill it with whatever content you wish.</p>        </div>
          </div>
 	
     
-    
+    <div class="row min-h-[300px] border border-[--gray] rounded-[--big-radius]">
+             <div class="col-12 v-a h-a">
+                <sheet position="left">
+                   <sheet-trigger class="p-2 bg-white text-sm border border-[--gray] rounded-md text-black">
+                      Open
+                   </sheet-trigger>
+                   <sheet-overlay>
+                   <sheet-content>
+                      <sheet-header class="p-4">
+                      <sheet-title>Edit profile</sheet-title>
+                      <sheet-description>
+                         Make changes to your profile here. Click save when you're done.
+                      </sheet-description>
+                   </sheet-header>
+                      <div class="p-4">
+                         
+                         <div class="row">
+                            <div class="col">
+                               <label for="titlename">Name</label>
+                               <input 
+                                class="form-control form-dark" 
+                                type="text"
+                                name="name" 
+                                value="Pedro Duarte" 
+                                placeholder="" />
+                            </div>
+                         </div>
+                         <div class="row">
+                            <div class="col">
+                               <label for="username">Username</label>
+                               <input 
+                                class="form-control form-dark" 
+                                type="text"
+                                name="username" 
+                                value="@pedroduarte" 
+                                placeholder="" />
+                            </div>
+                         </div>
+                         <div class="row">
+                            <div class="col">
+                               <button-component variant="primary" class="w-full">
+                                  Save
+                               </button-component>
+                            </div>
+                         </div>
+                      </div>
+                   </sheet-content>
+
+                   </sheet-overlay>
+                </sheet>
+                
+             </div>
+          </div>
 
 	
 	
@@ -185,57 +237,7 @@
 
 	
     
-            <div class="row">
-            <div class="col-12 m-t">
-                <div class="row min-h-[300px] border border-[--gray] rounded-[--big-radius]">
-   <div class="col-12 v-a h-a">
-      <sheet>
-         <sheet-trigger class="p-2 bg-white text-sm border border-[--gray] rounded-md text-black">
-            Open
-         </sheet-trigger>
-         <sheet-content>
-            <div class="p-4">
-               <div class="row">
-                  <div class="col">
-                     <h5>Edit profile</h5>
-                     Make changes to your profile here. Click save when you're done.
-                  </div>
-               </div>
-               <div class="row">
-                  <div class="col">
-                     <label for="titlename">Name</label>
-                     <input 
-                        class="form-control" 
-                        type="text"
-                        name="name" 
-                        value="Pedro Duarte" 
-                        placeholder="" />
-                  </div>
-               </div>
-               <div class="row">
-                  <div class="col">
-                     <label for="username">Username</label>
-                     <input 
-                        class="form-control" 
-                        type="text"
-                        name="username" 
-                        value="@pedroduarte" 
-                        placeholder="" />
-                  </div>
-               </div>
-               <div class="row">
-                  <div class="col">
-                     <button-component variant="primary" class="w-full">
-                        Save
-                     </button-component>
-                  </div>
-               </div>
-            </div>
-         </sheet-content>
-      </sheet>
-   </div>
-</div>            </div>
-         </div>
+            
 	
 
 	
@@ -250,52 +252,56 @@
     
 
 	
-	        <div class="foo">
+	        <div class="foo mt-4">
 <div class="foo">
-<pre class="code">&lt;sheet&gt;
-   &lt;sheet-trigger class=&quot;p-2 bg-white text-sm border border-[--gray] rounded-md text-black&quot;&gt;
+<pre class="code">
+&lt;sheet position=&quot;left&quot;&gt;
+   &lt;sheet-trigger class=&quot;btn btn-white&quot;&gt;
       Open
    &lt;/sheet-trigger&gt;
-   &lt;sheet-content&gt;
-      &lt;div class=&quot;p-4&quot;&gt;
-         &lt;div class=&quot;row&quot;&gt;
-            &lt;div class=&quot;col&quot;&gt;
-               &lt;h5&gt;Edit profile&lt;/h5&gt;
-               Make changes to your profile here. Click save when you&#039;re done.
+   &lt;sheet-overlay&gt;
+      &lt;sheet-content&gt;
+         &lt;sheet-header class=&quot;p-4&quot;&gt;
+            &lt;sheet-title&gt;Edit profile&lt;/sheet-title&gt;
+            &lt;sheet-description&gt;
+               Make changes to your profile here. Click save when you&apos;re done.
+            &lt;/sheet-description&gt;
+         &lt;/sheet-header&gt;
+         &lt;div class=&quot;p-4&quot;&gt;
+            &lt;div class=&quot;row&quot;&gt;
+               &lt;div class=&quot;col&quot;&gt;
+                  &lt;label for=&quot;titlename&quot;&gt;Name&lt;/label&gt;
+                  &lt;input
+                     class=&quot;form-control form-dark&quot;
+                     type=&quot;text&quot;
+                     name=&quot;name&quot;
+                     value=&quot;Pedro Duarte&quot;
+                     placeholder=&quot;&quot; /&gt;
+               &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;row&quot;&gt;
+               &lt;div class=&quot;col&quot;&gt;
+                  &lt;label for=&quot;username&quot;&gt;Username&lt;/label&gt;
+                  &lt;input
+                     class=&quot;form-control form-dark&quot;
+                     type=&quot;text&quot;
+                     name=&quot;username&quot;
+                     value=&quot;@pedroduarte&quot;
+                     placeholder=&quot;&quot; /&gt;
+               &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;row&quot;&gt;
+               &lt;div class=&quot;col&quot;&gt;
+                  &lt;button-component variant=&quot;primary&quot; class=&quot;w-full&quot;&gt;
+                     Save
+                  &lt;/button-component&gt;
+               &lt;/div&gt;
             &lt;/div&gt;
          &lt;/div&gt;
-         &lt;div class=&quot;row&quot;&gt;
-            &lt;div class=&quot;col&quot;&gt;
-               &lt;label for=&quot;titlename&quot;&gt;Name&lt;/label&gt;
-               &lt;input 
-                  class=&quot;form-control&quot; 
-                  type=&quot;text&quot;
-                  name=&quot;name&quot; 
-                  value=&quot;Pedro Duarte&quot; 
-                  placeholder=&quot;&quot; /&gt;
-            &lt;/div&gt;
-         &lt;/div&gt;
-         &lt;div class=&quot;row&quot;&gt;
-            &lt;div class=&quot;col&quot;&gt;
-               &lt;label for=&quot;username&quot;&gt;Username&lt;/label&gt;
-               &lt;input 
-                  class=&quot;form-control&quot; 
-                  type=&quot;text&quot;
-                  name=&quot;username&quot; 
-                  value=&quot;@pedroduarte&quot; 
-                  placeholder=&quot;&quot; /&gt;
-            &lt;/div&gt;
-         &lt;/div&gt;
-         &lt;div class=&quot;row&quot;&gt;
-            &lt;div class=&quot;col&quot;&gt;
-               &lt;button-component variant=&quot;primary&quot; class=&quot;w-full&quot;&gt;
-                  Save
-               &lt;/button-component&gt;
-            &lt;/div&gt;
-         &lt;/div&gt;
-      &lt;/div&gt;
-   &lt;/sheet-content&gt;
-&lt;/sheet&gt;</pre>
+      &lt;/sheet-content&gt;
+   &lt;/sheet-overlay&gt;
+&lt;/sheet&gt;
+</pre>
             </div>
          </div>        
 	
