@@ -170,8 +170,61 @@
             
 	        <div class="row">
         <div class="col-12 m-t">
-			<h3>Quick start</h3><p>Kamijs is a minimalistic CSS/JS framework with a sprinkling of Vue 2.0 on the front end. We've left out the build step for javascript (vue) intentionally to keep complexity to a bare minimum.</p><p><br></p><p>Eventually, the component library will support full accessibility with aria and keyboard navigation ensuring our library follows the standards. At present the library is still in beta so there are a lot of changes and bug fixes to address.</p><p><br></p><p><br></p><p><br></p><p><br></p><h3><br></h3>        </div>
+           <h3>Quick start</h3><p>Kamijs is a minimalistic CSS/JS framework with a sprinkling of Vue 2.0 on the front end. </p>
+            <br>
+           <p>This framework is <strong> not </strong> component centric.</p>
+           <br>
+           What this means is, in traditional component based frameworks you have
+           a parent component where all other components belong inside. 
+           With Kamijs, you only add javascript tags where you need it. This workflow
+           is common to much older paradigms that follows an MVC approach. 
+
+           <br>
+           <br>
+           The anatomy of a kamijs single page is as follows. As you can see, you simply
+           add the required components, at the end of the file. Each .html page you create, must
+           follow this basic structure. The components are usually self contained, where you can
+           easily copy and paste the code in the given examples.
          </div>
+         </div>
+
+         <pre class="code">
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+   &lt;head&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&apos;../resources/assets/css/kamicss.css&apos; /&gt;
+      &lt;!-- vue 2 --&gt;
+      &lt;script src=&quot;../resources/assets/js/vue.js&quot;&gt;&lt;/script&gt;
+   &lt;/head&gt;
+   &lt;body&gt;
+      &lt;div class=&quot;main&quot; id=&quot;app&quot;&gt;
+         &lt;!-- Component syntax goes here --&gt;
+      &lt;/div&gt;
+      &lt;!-- Click outside and focus trap must go before all other scripts --&gt;
+      &lt;script src=&quot;../resources/assets/js/click-outside.js&quot;&gt;&lt;/script&gt;
+      &lt;script src=&quot;../resources/assets/js/focus-trap.js&quot;&gt;&lt;/script&gt;
+      &lt;script src=&quot;../resources/assets/js/component-name.js&quot;&gt;&lt;/script&gt;
+      &lt;script&gt;
+         var app = new Vue ({
+            el: &apos;#app&apos;
+         });
+      &lt;/script&gt;
+   &lt;/body&gt;
+&lt;/html&gt;
+         </pre>
+
+         <div class="row">
+            <div class="col">
+               <h3>Kamijs bundle</h3>
+               <p>Adding individual components to the end of the file can become a bit tedious.</p>
+               <p>In this particular case you can add the main minified kamijs bundle. For convenience we've 
+               separated out the chartjs section, the carousel slider and the rich text editor as these js
+               bundle sizes are quite large.</p>
+
+               <br>
+               <p>You should add the charts, carousel and rich text editor js bundles ad hoc as and when you need them.</p>
+            </div>
+         </div>   
 	
     
     
@@ -184,7 +237,6 @@
 	
 
   <div class="gap"></div>
-            </div>
             
          </div>
             
