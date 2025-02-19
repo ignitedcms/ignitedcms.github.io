@@ -170,29 +170,18 @@
             
 	        <div class="row">
         <div class="col-12 m-t">
-			<h3>Modals</h3><p>These are handy to create popup content that doesn't interfere with the main pages. Tab through and you'll notice the modals have automatic modal trappings, also like all our components it is fully accessible, having the appropriate aria attributes.</p>        </div>
+			<h3>Modals</h3>
+         A window overlaid on either the primary window or another dialog window, rendering the content underneath inert.
+        </div>
          </div>
 	
-    
-    
-
-	
-	
-
-	
-
-	
-
-	
-    
-            <div class="row">
-            <div class="col-12 m-t">
-                <div class="row min-h-[300px] border">
-             <div class="col v-a h-a">
-                 <modal>
+   <div class="row min-h-[300px] border border-[--gray] rounded-[--big-radius]">
+             <div class="col-12 v-a h-a">
+                <modal>
                 <modal-trigger class="btn btn-white">
                    Show dialog
                 </modal-trigger>
+                <modal-overlay>
                 <modal-content>
                    <modal-header class="p-4">
                       <modal-title>Edit profile</modal-title>
@@ -200,16 +189,40 @@
                          Make changes to your profile here. Click save when you're done.
                       </modal-description>
                    </modal-header>
-                   <div class="p-4">
+
+                   <div class="row px-4 text-dark dark:bg-darker">
+                      <div class="col">
+                         <label for="title" class="text-dark">Name</label>
+                         <input 
+                          class="form-control form-dark" 
+                          type="text"
+                          value="pedro" 
+                          placeholder="test" />
+                         <div class="mt-2"></div>
+                         <label for="title" class="text-dark">Username</label>
+                         <input 
+                          class="form-control form-dark" 
+                          type="text"
+                          value="@pedro" 
+                          placeholder="test" />
+                         
+                         <button-component variant="dark" class="float-right mt-4">
+                            Save changes
+                         </button-component>
+                      </div>
                    </div>
+                   
                 </modal-content>
+
+                </modal-overlay>
                 </modal>
              </div>
-          </div>            </div>
-         </div>
-	
+          </div> 
+    
 
 	
+	
+
 	
 
 	
@@ -221,22 +234,45 @@
     
 
 	
-	        <div class="foo">
+	        <div class="foo mt-4">
 <div class="foo">
-<pre class="code">&lt;modal&gt;
-   &lt;modal-trigger class=&quot;btn&quot;&gt;
+<pre class="code">
+&lt;modal&gt;
+   &lt;modal-trigger class=&quot;btn btn-white&quot;&gt;
       Show dialog
    &lt;/modal-trigger&gt;
-   &lt;modal-content&gt;
-      &lt;modal-header&gt;
-         &lt;modal-title&gt;Edit profile&lt;/modal-title&gt;
-         &lt;modal-description&gt;
-            Make changes to your profile here. Click save when you&#039;re done.
-         &lt;/modal-description&gt;
-      &lt;/modal-header&gt;
-      &lt;div&gt;test&lt;/div&gt;
-   &lt;/modal-content&gt;
-&lt;/modal&gt;</pre>
+   &lt;modal-overlay&gt;
+      &lt;modal-content&gt;
+         &lt;modal-header class=&quot;p-4&quot;&gt;
+            &lt;modal-title&gt;Edit profile&lt;/modal-title&gt;
+            &lt;modal-description&gt;
+               Make changes to your profile here. Click save when you&apos;re done.
+            &lt;/modal-description&gt;
+         &lt;/modal-header&gt;
+         &lt;div class=&quot;row px-4 text-dark dark:bg-darker&quot;&gt;
+            &lt;div class=&quot;col&quot;&gt;
+               &lt;label for=&quot;title&quot; class=&quot;text-dark&quot;&gt;Name&lt;/label&gt;
+               &lt;input 
+                  class=&quot;form-control form-dark&quot; 
+                  type=&quot;text&quot;
+                  value=&quot;pedro&quot; 
+                  placeholder=&quot;test&quot; /&gt;
+               &lt;div class=&quot;mt-2&quot;&gt;&lt;/div&gt;
+               &lt;label for=&quot;title&quot; class=&quot;text-dark&quot;&gt;Username&lt;/label&gt;
+               &lt;input 
+                  class=&quot;form-control form-dark&quot; 
+                  type=&quot;text&quot;
+                  value=&quot;@pedro&quot; 
+                  placeholder=&quot;test&quot; /&gt;
+               &lt;button-component variant=&quot;dark&quot; class=&quot;float-right mt-4&quot;&gt;
+                  Save changes
+               &lt;/button-component&gt;
+            &lt;/div&gt;
+         &lt;/div&gt;
+      &lt;/modal-content&gt;
+   &lt;/modal-overlay&gt;
+&lt;/modal&gt;
+</pre>
             </div>
          </div>        
 	

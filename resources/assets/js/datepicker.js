@@ -119,6 +119,7 @@ Vue.component('datepicker', {
                 dark:text-white
                 dark:border-slate-600
                 "
+                :id="'datepicker-'+ uniqueIdTwo"
                 @click.prevent
               >
                 {{ getMonthName(currentMonth) }} {{ currentYear }}
@@ -145,7 +146,7 @@ Vue.component('datepicker', {
 
               </button>
             </div>
-            <table class="w-full rm-btn-styles" role="grid" aria-labelled="">
+            <table class="w-full rm-btn-styles" role="grid" :aria-labelled="'datepicker-'+ uniqueIdTwo">
               <thead>
               <tr class="h-e text-sm space-x-1 mx-[5px]">
                 <th class="dark:hover:bg-darkest dark:text-white w-[14.2857142857%] text-center font-normal" aria-label="Sunday">Su</th>
@@ -165,43 +166,39 @@ Vue.component('datepicker', {
                 @click.prevent
               >
                 <tr v-for="(row, rowIndex) in calendar" :key="rowIndex" class="flex w-full">
-                  <td role="presentation" 
+                  <td role="presentation" v-for="(cell, cellIndex) in row"
+ 
                   class="
                   relative
                   p-0
                   ">
                   <button
-                    v-for="(cell, cellIndex) in row"
-                    :key="cell.date"
-                    @click="selectDate(cell)"
-                    role="gridcell"
-                    class="
-                    inline-flex
-                    items-center
-                    justify-center
-                    gap-2
-                    whitespace-nowrap
-                    rounded-md
-                    text-sm
-                    min-w-[33px]
-                    min-h-[33px]
-                    hover:bg-[--gray]
-                    hover:text-black
-                    hover:rounded-[--small-radius]
-                    dark:text-white
-                    dark:hover:bg-dark
-                    dark:hover:border border-slate-200
-
-                    "
-                    :class="{
-                      'current-date dark:bg-slate-400': isCurrentDate(cell),
-                      focused: isFocused(rowIndex, cellIndex)
-                    }"
-                    tabindex="-1"
-                    @focus="setFocus(rowIndex, cellIndex)"
-                    @click.prevent
+                   :key="cell.date"
+                   @click="selectDate(cell)"
+                   role="gridcell"
+                   class="
+                   inline-flex
+                   items-center
+                   justify-center
+                   gap-2
+                   whitespace-nowrap
+                   rounded-md
+                   text-sm
+                   min-w-[33px]
+                   min-h-[33px]
+                   dark:text-white
+                   "
+                   :class="{
+                       'current-date dark:bg-slate-400': isCurrentDate(cell),
+                       focused: isFocused(rowIndex, cellIndex),
+                       'hover:bg-[--gray] hover:text-black hover:rounded-[--small-radius] dark:hover:bg-dark dark:hover:border border-slate-200': cell.date !== ''
+                   }"
+                   :aria-selected="isSelectedDate(cell)"
+                   tabindex="-1"
+                   @focus="setFocus(rowIndex, cellIndex)"
+                   @click.prevent
                   >
-                    {{ cell.date }}
+                  {{ cell.date }}
                   </button>
                   </td>
                 </tr>
@@ -225,7 +222,8 @@ Vue.component('datepicker', {
       focusedCell: -1,
       enableArrowkeys: false,
       arr: 'false',
-      uniqueId: Math.random().toString(36).substring(2) // Generate a unique ID
+      uniqueId: Math.random().toString(36).substring(2), // Generate a unique ID
+      uniqueIdTwo: Math.random().toString(36).substring(2) // Generate a unique ID
 
     };
   },
@@ -269,6 +267,13 @@ Vue.component('datepicker', {
 
   },
   methods: {
+     isSelectedDate(cell) {
+        if (!cell.date) return false;
+        const selectedDate = new Date(this.selectedDate);
+        return cell.date === selectedDate.getDate() &&
+               cell.month === selectedDate.getMonth() &&
+               cell.year === selectedDate.getFullYear();
+    },
     updateDate(newValue) {
       this.$emit('input', newValue);
     },

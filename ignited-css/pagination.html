@@ -170,10 +170,58 @@
             
 	        <div class="row">
         <div class="col-12 m-t">
-			<h3>Pagination</h3>        </div>
+			<h3>Pagination</h3> 
+         Pagination with page navigation, next and previous links.
+        </div>
          </div>
+
+         <div class="dark:bg-darker row min-h-[300px] bg-white border border-[--gray] rounded-[--big-radius]">
+             <div class="col  v-a h-a">
+
+            <pagination>
+                 <pagination-content>
+                   <pagination-item>
+                     <pagination-previous href="foo" />
+                   </pagination-item>
+                   <pagination-item>
+                     <pagination-link href="#">1</pagination-link>
+                   </pagination-item>
+                   <pagination-item>
+                     <pagination-link active="true" href="#">2</pagination-link>
+                   </pagination-item>
+                   <pagination-item>
+                     <pagination-next href="#" />
+                   </pagination-item>
+                 </pagination-content>
+               </pagination>
+
+
+             </div>
+          </div>
 	
     
+          <div class="foo mt-4">
+             <div class="foo">
+                <pre class="code">
+&lt;pagination&gt;
+   &lt;pagination-content&gt;
+      &lt;pagination-item&gt;
+         &lt;pagination-previous href=&quot;foo&quot; /&gt;
+      &lt;/pagination-item&gt;
+      &lt;pagination-item&gt;
+         &lt;pagination-link href=&quot;#&quot;&gt;1&lt;/pagination-link&gt;
+      &lt;/pagination-item&gt;
+      &lt;pagination-item&gt;
+         &lt;pagination-link active=&quot;true&quot; href=&quot;#&quot;&gt;2&lt;/pagination-link&gt;
+      &lt;/pagination-item&gt;
+      &lt;pagination-item&gt;
+         &lt;pagination-next href=&quot;#&quot; /&gt;
+      &lt;/pagination-item&gt;
+   &lt;/pagination-content&gt;
+&lt;/pagination&gt;
+                </pre>
+             </div>
+          </div>
     
 
 	
@@ -227,6 +275,7 @@
 <script src="../resources/assets/js/mobile-menu.js"></script>
 <script src="../resources/assets/js/sheet.js"></script>
 <script src="../resources/assets/js/password.js"></script>
+<script src="../resources/assets/js/pagination.js"></script>
 <script src="../resources/assets/js/combobox.js"></script>
 <script src="../resources/assets/js/input-otp.js"></script>
 

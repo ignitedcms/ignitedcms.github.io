@@ -50,7 +50,7 @@ Vue.component('accordion-item', {
       >
         <span class="text-dark text-black">{{ title }}</span>
         <svg
-          class="text-dark w-6 h-6 text-gray-500 transition-transform duration-200 ease-in-out"
+          class="text-dark size-4 text-gray-500 transition-transform duration-200 ease-in-out"
           :class="{ 'transform rotate-180': isActive }"
           fill="none"
           viewBox="0 0 24 24"

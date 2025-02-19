@@ -18,6 +18,7 @@ Vue.component("input-otp", {
         :key="index"
         type="text"
         class="
+         form-control
          form-dark 
          text-center
          mr-4 

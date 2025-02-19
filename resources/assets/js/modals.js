@@ -11,6 +11,7 @@
 |
 */
 // Modal component
+// Main Modal component
 Vue.component('modal', {
   template: `
     <div>
@@ -36,24 +37,37 @@ Vue.component('modal', {
     this.descriptionId = `modal-description-${this.uniqueId}`;
   },
   methods: {
-     open() {
-         this.isOpen = true;
-         this.disableScroll();
-     },
-     close() {
-         this.isOpen = false;
-         this.enableScroll();
-      },
-      toggle() {
-            this.isOpen ? this.close() : this.open();
-      },
-      disableScroll() {
-            document.body.style.overflow = 'hidden';
-      },
-      enableScroll() {
-         document.body.style.overflow = '';
-     }
+    open() {
+      this.isOpen = true;
+      this.disableScroll();
+    },
+    close() {
+      this.isOpen = false;
+      this.enableScroll();
+    },
+    toggle() {
+      this.isOpen ? this.close() : this.open();
+    },
+    disableScroll() {
+      document.body.style.overflow = 'hidden';
+    },
+    enableScroll() {
+      document.body.style.overflow = '';
+    }
   }
+});
+
+// Modal Overlay component
+Vue.component('modal-overlay', {
+  template: `
+    <div
+      v-if="modal.isOpen"
+      class="fixed z-20 w-full bg-opacity-80 h-full bg-darker left-0 top-0 overflow-auto v-a h-a"
+    >
+      <slot></slot>
+    </div>
+  `,
+  inject: ['modal']
 });
 
 // Modal Trigger component
@@ -87,12 +101,9 @@ Vue.component('modal-trigger', {
 // Modal Content component
 Vue.component('modal-content', {
   template: `
-    <div
-      v-if="modal.isOpen"
-      class="fixed z-20 w-full bg-opacity-80 h-full bg-darker left-0 top-0 overflow-auto v-a h-a"
-    >
-      <div 
-        class="modal-content hide-tablet relative w-[90%] lg:w-[30%] shadow-md rounded-[--big-radius] overflow-hidden border border-slate-600 bg-opacity-100 z-30 bg-white fade-in-bottom dark:shadow-none"
+    <div>
+      <div
+        class="modal-content hide-tablet relative shadow-md rounded-[--big-radius] overflow-hidden border border-slate-600 bg-opacity-100 z-30 bg-white fade-in-bottom dark:shadow-none"
         :id="'modal-' + modal.uniqueId"
         role="dialog"
         :aria-labelledby="modal.titleId"
@@ -103,9 +114,8 @@ Vue.component('modal-content', {
           <slot></slot>
         </focus-trap>
       </div>
-
-      <div 
-        class="modal-content-mobile show-tablet fixed bottom-0 h-[70%] w-full overflow-hidden rounded-t-lg bg-white p-4 dark:bg-darkest fade-in-bottom"
+      <div
+        class="modal-content-mobile show-tablet fixed left-0 bottom-0 h-[70%] w-full overflow-hidden rounded-t-lg bg-white p-4 dark:bg-darkest fade-in-bottom"
         :id="'modal-' + modal.uniqueId"
         role="dialog"
         :aria-labelledby="modal.titleId"

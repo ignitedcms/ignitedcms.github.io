@@ -67,7 +67,6 @@ Vue.component('collapsible-content', {
       :id="'collapsible-' + collapsible.uniqueId"
       class="
         dark:shadow-none
-        dark:bg-darkest
         dark:text-white 
         dark:border-slate-600"
       v-if="collapsible.show"

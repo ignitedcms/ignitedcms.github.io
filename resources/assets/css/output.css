@@ -571,7 +571,6 @@ video {
   --font-size:16px;
   --line-height:25px;
   --font-color:#666666;
-  --form-focus-color:#5cbef7;
   --desktop:1200px;
   --tablet:900px;
   --mobile:500px;
@@ -719,6 +718,20 @@ video {
   color: rgb(255 255 255 / var(--tw-text-opacity, 1)) !important;
 }
 
+.ql-picker-item:is(.dark *) {
+  --tw-text-opacity: 1 !important;
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1)) !important;
+}
+
+.ql-snow .ql-picker-options:is(.dark *) {
+  background-color: var(--dark);
+}
+
+.ql-picker-options:is(.dark *) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(21 23 31 / var(--tw-bg-opacity, 1));
+}
+
 .ql-stroke:is(.dark *) {
   stroke: #fff !important;
 }
@@ -780,7 +793,15 @@ label {
   border-radius: 5px;
 }
 
-
+@media (max-width: 1200px) {
+  .code {
+    /*padding: 10px;*/
+    /*white-space: pre-wrap;*/
+    /*word-wrap: break-word;*/
+    /*width: 100%;*/
+    /*overflow-x: auto;*/
+  }
+}
 
 /*                                                                          
  |---------------------------------------------------------------            
@@ -3667,6 +3688,10 @@ table.dataTable tfoot th {
   position: fixed;
 }
 
+.\!absolute {
+  position: absolute !important;
+}
+
 .absolute {
   position: absolute;
 }
@@ -3715,6 +3740,10 @@ table.dataTable tfoot th {
   right: 2.5rem;
 }
 
+.right-2 {
+  right: 0.5rem;
+}
+
 .right-4 {
   right: 1rem;
 }
@@ -3729,6 +3758,10 @@ table.dataTable tfoot th {
 
 .top-10 {
   top: 2.5rem;
+}
+
+.top-2 {
+  top: 0.5rem;
 }
 
 .top-4 {
@@ -3792,9 +3825,19 @@ table.dataTable tfoot th {
   margin-right: 0.5rem;
 }
 
+.mx-4 {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
 .mx-\[5px\] {
   margin-left: 5px;
   margin-right: 5px;
+}
+
+.my-4 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .mb-10 {
@@ -3909,6 +3952,18 @@ table.dataTable tfoot th {
   display: table;
 }
 
+.table-caption {
+  display: table-caption;
+}
+
+.table-cell {
+  display: table-cell;
+}
+
+.table-row {
+  display: table-row;
+}
+
 .grid {
   display: grid;
 }
@@ -3961,6 +4016,10 @@ table.dataTable tfoot th {
   height: 1.5rem;
 }
 
+.h-8 {
+  height: 2rem;
+}
+
 .h-\[15px\] {
   height: 15px;
 }
@@ -3999,6 +4058,10 @@ table.dataTable tfoot th {
 
 .h-\[70px\] {
   height: 70px;
+}
+
+.h-\[80\%\] {
+  height: 80%;
 }
 
 .h-\[800px\] {
@@ -4137,8 +4200,16 @@ table.dataTable tfoot th {
   width: 100vw;
 }
 
+.w-\[800px\] {
+  width: 800px;
+}
+
 .min-w-\[150px\] {
   min-width: 150px;
+}
+
+.min-w-\[20px\] {
+  min-width: 20px;
 }
 
 .min-w-\[250px\] {
@@ -4430,11 +4501,6 @@ table.dataTable tfoot th {
   background-color: rgb(249 250 251 / var(--tw-bg-opacity, 1));
 }
 
-.bg-gray-800 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(31 41 55 / var(--tw-bg-opacity, 1));
-}
-
 .bg-red-600 {
   --tw-bg-opacity: 1;
   background-color: rgb(220 38 38 / var(--tw-bg-opacity, 1));
@@ -4459,6 +4525,11 @@ table.dataTable tfoot th {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
 }
 
+.bg-blue-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(191 219 254 / var(--tw-bg-opacity, 1));
+}
+
 .bg-opacity-100 {
   --tw-bg-opacity: 1;
 }
@@ -4477,6 +4548,10 @@ table.dataTable tfoot th {
 
 .bg-no-repeat {
   background-repeat: no-repeat;
+}
+
+.\!p-2 {
+  padding: 0.5rem !important;
 }
 
 .p-0 {
@@ -4868,9 +4943,24 @@ table.dataTable tfoot th {
   border-color: rgb(255 255 255 / var(--tw-border-opacity, 1));
 }
 
+.dark\:border-b-slate-600:is(.dark *) {
+  --tw-border-opacity: 1;
+  border-bottom-color: rgb(71 85 105 / var(--tw-border-opacity, 1));
+}
+
 .dark\:border-l-slate-600:is(.dark *) {
   --tw-border-opacity: 1;
   border-left-color: rgb(71 85 105 / var(--tw-border-opacity, 1));
+}
+
+.dark\:border-r-slate-600:is(.dark *) {
+  --tw-border-opacity: 1;
+  border-right-color: rgb(71 85 105 / var(--tw-border-opacity, 1));
+}
+
+.dark\:border-t-slate-600:is(.dark *) {
+  --tw-border-opacity: 1;
+  border-top-color: rgb(71 85 105 / var(--tw-border-opacity, 1));
 }
 
 .dark\:bg-gray-400:is(.dark *) {
@@ -4919,6 +5009,10 @@ table.dataTable tfoot th {
 }
 
 @media (min-width: 640px) {
+  .sm\:h-\[350px\] {
+    height: 350px;
+  }
+
   .sm\:w-\[350px\] {
     width: 350px;
   }
@@ -4972,4 +5066,12 @@ table.dataTable tfoot th {
   .lg\:w-\[30\%\] {
     width: 30%;
   }
+}
+
+.\[\&\>svg\]\:h-3\.5>svg {
+  height: 0.875rem;
+}
+
+.\[\&\>svg\]\:w-3\.5>svg {
+  width: 0.875rem;
 }

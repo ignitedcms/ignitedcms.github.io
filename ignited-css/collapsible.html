@@ -170,32 +170,61 @@
             
 	        <div class="row">
         <div class="col-12 m-t">
-			<h3>Collapsible</h3>        </div>
-         </div>
-	
-    
-    
-
-	
-	
-
-	
-
-	
-
-	
-    
-    
-
-	
-	
-
-	        <div class="row">
-        <div class="col-12 m-t">
-            <div class="panel">
-			    <p>To be completed</p>            </div>
+			<h3>Collapsible</h3>       
+         An interactive component which expands/collapses a panel.
         </div>
          </div>
+	
+    
+    
+         <div class="row min-h-[300px] border border-[--gray] rounded-[--big-radius] bg-white">
+            <div class="col  v-a h-a">
+               <collapsible>
+               <div class="h-e w-[300px] v-a">
+                  <div class="text-black font-medium">@peduarte starred 3 repositories</div>
+                  <collapsible-trigger class="p-1 rounded-md text-sm bg-transparent text-black hover:bg-light-gray">
+                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15 12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9" />
+                     </svg>
+
+                  </collapsible-trigger>
+               </div>
+
+               <collapsible-content>
+                  <a href="#" class="underline">foo</a>
+                  <br> 
+                  <a href="#" class="underline">bar</a>
+               </collapsible-content>
+               </collapsible>
+            </div>
+         </div>	
+    
+    
+      <div class="foo mt-4">
+         <div class="foo">
+            <pre class="code">
+&lt;collapsible&gt;
+   &lt;div class=&quot;h-e w-[300px] v-a&quot;&gt;
+      &lt;div class=&quot;text-black font-medium&quot;&gt;@peduarte starred 3 repositories&lt;/div&gt;
+      &lt;collapsible-trigger class=&quot;p-1 rounded-md text-sm bg-transparent text-black hover:bg-light-gray&quot;&gt;
+         &lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; fill=&quot;none&quot; viewBox=&quot;0 0 24 24&quot; stroke-width=&quot;1.5&quot; stroke=&quot;currentColor&quot; class=&quot;size-6&quot;&gt;
+            &lt;path stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; d=&quot;M8.25 15 12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9&quot; /&gt;
+         &lt;/svg&gt;
+      &lt;/collapsible-trigger&gt;
+   &lt;/div&gt;
+   &lt;collapsible-content&gt;
+      &lt;a href=&quot;#&quot; class=&quot;underline&quot;&gt;foo&lt;/a&gt;
+      &lt;br&gt;
+      &lt;a href=&quot;#&quot; class=&quot;underline&quot;&gt;bar&lt;/a&gt;
+   &lt;/collapsible-content&gt;
+&lt;/collapsible&gt;
+            </pre>
+         </div>
+      </div>
+	
+	
+
+	        
 	
 
 	
@@ -223,6 +252,7 @@
 <script src="../resources/assets/js/click-outside.js"></script>
 <script src="../resources/assets/js/focus-trap.js"></script>
 <script src="../resources/assets/js/dark-mode.js"></script>
+<script src="../resources/assets/js/collapsible.js"></script>
 <script src="../resources/assets/js/alerts.js"></script>
 <script src="../resources/assets/js/tabs.js"></script>
 <script src="../resources/assets/js/buttons.js"></script>

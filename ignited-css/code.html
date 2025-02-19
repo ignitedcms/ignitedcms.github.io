@@ -168,11 +168,58 @@
          <div class="foo">
 <div class="foo">
             
-	        <div class="row">
-        <div class="col-12 m-t">
-			<h3>Code</h3>        </div>
-         </div>
-	
+   <div class="row">
+      <div class="col-12 m-t">
+         <h3>Code</h3>        
+<p>The code block component acts as an easy way for you to
+         add code blocks with the facility to copy the contents to clipboard</p>
+      </div>
+   </div>
+
+   
+<div class="foo">
+   <div class="foo">
+      <pre class="code">&lt;code-block&gt;foo&lt;/code-block&gt;</pre>
+   </div>
+</div>	
+
+<div class="row">
+   <div class="col-12">Just add the following to the end of your html file</div>
+</div>
+
+<div class="foo">
+   <div class="foo">
+     <pre class="code">
+&lt;script src=&quot;../resources/assets/js/clipboard.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;../resources/assets/js/code-block.js&quot;&gt;&lt;/script&gt;
+
+&lt;script&gt;
+   new ClipboardJS(&apos;.code-copy&apos;);
+&lt;/script&gt;
+    </pre>
+
+   </div>
+</div>	
+
+
+<div class="row">
+   <div class="col">
+      <h3>Example</h3>
+   </div>
+</div>
+
+<div class="mt-4"></div>
+<div class="foo">
+   <div class="foo">
+      <code-block>foo</code-block>
+   </div>
+</div>
+
+<div class="foo mt-4">
+   <div class="foo">
+      <code-block>Another test</code-block>
+   </div>
+</div>
     
     
 
@@ -190,12 +237,7 @@
 	
 	
 
-	        <div class="row">
-        <div class="col-12 m-t">
-            <div class="panel">
-			    <p>To be completed</p>            </div>
-        </div>
-         </div>
+	        
 	
 
 	
@@ -258,6 +300,10 @@
 <script src="../resources/assets/js/splide.min.js"></script>
 <script src="../resources/assets/js/small-menu.js"></script>
 <script src="../resources/assets/js/carousel.js"></script>
+
+<script src="../resources/assets/js/clipboard.min.js"></script>
+<script src="../resources/assets/js/code-block.js"></script>
+
 
 <!-- end feather icons js lib -->
 
@@ -352,6 +398,9 @@
         });    
     </script>
 
+<script>
+         new ClipboardJS('.code-copy');
+</script>
 
 <script>
          const ctx = document.getElementById('myChart');

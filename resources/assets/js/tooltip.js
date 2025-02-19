@@ -25,7 +25,8 @@ Vue.component('tooltip', {
   },
   data() {
     return {
-      isVisible: false
+      isVisible: false,
+      uniqueId: Math.random().toString(36).substring(2)
     };
   },
   methods: {
@@ -41,7 +42,7 @@ Vue.component('tooltip', {
 // Tooltip Trigger component
 Vue.component('tooltip-trigger', {
   template: `
-    <div @mouseover="tooltip.showTooltip()" @mouseleave="tooltip.hideTooltip()" class="cursor-pointer">
+    <div :aria-describedby="'tooltip-' + tooltip.uniqueId " @mouseover="tooltip.showTooltip()" @mouseleave="tooltip.hideTooltip()" class="cursor-pointer">
       <slot></slot>
     </div>
   `,
@@ -62,6 +63,7 @@ Vue.component('tooltip-content', {
     >
       <div
         role="tooltip"
+        :id="'tooltip-' + tooltip.uniqueId "
         class="
           small
           fade-in-bottom
