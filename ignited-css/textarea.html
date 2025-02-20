@@ -165,13 +165,57 @@
 </ul>
          
 
-         <div class="foo">
 <div class="foo">
-            
-  <div class="gap"></div>
-            </div>
-            
+   <div class="foo">
+
+      <div class="row">
+         <div class="col-12">
+            <h3>Textarea</h3>
+            Displays a form textarea or a component that looks like a textarea.
          </div>
+      </div>
+
+
+      <div class="row">
+         <div class="col-12 m-t">
+            <div class="form-group v-a h-a border" style="min-height:300px;">
+               <div class="form-group" style="width:300px;">
+                  {{foo}}
+                  <textarea-component v-model="foo" >
+                  </textarea-component>
+               </div>
+            </div>
+         </div>
+      </div>
+
+
+<div>
+   <pre class="code">
+<div v-pre>
+{{foo}}
+&lt;input-component v-model=&quot;foo&quot;&gt;
+&lt;/input-component&gt;
+
+</div>
+   </pre>
+</div>
+
+<div class="row">
+   <div class="col-12">
+      <div class="panel">
+         Make sure you include the 'forms' script
+      </div>
+   </div>
+</div>
+
+
+
+
+
+      <div class="gap"></div>
+   </div>
+
+</div>
             
             
          </sidebar>
@@ -226,6 +270,7 @@
 <script src="../resources/assets/js/splide.min.js"></script>
 <script src="../resources/assets/js/small-menu.js"></script>
 <script src="../resources/assets/js/carousel.js"></script>
+<script src="../resources/assets/js/forms.js"></script>
 
 <!-- end feather icons js lib -->
 
