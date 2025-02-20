@@ -170,8 +170,39 @@
       <p>A control that allows the user to toggle between checked and not checked.</p>
    </div>
 </div>
+
+<div class="row">
+            <div class="col-12 m-t">
+               <div class="form-group v-a h-a border" style="min-height:300px;">
+                  <div class="form-group" style="width:300px;">
+                     <checkbox-component v-model="selectedOptions" :options="options">
+                     </checkbox-component>
+                     <p>Selected: {{ selectedOptions }}</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+
+<div>
+   <pre class="code">
+<div v-pre>
+&lt;checkbox-component v-model=&quot;selectedOptions&quot; :options=&quot;options&quot;&gt;
+&lt;/checkbox-component&gt;
+&lt;p&gt;Selected: {{ selectedOptions }}&lt;/p&gt;
+</div>
+   </pre>
+</div>
+
+<div class="row">
+   <div class="col-12">
+      <div class="panel">
+         Make sure you include the 'forms' script
+      </div>
+   </div>
+</div>
             
-         </sidebar>
+</sidebar>
 
       
  
@@ -223,6 +254,7 @@
 <script src="../resources/assets/js/splide.min.js"></script>
 <script src="../resources/assets/js/small-menu.js"></script>
 <script src="../resources/assets/js/carousel.js"></script>
+<script src="../resources/assets/js/forms.js"></script>
 
 <!-- end feather icons js lib -->
 
@@ -244,6 +276,8 @@
               dark:false,
               foo:'hello',
               bar: 'none',
+              options: ['Option 1', 'Option 2', 'Option 3'], // array of options
+              selectedOptions: [], // initial value
               otp:'',
               items: [
                     { id: 1, text: 'Item 1' },
