@@ -179,6 +179,39 @@ A set of checkable buttons—known as radio buttons—where no more than one of 
 
 
 
+<div class="row">
+            <div class="col-12 m-t">
+               <div class="form-group v-a h-a border" style="min-height:300px;">
+                  <div class="form-group" style="width:300px;">
+                     <label for="radios" class="text-dark">Radios</label>
+                     <radio-component v-model="selectedRadioOptions" :options="options">
+                     </radio-component>
+                     <p>Selected options: {{ selectedRadioOptions }}</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+
+<div>
+   <pre class="code">
+<div v-pre>
+&lt;label for=&quot;radios&quot; class=&quot;text-dark&quot;&gt;Radios&lt;/label&gt;
+&lt;radio-component v-model=&quot;selectedRadioOptions&quot; :options=&quot;options&quot;&gt;
+&lt;/radio-component&gt;
+&lt;p&gt;Selected options: {{ selectedRadioOptions }}&lt;/p&gt;
+</div>
+   </pre>
+</div>
+
+<div class="row">
+   <div class="col-12">
+      <div class="panel">
+         Make sure you include the 'forms' script
+      </div>
+   </div>
+</div>
+
 
       <div class="gap"></div>
    </div>
@@ -238,8 +271,8 @@ A set of checkable buttons—known as radio buttons—where no more than one of 
 <script src="../resources/assets/js/splide.min.js"></script>
 <script src="../resources/assets/js/small-menu.js"></script>
 <script src="../resources/assets/js/carousel.js"></script>
+<script src="../resources/assets/js/forms.js"></script>
 
-<!-- end feather icons js lib -->
 
 <script>
         /*                                                                          
@@ -260,6 +293,9 @@ A set of checkable buttons—known as radio buttons—where no more than one of 
               foo:'hello',
               bar: 'none',
               otp:'',
+              options: ['Option 1', 'Option 2', 'Option 3'], // array of options
+              selectedOptions: [], // initial value
+              selectedRadioOptions: '', // initial value
               items: [
                     { id: 1, text: 'Item 1' },
                     { id: 2, text: 'Item 2' },

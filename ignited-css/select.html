@@ -165,13 +165,68 @@
 </ul>
          
 
-         <div class="foo">
 <div class="foo">
-            
-  <div class="gap"></div>
-            </div>
-            
+   <div class="foo">
+
+      <div class="row">
+         <div class="col-12">
+            <h3>Select</h3>
+            Displays a list of options for the user to pick from—triggered by a button.
+            Note, this uses the native html select element
          </div>
+      </div>
+
+
+<div class="row">
+            <div class="col-12 m-t">
+               <div class="form-group v-a h-a border" style="min-height:300px;">
+                  <div class="form-group" style="width:300px;">
+                     {{foo}}
+                     <select-component v-model="foo">
+                        <select-item title="one">
+                        </select-item >
+                        <select-item title="two">
+                        </select-item >
+                        <select-item title="three">
+                        </select-item >
+                     </select-component>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+
+<div>
+   <pre class="code">
+<div v-pre>
+{{foo}}
+&lt;select-component v-model=&quot;foo&quot;&gt;
+   &lt;select-item title=&quot;one&quot;&gt;
+   &lt;/select-item&gt;
+   &lt;select-item title=&quot;two&quot;&gt;
+   &lt;/select-item&gt;
+   &lt;select-item title=&quot;three&quot;&gt;
+   &lt;/select-item&gt;
+&lt;/select-component&gt;
+</div>
+   </pre>
+</div>
+
+<div class="row">
+   <div class="col-12">
+      <div class="panel">
+         Make sure you include the 'forms' script
+      </div>
+   </div>
+</div>
+
+
+
+
+      <div class="gap"></div>
+   </div>
+
+</div>
             
             
          </sidebar>
@@ -226,6 +281,7 @@
 <script src="../resources/assets/js/splide.min.js"></script>
 <script src="../resources/assets/js/small-menu.js"></script>
 <script src="../resources/assets/js/carousel.js"></script>
+<script src="../resources/assets/js/forms.js"></script>
 
 <!-- end feather icons js lib -->
 
