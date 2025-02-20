@@ -13,7 +13,6 @@
 
 Vue.component('mega-menu', {
   props: [
-    'title',
     'logo',
     'url'
   ],
@@ -35,7 +34,6 @@ Vue.component('mega-menu', {
        p-4
        default-container
        "
-       :aria-labelledby="title"
       >
         <div class="">
           <a
@@ -149,7 +147,6 @@ Vue.component('menu-items', {
 Vue.component('menu-item', {
   props: [
     'title',
-    'icon',
     'url'
   ],
   template: `

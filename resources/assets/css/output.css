@@ -3928,6 +3928,10 @@ table.dataTable tfoot th {
   margin-top: 2rem;
 }
 
+.mt-1 {
+  margin-top: 0.25rem;
+}
+
 .block {
   display: block;
 }
@@ -4003,6 +4007,11 @@ table.dataTable tfoot th {
 .size-6 {
   width: 1.5rem;
   height: 1.5rem;
+}
+
+.size-8 {
+  width: 2rem;
+  height: 2rem;
 }
 
 .h-10 {
@@ -4201,6 +4210,22 @@ table.dataTable tfoot th {
   width: 100vw;
 }
 
+.w-\[400px\] {
+  width: 400px;
+}
+
+.w-\[\!400px\] {
+  width: !400px;
+}
+
+.\!w-\[400px\] {
+  width: 400px !important;
+}
+
+.\!w-\[300px\] {
+  width: 300px !important;
+}
+
 .min-w-\[150px\] {
   min-width: 150px;
 }
@@ -4227,6 +4252,10 @@ table.dataTable tfoot th {
 
 .grow {
   flex-grow: 1;
+}
+
+.caption-bottom {
+  caption-side: bottom;
 }
 
 .border-collapse {
@@ -4518,6 +4547,11 @@ table.dataTable tfoot th {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
 }
 
+.bg-black {
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity, 1));
+}
+
 .bg-opacity-100 {
   --tw-bg-opacity: 1;
 }
@@ -4609,6 +4643,11 @@ table.dataTable tfoot th {
 .py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
+}
+
+.py-8 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 .pb-16 {
@@ -4855,6 +4894,11 @@ table.dataTable tfoot th {
   background-color: var(--dark);
 }
 
+.hover\:dark\:bg-darker:is(.dark *):hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(26 29 39 / var(--tw-bg-opacity, 1));
+}
+
 .dark\:hover\:bg-darkest:hover:is(.dark *) {
   --tw-bg-opacity: 1;
   background-color: rgb(21 23 31 / var(--tw-bg-opacity, 1));
@@ -5004,6 +5048,10 @@ table.dataTable tfoot th {
     width: 350px;
   }
 
+  .sm\:w-\[500px\] {
+    width: 500px;
+  }
+
   .sm\:flex-row {
     flex-direction: row;
   }
@@ -5012,6 +5060,14 @@ table.dataTable tfoot th {
 @media (min-width: 768px) {
   .md\:ml-\[280px\] {
     margin-left: 280px;
+  }
+
+  .md\:w-\[500px\] {
+    width: 500px;
+  }
+
+  .md\:w-full {
+    width: 100%;
   }
 
   .md\:p-8 {
@@ -5046,6 +5102,12 @@ table.dataTable tfoot th {
   .md\:text-xl {
     font-size: 1.25rem;
     line-height: 1.75rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:w-\[500px\] {
+    width: 500px;
   }
 }
 

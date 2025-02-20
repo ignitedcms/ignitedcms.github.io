@@ -21,7 +21,7 @@ Vue.component('table-component', {
 
 Vue.component('table-caption', {
     template: `
-        <caption class="sr-only">
+        <caption>
             <slot></slot>
         </caption>
     `
@@ -29,7 +29,7 @@ Vue.component('table-caption', {
 
 Vue.component('table-header', {
     template: `
-        <thead class="bg-light-gray dark:bg-darker">
+        <thead class="bg-white dark:bg-darker">
             <slot></slot>
         </thead>
     `
@@ -53,7 +53,7 @@ Vue.component('table-footer', {
 
 Vue.component('table-row', {
     template: `
-        <tr>
+        <tr class="hover:bg-light-gray hover:dark:bg-darker">
             <slot></slot>
         </tr>
     `
@@ -61,7 +61,7 @@ Vue.component('table-row', {
 
 Vue.component('table-head', {
     template: `
-        <th scope="col" class="px-4 py-2 text-left font-medium text-gray-900 text-dark">
+        <th scope="col" class="px-4 py-4 text-left font-normal text-sm text-muted text-dark">
             <slot></slot>
         </th>
     `
@@ -69,7 +69,7 @@ Vue.component('table-head', {
 
 Vue.component('table-cell', {
     template: `
-        <td class="px-4 py-2 whitespace-nowrap text-dark">
+        <td class="px-4 py-4 whitespace-nowrap text-dark text-sm text-black">
             <slot></slot>
         </td>
     `

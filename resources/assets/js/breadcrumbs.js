@@ -18,6 +18,7 @@ Vue.component('breadcrumb', {
   <ol
     class="
     rm-list-styles
+    text-sm
     v-a
     px-2
     py-3

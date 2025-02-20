@@ -22,7 +22,7 @@ Vue.component('pagination', {
 
 Vue.component('pagination-content', {
   template: `
-    <ul class="rm-list-styles h-a v-a space-x-2">
+    <ul class="rm-list-styles h-a v-a space-x-2 text-sm">
       <slot></slot>
     </ul>
   `

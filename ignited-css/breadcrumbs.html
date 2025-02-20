@@ -170,7 +170,10 @@
             
 	        <div class="row">
         <div class="col-12 m-t">
-			<h3>Breadcrumbs</h3><p>Use this to create navigation blocks at the top of your pages</p>        </div>
+			<h3>Breadcrumbs</h3><p>
+         Displays the path to the current resource using a hierarchy of links.
+         </p>        
+        </div>
          </div>
 	
 	
@@ -178,13 +181,15 @@
          <div class="row">
             <div class="col-12 m-t">
                <div class="form-group v-a h-a border p-4" style="min-height:300px;">
-                  <div class="form-group min-w-[90%]">
+                  
                      <breadcrumb>
                      <breadcrumb-item title="Home"></breadcrumb-item>
                      <breadcrumb-separator></breadcrumb-separator>
-                     <breadcrumb-item title="About" url="test"></breadcrumb-item>
+                     <breadcrumb-item title="Components"></breadcrumb-item>
+                     <breadcrumb-separator></breadcrumb-separator>
+                     <breadcrumb-item title="Breadcrumb" url="test"></breadcrumb-item>
                      </breadcrumb>
-                  </div>
+                  
 
                </div>           
             </div>
@@ -198,7 +203,9 @@
 &lt;breadcrumb&gt;
    &lt;breadcrumb-item title=&quot;Home&quot;&gt;&lt;/breadcrumb-item&gt;
    &lt;breadcrumb-separator&gt;&lt;/breadcrumb-separator&gt;
-   &lt;breadcrumb-item title=&quot;About&quot; url=&quot;test&quot;&gt;&lt;/breadcrumb-item&gt;
+   &lt;breadcrumb-item title=&quot;Components&quot;&gt;&lt;/breadcrumb-item&gt;
+   &lt;breadcrumb-separator&gt;&lt;/breadcrumb-separator&gt;
+   &lt;breadcrumb-item title=&quot;Breadcrumb&quot; url=&quot;test&quot;&gt;&lt;/breadcrumb-item&gt;
 &lt;/breadcrumb&gt;
 </pre>
             </div>
