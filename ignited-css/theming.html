@@ -168,34 +168,70 @@
          <div class="foo">
 <div class="foo">
             
-	        <div class="row">
-        <div class="col-12 m-t">
-			<h3>Theming</h3>        </div>
+   <div class="row">
+      <div class="col-12 m-t">
+         <h3>Theming</h3>
+         Kamijs uses tailwind css under the hood. However, theming your site
+         is extremely straight forward. All you need to do is go into the css
+         directory, find 'input.css' and adjust the 'primary' variable
+         to be a color of your choice. 
+         <br>
+         <br>
+         Once that is done you can recompile tailwind then add a link to the
+         minified css file as a link to every html file you create.
+         <br> 
+         <br> 
+         For example, a list of available theming option inside input.css are as
+         follows:-
+      </div>
+   </div>
+
+
+   <div class="foo">
+      <div class="foo">
+         <pre class="code">
+:root {
+     --primary: #292F3E;
+     --primary-light: #989FB3;
+     --light-gray: #F7FAFC;
+     --gray: #cccccc;
+     --dark: #1A1C22;
+     --big-radius:10px;
+     --small-radius:5px;
+     --default-container:1100px;
+     --medium-container:800px;
+     --small-container:600px;
+     --padding:30px;
+     --margin:10px;
+     --font-family:&apos;Instrument Sans&apos;,sans-serif;
+     --font-size:16px;
+     --line-height:25px;
+     --font-color:#666666;
+     --desktop:1200px;
+     --tablet:900px;
+     --mobile:500px;
+  }
+
+         </pre>
+      </div>
+   </div>
+  
+   <div class="row">
+      <div class="col-12">
+         For more information about using tailwind, please refer
+         to their <a target="_blank" href="https://tailwindcss.com/docs/installation/using-vite" class="underline">documentation</a>
+      </div>
+   </div>
+
+   <div class="row">
+      <div class="col-12">
+         <div class="panel">
+            Normally, it is enough just to change the --primary variable
+            to match the hex color of your chosen color theme.
          </div>
-	
-    
-    
-
-	
-	
-
-	
-
-	
-
-	
-    
-    
-
-	
-	
-
-	        <div class="row">
-        <div class="col-12 m-t">
-            <div class="panel">
-			    <p>To be completed</p>            </div>
-        </div>
-         </div>
+      </div>
+   </div>
+	        
 	
 
 	
