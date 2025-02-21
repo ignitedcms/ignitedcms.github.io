@@ -169,6 +169,18 @@ Vue.component('checkbox-component', {
    }
 });
 
+
+Vue.component('link-component', {
+  props: ['title','url','newtab'],
+  template: `
+  <a :href="url" :target="newtab === 'yes' ? '_blank' : ''" class="underline text-dark">{{title}}</a>
+  `,
+  data() {
+     return {
+     }
+  },
+});
+
 Vue.component('radio-component', {
   props: ['options','value'],
   template: `
@@ -293,6 +305,8 @@ Vue.component('description', {
      }
   },
 });
+
+
 
 
 
