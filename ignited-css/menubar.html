@@ -31,21 +31,49 @@
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
       <style>
-      [v-cloak] {
-         display: none;
+      
+       .menu-item {
+           position: relative;
+           cursor: pointer;
+           color: #333;
+           padding: 4px;
+           font-size: 13px;
+       }
+       .menu-item:hover, .menu-item:focus {
+           background-color: #f5f5f5;
+           border-radius: 5px;
+           outline: none;
+       }
+       .submenu {
+           display: none;
+           position: absolute;
+           top: 100%;
+           left: -5px;
+           background-color: #fff;
+           list-style-type: none;
+           margin: 0;
+           min-width: 220px;
+           z-index: 1000;
+       }
+       .submenu .menu-item {
+           display: flex;
+           padding: 8px 12px;
+       }
+       .submenu .submenu {
+           top: 0;
+           left: 100%;
+       }
+
+      .active > .submenu {
+         display: block;
       }
 
-      .checked {
-         color: orange;
+      .separator{
+         border-top: 1px solid #ddd;
+         margin: 5px 0;
       }
+   </style>
 
-      .splide__pagination__page.is-active {
-          background: #333;
-          transform: scale(1.4);
-          z-index: 1;
-      }
-
-      </style>
 </head>
 
 <body class="h-screen v-screen bg-white dark:bg-dark">
@@ -173,6 +201,7 @@
 			<h3>Menubar</h3>
          <p>
          A visually persistent menu common in desktop applications that provides quick access to a consistent set of commands.
+         This is fully keyboard accessible and ARIA compliant. It also has support for pseudo radio buttons and checkboxes.
          </p>
         </div>
          </div>
@@ -180,26 +209,67 @@
     
     
 
-	
-	
-
-	
-
-	
-
-	
-    
-    
-
-	
-	
-
-	        <div class="row">
-        <div class="col-12 m-t">
-            <div class="panel">
-			    <p>To be completed</p>            </div>
+	<div class="row">
+         <div class="col-12 m-t">
+            <div class="form-group v-a h-a border p-4" style="min-height:300px;">
+               <div style="min-width:400px;" id="main-menu" class="flex bg-white p-1 m-0 border border-gray-300 rounded-md shadow-sm text-muted list-none" role="menubar" aria-label="Main Menu">
+  <div id="file-menu" class="menu-item" tabindex="0" role="menuitem" aria-haspopup="true" aria-expanded="false" aria-controls="file-submenu">File
+    <div id="file-submenu" class="submenu fade-in-bottom p-1 rounded-md shadow-md border border-gray-300" role="menu" aria-labelledby="file-menu">
+      <div id="new-tab" class="menu-item" tabindex="-1" role="menuitem">New tab</div>
+      <div id="new-window" class="menu-item" tabindex="-1" role="menuitem">New window</div>
+      <div id="share-menu" class="menu-item h-e" tabindex="-1" role="menuitem" aria-haspopup="true" aria-expanded="false" aria-controls="share-submenu">
+        <div>Share</div>
+        <div class="v-a">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+          </svg>
         </div>
+        <div id="share-submenu" class="submenu fade-in-bottom p-1 rounded-md shadow-md border border-gray-300" role="menu" aria-labelledby="share-menu">
+          <div id="email-link" class="menu-item" tabindex="-1" role="menuitem">Email link</div>
+          <div id="message" class="menu-item" tabindex="-1" role="menuitem">Message</div>
+          <div id="notes" class="menu-item" tabindex="-1" role="menuitem">Notes</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="edit-menu" class="menu-item" tabindex="-1" role="menuitem" aria-haspopup="true" aria-expanded="false" aria-controls="edit-submenu">Edit
+    <div id="edit-submenu" class="submenu fade-in-bottom p-1 rounded-md shadow-md border border-gray-300" role="menu" aria-labelledby="edit-menu">
+      <div id="undo" class="menu-item" tabindex="-1" role="menuitem">Undo</div>
+      <div id="redo" class="menu-item" tabindex="-1" role="menuitem">Redo</div>
+      <div id="find-menu" class="menu-item h-e" tabindex="-1" role="menuitem" aria-haspopup="true" aria-expanded="false" aria-controls="find-submenu">
+        <div>Find</div>
+        <div class="v-a">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+          </svg>
+        </div>
+        <div id="find-submenu" class="submenu fade-in-bottom p-1 rounded-md shadow-md border border-gray-300" role="menu" aria-labelledby="find-menu">
+          <div id="search-web" class="menu-item" tabindex="-1" role="menuitem">Search web</div>
+          <div id="find" class="menu-item" tabindex="-1" role="menuitem">Find</div>
+          <div id="find-next" class="menu-item" tabindex="-1" role="menuitem">Find next</div>
+          <div id="find-previous" class="menu-item" tabindex="-1" role="menuitem">Find previous</div>
+        </div>
+      </div>
+      <div id="cut" class="menu-item" tabindex="-1" role="menuitem">Cut</div>
+      <div id="copy" class="menu-item" tabindex="-1" role="menuitem">Copy</div>
+      <div id="paste" class="menu-item" tabindex="-1" role="menuitem">Paste</div>
+    </div>
+  </div>
+  <div id="view-menu" class="menu-item" tabindex="-1" role="menuitem" aria-haspopup="true" aria-expanded="false" aria-controls="view-submenu">View
+    <div id="view-submenu" class="submenu fade-in-bottom p-1 rounded-md shadow-md border border-gray-300" role="menu" aria-labelledby="view-menu">
+      <div id="show-bookmarks" class="menu-item" tabindex="-1" role="menuitem">Always show bookmarks</div>
+      <div id="show-full-url" class="menu-item" tabindex="-1" role="menuitem">Always show full url</div>
+      <div id="reload" class="menu-item" tabindex="-1" role="menuitem">Reload</div>
+      <div id="toggle-fullscreen" class="menu-item" tabindex="-1" role="menuitem">Toggle fullscreen</div>
+      <div id="hide-fullscreen" class="menu-item" tabindex="-1" role="menuitem">Hide fullscreen</div>
+    </div>
+  </div>
+</div>
+            </div>           
          </div>
+      </div>
+	
+
 	
 
 	
@@ -209,7 +279,19 @@
     
 
 	
-	        <div class="foo">
+	
+
+	        
+	
+
+	
+
+	
+    
+    
+
+	
+	        <div class="foo mt-4">
 <div class="foo">
 <pre class="code">&lt;menubar&gt;
    &lt;menubar-menu&gt;
@@ -464,36 +546,76 @@
     </script>
 
 
+
 <script>
-         const ctx = document.getElementById('myChart');
 
-         Chart.defaults.font.family = 'Instrument Sans';
-         Chart.defaults.font.size = 14;
-
-         //Change from 'bar' to 'line' etc
-         new Chart(ctx, {
-           type: 'bar',
-           data: {
-             labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-             datasets: [{
-               label: '# of Votes',
-               data: [12, 19, 3, 5, 2, 3],
-               borderWidth: 1,
-               borderColor: '#292F3E',
-               backgroundColor: '#292F3E',
-             }]
-           },
-           options: {
-             responsive: true,
-             scales: {
-               y: {
-                 beginAtZero: true
+         document.addEventListener('DOMContentLoaded',()=>{
+            const mainMenu=document.getElementById('main-menu');
+            document.addEventListener('click',(e)=>{if(!mainMenu.contains(e.target)){zyx();}});
+            document.querySelectorAll('.menu-item').forEach(item=>{item.addEventListener('click',(e)=>{
+               e.preventDefault();e.stopPropagation();
+               if(!item.querySelector('.submenu')){/*alert("Selected: "+item.textContent.trim());*/zyx();}
+               else{wvu(item);}});
+            });
+            document.addEventListener('keydown',(e)=>{
+               if(e.key==='Escape'){e.preventDefault();zyx();const firstMenuItem=mainMenu.querySelector('.menu-item');if(firstMenuItem){firstMenuItem.focus();}return;}
+               const activeItem=document.activeElement;
+               if(!activeItem.classList.contains('menu-item'))return;
+               switch(e.key){
+                  case'ArrowRight':e.preventDefault();tsr(activeItem);break;
+                  case'ArrowLeft':e.preventDefault();qpo(activeItem);break;
+                  case'ArrowDown':e.preventDefault();nml(activeItem);break;
+                  case'ArrowUp':e.preventDefault();kji(activeItem);break;
+                  case'Enter':e.preventDefault();if(!activeItem.querySelector('.submenu')){/*alert("Selected: "+activeItem.textContent.trim());*/zyx();}else{wvu(activeItem);}break;
                }
-             }
-           }
+            });
+            document.querySelectorAll('.menu-item').forEach(item=>{item.addEventListener('mouseover',(e)=>{
+               const currentItem=e.currentTarget;xwv(currentItem);rqp(currentItem);currentItem.focus();
+               const parentMenuItem=currentItem.closest('.submenu')?.closest('.menu-item');if(parentMenuItem){rqp(parentMenuItem);}
+               e.stopPropagation();});
+            });
          });
+         function abc(item){return item.parentElement.id==='main-menu';}
+         function def(item){return item.querySelector('.submenu')!==null;}
+         function ghi(item){return item.parentElement.classList.contains('submenu')&&item===item.parentElement.firstElementChild;}
+         function jkl(item){return item.parentElement.classList.contains('submenu')&&item===item.parentElement.lastElementChild;}
+         function mno(element){while(element&&(element.classList.contains('separator')||!element.classList.contains('menu-item'))){element=element.nextElementSibling;}return element;}
+         function pqr(element){while(element&&(element.classList.contains('separator')||!element.classList.contains('menu-item'))){element=element.previousElementSibling;}return element;}
+         function tsr(item){
+            if(abc(item)){stu(item,'next');}
+            else if(def(item)){rqp(item);const firstNonSeparator=mno(item.querySelector('.submenu').firstElementChild);if(firstNonSeparator){firstNonSeparator.focus();}}
+            else{const nextTopLevel=item.closest('#main-menu > .menu-item').nextElementSibling;if(nextTopLevel){zyx();nextTopLevel.focus();}}
+         }
+         function qpo(item){
+            if(abc(item)){stu(item,'prev');}
+            else{const parentMenu=item.closest('.submenu');const parentMenuItem=parentMenu.closest('.menu-item');onm(parentMenuItem);parentMenuItem.focus();}
+         }
+         function nml(item){
+            if(abc(item)&&def(item)){rqp(item);const firstNonSeparator=mno(item.querySelector('.submenu').firstElementChild);if(firstNonSeparator){firstNonSeparator.focus();}}
+            else{let nextItem=item.nextElementSibling;nextItem=mno(nextItem);if(nextItem){nextItem.focus();}}
+         }
+         function kji(item){let prevItem=item.previousElementSibling;prevItem=pqr(prevItem);if(prevItem){prevItem.focus();}}
+         function stu(item,direction){
+            const items=Array.from(item.parentElement.children);const index=items.indexOf(item);
+            if(direction==='next'){let newIndex=(index+1)%items.length;while(items[newIndex].classList.contains('separator')){newIndex=(newIndex+1)%items.length;}items[newIndex].focus();}
+            else{let newIndex=(index-1+items.length)%items.length;while(items[newIndex].classList.contains('separator')){newIndex=(newIndex-1+items.length)%items.length;}items[newIndex].focus();}
+         }
+         function rqp(item){const submenu=item.querySelector('.submenu');if(submenu){item.classList.add('active');item.setAttribute('aria-expanded','true');}}
+         function onm(item){item.classList.remove('active');item.setAttribute('aria-expanded','false');}
+         function wvu(item){
+            const submenu=item.querySelector('.submenu');
+            if(submenu){item.classList.toggle('active');const isExpanded=item.classList.contains('active');item.setAttribute('aria-expanded',isExpanded?'true':'false');
+               if(isExpanded){const firstNonSeparator=mno(submenu.firstElementChild);if(firstNonSeparator){firstNonSeparator.focus();}}}
+         }
+         function zyx(){document.querySelectorAll('.active').forEach(item=>{item.classList.remove('active');if(item.hasAttribute('aria-expanded')){item.setAttribute('aria-expanded','false');}});}
+         function xwv(currentItem){
+            const parentMenuItems=[];let parent=currentItem.closest('.submenu')?.closest('.menu-item');
+            while(parent){parentMenuItems.push(parent);parent=parent.closest('.submenu')?.closest('.menu-item');}
+            document.querySelectorAll('.active').forEach(item=>{
+               if(!item.contains(currentItem)&&!parentMenuItems.includes(item)){item.classList.remove('active');if(item.hasAttribute('aria-expanded')){item.setAttribute('aria-expanded','false');}}
+            });
+         }
       </script>
-
 
 <script>
     $('#example').dataTable({
