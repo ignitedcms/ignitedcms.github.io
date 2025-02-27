@@ -191,66 +191,31 @@
 
 	
     
-            <div class="row">
+         <div class="row">
             <div class="col-12 m-t">
-                <div class="row min-h-[300px] border border-[--gray] rounded-[--big-radius]" style="min-height:600px;">
-             <div class="col v-a h-a">
-                <popover width="300px" halfwidth="-150px">
-                   <popover-trigger class="btn-white">
-                      Open popover
-                   </popover-trigger>
-                   <popover-content>
-                      <div class="grid gap-4">
-                         <div class="space-y-2">
-                            <h4 class="font-medium leading-none">Dimensions</h4>
-                            <p class="text-sm text-muted-foreground">
-                            Set the dimensions for the layer.
-                            </p>
-                         </div>
-                         <div class="grid gap-2">
-                            <div class="">
-                               <label for="title">Width</label>
-                               <input 
-                                      class="form-control" 
-                                      type="text"
-                                      name="width" 
-                                      value="100%" 
-                                      placeholder="" />
-                            </div>
-                            <div class="">
-                               <label for="title">Max width</label>
-                               <input 
-                                      class="form-control" 
-                                      type="text"
-                                      name="maxwidth" 
-                                      value="300px" 
-                                      placeholder="" />
-                            </div>
-                            <div class="">
-                               <label for="title">Height</label>
-                               <input 
-                                      class="form-control" 
-                                      type="text"
-                                      name="height" 
-                                      value="25px" 
-                                      placeholder="" />
-                            </div>
-                            <div class="">
-                               <label for="title">Max height</label>
-                               <input 
-                                      class="form-control" 
-                                      type="text"
-                                      name="maxheight" 
-                                      value="none" 
-                                      placeholder="" />
-                            </div>
-                         </div>
-                      </div>
-                   </popover-content>
-                </popover>
-                
-             </div>
-          </div>            </div>
+               <div class="row min-h-[300px] border border-[--gray] rounded-[--big-radius]" >
+                  <div class="col v-a h-a">
+                     <popover position="top">
+                     <popover-trigger class="btn-white">
+                        Open popover
+                     </popover-trigger>
+                     <popover-content style="width:350px;">
+                        <div class="space-y-1">
+                           <div>
+                              <h6 class="font-medium leading-none mb-0.5">Dimensions</h6>
+                              <p class="text-sm text-muted mb-2">Set the dimensions for the layer.</p>
+                           </div>
+                           <div class="flex items-center mb-0.5"><label for="width" class="text-sm w-32">Width</label> <input id="width" type="text" value="100%" class="h-7 form-control w-full rounded border px-1 py-0 text-sm"></div>
+                           <div class="flex items-center mb-0.5"><label for="maxWidth" class="text-sm w-32">Max. width</label> <input id="maxWidth" type="text" value="300px" class="h-7 form-control w-full rounded border px-1 py-0 text-sm"></div>
+                           <div class="flex items-center mb-0.5"><label for="height" class="text-sm w-32">Height</label> <input id="height" type="text" value="25px" class="h-7 w-full form-control rounded border px-1 py-0 text-sm"></div>
+                           <div class="flex items-center"><label for="maxHeight" class="text-sm w-32">Max. height</label> <input id="maxHeight" type="text" value="none" class="h-7 w-full form-control rounded border px-1 py-0 text-sm"></div>
+                        </div>
+                     </popover-content>
+                     </popover>
+
+                  </div>
+               </div>           
+            </div>
          </div>
 	
 
@@ -266,9 +231,9 @@
     
 
 	
-	        <div class="foo">
+	        <div class="foo mt-4">
 <div class="foo">
-<pre class="code">&lt;popover width=&quot;300px&quot; halfwidth=&quot;-150px&quot;&gt; 
+<pre class="code">&lt;popover&gt; 
    &lt;popover-trigger class=&quot;btn-white&quot;&gt;
       Open popover
    &lt;/popover-trigger&gt;
