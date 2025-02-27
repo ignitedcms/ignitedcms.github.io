@@ -188,7 +188,7 @@
 	
     
          <div class="row">
-            <div class="col-12 m-t">
+            <div class="col-12 ">
                <div class="form-group v-a h-a border p-4" style="min-height:300px;">  
                   <div class="row">
                      <div class="col">
@@ -208,13 +208,6 @@
 
 	
 	
-
-	
-
-	
-
-	
-    
     
 
 	
@@ -243,10 +236,40 @@
 	
          <pre class="code"><span class="ql-font-monospace">&lt;switch-ios name="a" v-model="foo" &gt;&lt;/switch-ios&gt;</span></pre>
     
-    
+  
+       <h4 class="mt-4">Form</h4>  
 
-	
-	
+
+       <div class="row">
+          <div class="col-12 ">
+             <div class=" v-a h-a border p-4" style="min-height:400px;">  
+                <div class="form-group" style="width:80%;">
+                   <h6>Email notifications</h6>
+                   <div class="panel h-e v-a">
+                      <div>
+
+                         <label for="marketing">Marketing emails</label>
+                         <div class="text-sm text-muted">Receive emails about new products, features and more.</div>
+                      </div>
+                      <switch-ios name="b" value="checked" id="marketing" ></switch-ios>
+                   </div>
+                   <div class="panel h-e v-a mt-4">
+                      <div>
+
+                         <label for="security">Security emails</label>
+                         <div class="text-sm text-muted">Receive emails about your account security .</div>
+                      </div>
+                      <switch-ios name="c" value="" id="security" ></switch-ios>
+                   </div>
+                   <div class="mt-6">
+                      <button-component variant="dark">
+                         Submit
+                      </button-component>
+                   </div>
+                </div>
+             </div>            
+          </div>
+       </div>
 
 	
 
