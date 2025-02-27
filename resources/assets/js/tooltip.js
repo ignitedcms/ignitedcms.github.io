@@ -10,18 +10,45 @@
 | @since: 1.0
 |
 */
-
-// Tooltip component (parent)
-Vue.component('tooltip', {
+// Tooltip Trigger Component
+Vue.component('tooltip-trigger', {
   template: `
-    <div class="tooltip-container">
+    <div
+      :aria-describedby="'tooltip-' + $parent.uniqueId"
+      @mouseenter="$parent.showTooltip"
+      @mouseleave="$parent.hideTooltip"
+      @focus="$parent.showTooltip"
+      @blur="$parent.hideTooltip"
+      class="cursor-pointer"
+      tabindex="0">
       <slot></slot>
     </div>
-  `,
-  provide() {
-    return {
-      tooltip: this
-    };
+  `
+});
+
+// Tooltip Content Component
+Vue.component('tooltip-content', {
+  template: `
+      <div v-if="$parent.isVisible" :id="'tooltip-' + $parent.uniqueId" role="tooltip" :class="[
+        'dark:text-black dark:bg-white rounded-[--small-radius] absolute z-50 px-3 py-2 text-xs text-center w-[120px] fade-in text-white bg-dark',
+        $parent.position === 'top' || $parent.position === 'bottom' ? '-translate-x-1/2' : '',
+        $parent.positionClass
+      ]">
+        <slot></slot>
+      </div>
+  `
+});
+
+// Main Tooltip Component
+Vue.component('tooltip', {
+  props: {
+    position: {
+      type: String,
+      default: 'top',
+      validator: function(value) {
+        return ['top', 'bottom', 'left', 'right'].indexOf(value) !== -1;
+      }
+    }
   },
   data() {
     return {
@@ -29,65 +56,44 @@ Vue.component('tooltip', {
       uniqueId: Math.random().toString(36).substring(2)
     };
   },
+  computed: {
+    positionClass() {
+      switch(this.position) {
+        case 'top':
+          return 'bottom-full left-1/2 mb-2';
+        case 'bottom':
+          return 'top-full left-1/2 mt-2';
+        case 'left':
+          return 'right-full top-1/2 -translate-y-1/2 translate-x-0 mr-2';
+        case 'right':
+          return 'left-full top-1/2 -translate-y-1/2 translate-x-0 ml-2';
+        default:
+          return 'bottom-full left-1/2 mb-2';
+      }
+    }
+  },
   methods: {
     showTooltip() {
       this.isVisible = true;
     },
     hideTooltip() {
       this.isVisible = false;
+    },
+    handleKeyDown(event) {
+      if (event.key === 'Escape' && this.isVisible) {
+        this.hideTooltip();
+      }
     }
-  }
-});
-
-// Tooltip Trigger component
-Vue.component('tooltip-trigger', {
+  },
+  mounted() {
+    document.addEventListener('keydown', this.handleKeyDown);
+  },
+  beforeDestroy() {
+    document.removeEventListener('keydown', this.handleKeyDown);
+  },
   template: `
-    <div :aria-describedby="'tooltip-' + tooltip.uniqueId " @mouseover="tooltip.showTooltip()" @mouseleave="tooltip.hideTooltip()" class="cursor-pointer">
+    <div class="relative inline-block">
       <slot></slot>
     </div>
-  `,
-  inject: ['tooltip'],
-});
-
-// Tooltip Content component
-Vue.component('tooltip-content', {
-  template: `
-    <div
-      v-if="tooltip.isVisible"
-      class="
-        relative
-        fade-in
-        dark:bg-darkest
-        dark:shadow-none
-        dark:border-slate-600"
-    >
-      <div
-        role="tooltip"
-        :id="'tooltip-' + tooltip.uniqueId "
-        class="
-          small
-          fade-in-bottom
-          absolute
-          bg-white
-          w-[200px]
-          p-2
-          bottom-[40px]
-          rounded-[--small-radius]
-          border
-          border-[--gray]
-          text-center
-          left-[50%]
-          ml-[-100px]
-          z-10
-          shadow-md
-          dark:shadow-none
-          dark:bg-darkest
-          dark:text-white
-          dark:border-slate-600"
-      >
-        <slot></slot>
-      </div>
-    </div>
-  `,
-  inject: ['tooltip']
+  `
 });
