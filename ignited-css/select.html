@@ -181,7 +181,6 @@
             <div class="col-12 m-t">
                <div class="form-group v-a h-a border" style="min-height:300px;">
                   <div class="form-group" style="width:300px;">
-                     {{foo}}
                      <select-component v-model="foo">
                         <select-item title="one">
                         </select-item >
@@ -190,6 +189,9 @@
                         <select-item title="three">
                         </select-item >
                      </select-component>
+                     <div class="mt-2">
+                       Selected: {{foo}}
+                     </div>
                   </div>
                </div>
             </div>
