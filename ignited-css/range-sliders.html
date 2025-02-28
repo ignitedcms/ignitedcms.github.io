@@ -173,6 +173,7 @@
 			<h3>Range Sliders</h3>
          <p>
          An input where the user selects a value from within a given range.
+         This uses the html input type of 'range' under the hood.
          </p>
         </div>
          </div>
@@ -206,11 +207,11 @@
 
 	
     
-            <div class="row">
+         <div class="row">
             <div class="col-12 m-t">
-                <div class="form-group v-a h-a border p-4" style="min-height:300px;">  
-   <range-slider min="0" max="100" name="a" value="0"></range-slider>
-</div>
+               <div class="form-group v-a h-a border p-4" style="min-height:300px;">  
+                  <range-slider min="0" max="100" step="10" name="a" value="0"></range-slider>
+               </div>
             </div>
          </div>
 	
@@ -229,10 +230,7 @@
 	
 	        <div class="foo mt-4">
 <div class="foo">
-<pre class="code">&lt;div class=&quot;form-group&quot;&gt;
-   &lt;range-slider min=&quot;0&quot; max=&quot;100&quot; 
-name=&quot;a&quot; value=&quot;0&quot;&gt;&lt;/range-slider&gt;
-&lt;/div&gt;</pre>
+<pre class="code">&lt;range-slider min=&quot;0&quot; max=&quot;100&quot; step=&quot;10&quot; name=&quot;a&quot; value=&quot;0&quot;&gt;&lt;/range-slider&gt;</pre>
             </div>
          </div>        
 	
