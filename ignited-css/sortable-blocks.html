@@ -45,6 +45,10 @@
           z-index: 1;
       }
 
+      #sortable-list {
+         touch-action: none; /* Critical for preventing page scrolling on mobile */
+         user-select: none; /* Prevent text selection during drag */
+      }
       </style>
 </head>
 
@@ -202,19 +206,20 @@
 
 	
     
-            <div class="row">
+         <div class="row">
             <div class="col-12 m-t">
-                <div class="container">
-          <h3>Sortable</h3>
-        <ul id="sortable-list">
-            <li v-for="(item, index) in items" :key="item.id" class="panel hand border-fix">
-               {{ item.text }}
-            </li>
-        </ul>
-        <div class="code mt-3">
-            {{items}}
-        </div>
-       </div>            </div>
+               <div class="container">
+                  <h3>Sortable</h3>
+                  <ul id="sortable-list">
+                     <li v-for="(item, index) in items" :key="item.id" class="panel hand border-fix">
+                        {{ item.text }}
+                     </li>
+                  </ul>
+                  <div class="code mt-3">
+                     {{items}}
+                  </div>
+               </div>            
+            </div>
          </div>
 	
 
