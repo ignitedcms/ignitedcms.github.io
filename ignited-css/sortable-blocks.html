@@ -176,6 +176,21 @@
         <div class="col-12 m-t">
 			<h3>Sortable blocks</h3><p>This allows you to easily sort data blocks, and gives you access to this data for use later on</p>        </div>
          </div>
+
+         <div class="row">
+            <div class="col-12">
+               <h4>Mobile touch considerations</h4>
+               <p>In order to prevent page scrolling on mobile devices you need to add the following critical css class.</p>
+            </div>
+         </div>
+
+         <pre class="code mt-4">
+#sortable-list {
+  touch-action: none; /* Critical for preventing page scrolling on mobile */
+  user-select: none; /* Prevent text selection during drag */
+}
+         </pre>
+
 	
     
     
@@ -194,11 +209,11 @@
 	
 	
 
-	        <div class="row">
-        <div class="col-12 m-t">
-            <div class="panel">
-			    <p>Drag and drop the blocks below to reorder their positions</p>            </div>
-        </div>
+         <div class="row">
+            <div class="col-12 m-t">
+               <div class="panel">
+                  <p>Drag and drop the blocks below to reorder their positions</p>            </div>
+            </div>
          </div>
 	
 
