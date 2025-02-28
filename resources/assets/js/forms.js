@@ -245,15 +245,15 @@ Vue.component('select-item', {
 
 
 Vue.component('input-component', {
-  props: ['value'],
+  props: ['value', 'placeholder'],
   template: `
-  <input 
-   class="form-control form-dark" 
+  <input
+   class="form-control form-dark"
    type="text"
-   name="a" 
-   :value="value" 
-   @input="$emit('input',$event.target.value)"
-   placeholder="test" />
+   name="a"
+   :value="value"
+   :placeholder="placeholder || 'Type'"
+   @input="$emit('input',$event.target.value)" />
   `,
   data() {
      return {
@@ -261,17 +261,14 @@ Vue.component('input-component', {
   },
 });
 
-
-
-
 Vue.component('textarea-component', {
-  props: ['value'],
+  props: ['value', 'placeholder'],
   template: `
   <textarea 
     class="form-control form-dark" 
     name="a" 
     @input="$emit('input',$event.target.value)"
-    placeholder="testing" 
+    :placeholder="placeholder || 'Type'" 
     rows="4">{{value}}</textarea>
   `,
   data() {
@@ -279,6 +276,8 @@ Vue.component('textarea-component', {
      }
   },
 });
+
+
 
 Vue.component('label-component', {
   props: [''],

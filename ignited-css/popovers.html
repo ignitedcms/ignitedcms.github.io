@@ -199,18 +199,31 @@
                      <popover-trigger class="btn-white">
                         Open popover
                      </popover-trigger>
-                     <popover-content style="width:350px;">
-                        <div class="space-y-1">
-                           <div>
-                              <h6 class="font-medium leading-none mb-0.5">Dimensions</h6>
-                              <p class="text-sm text-muted mb-2">Set the dimensions for the layer.</p>
-                           </div>
-                           <div class="flex items-center mb-0.5"><label for="width" class="text-sm w-32">Width</label> <input id="width" type="text" value="100%" class="h-7 form-control w-full rounded border px-1 py-0 text-sm"></div>
-                           <div class="flex items-center mb-0.5"><label for="maxWidth" class="text-sm w-32">Max. width</label> <input id="maxWidth" type="text" value="300px" class="h-7 form-control w-full rounded border px-1 py-0 text-sm"></div>
-                           <div class="flex items-center mb-0.5"><label for="height" class="text-sm w-32">Height</label> <input id="height" type="text" value="25px" class="h-7 w-full form-control rounded border px-1 py-0 text-sm"></div>
-                           <div class="flex items-center"><label for="maxHeight" class="text-sm w-32">Max. height</label> <input id="maxHeight" type="text" value="none" class="h-7 w-full form-control rounded border px-1 py-0 text-sm"></div>
-                        </div>
-                     </popover-content>
+                   <popover-content class="!w-[320px]">
+                      <div class="space-y-4">
+                         <div>
+                            <h6 class="font-medium leading-none mb-1">Dimensions</h6>
+                            <p class="text-sm text-muted mb-2">Set the dimensions for the layer.</p>
+                         </div>
+                         <div class="flex items-center mt-2">
+                            <label for="width" class="w-32 text-sm">Width</label>
+                            <input id="width" type="text" value="100%" class="h-7 form-control w-full rounded border px-1 py-0 text-sm" />
+                         </div>
+                         <div class="flex items-center mt-2">
+                            <label for="maxWidth" class="w-32 text-sm">Max. width</label>
+                            <input id="maxWidth" type="text" value="300px" class="h-7 form-control w-full rounded border px-1 py-0 text-sm" />
+                         </div>
+                         <div class="flex items-center mt-2">
+                            <label for="height" class="w-32 text-s">Height</label>
+                            <input id="height" type="text" value="25px" class="h-7 w-full form-control rounded border px-1 py-0 text-sm" />
+                         </div>
+                         <div class="flex items-center mt-2">
+                            <label for="maxHeight" class="w-32 text-sm">Max. height</label>
+                            <input id="maxHeight" type="text" value="none" class="h-7 w-full form-control rounded border px-1 py-0 text-sm" />
+                         </div>
+                      </div>
+                   </popover-content>
+                     
                      </popover>
 
                   </div>
