@@ -181,6 +181,19 @@ Vue.component('link-component', {
   },
 });
 
+Vue.component('blockquote-component', {
+  template: `
+  <blockquote class="mt-4 border-l-2 pl-6 italic">
+  <slot>
+  </slot>
+  </blockquote>
+  `,
+  data() {
+     return {
+     }
+  },
+});
+
 Vue.component('radio-component', {
   props: ['options','value'],
   template: `
