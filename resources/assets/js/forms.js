@@ -29,6 +29,28 @@ Vue.component('paragraph', {
   },
 });
 
+Vue.component('blockquote-component', {
+  props: [''],
+  template: `
+  <blockquote
+     class="
+      mt-4 
+      border-l-4
+      pl-6
+      italic
+      relative
+      text-dark
+      "
+   >
+   <slot></slot>
+  </blockquote>
+  `,
+  data() {
+     return {
+     }
+  },
+});
+
 Vue.component('header1', {
   props: [''],
   template: `
@@ -152,7 +174,7 @@ Vue.component('checkbox-component', {
        v-model="checkedOptions" 
        :value="option" 
        @change="handleChange">
-      <label class="ml-2 text-dark" :for="'checkbox-' + index">{{ option }}</label>
+      <label class="ml-2 text-sm text-dark" :for="'checkbox-' + index">{{ option }}</label>
     </div>
   </div>
   
@@ -181,19 +203,6 @@ Vue.component('link-component', {
   },
 });
 
-Vue.component('blockquote-component', {
-  template: `
-  <blockquote class="mt-4 border-l-2 pl-6 italic">
-  <slot>
-  </slot>
-  </blockquote>
-  `,
-  data() {
-     return {
-     }
-  },
-});
-
 Vue.component('radio-component', {
   props: ['options','value'],
   template: `
@@ -206,7 +215,7 @@ Vue.component('radio-component', {
       v-model="radioOptions" 
       :value="option" 
       @change="handleChange">
-      <label class="ml-2 text-dark" :for="'radio-' + index">{{ option }}</label>
+      <label class="ml-2 text-sm text-dark" :for="'radio-' + index">{{ option }}</label>
     </div>
   </div>
   
@@ -293,9 +302,9 @@ Vue.component('textarea-component', {
 
 
 Vue.component('label-component', {
-  props: [''],
+  props: ['htmlfor'],
   template: `
-  <label for="title" class="text-dark">
+  <label :for="htmlfor" class="text-dark">
     <slot></slot>
   </label>
   `,

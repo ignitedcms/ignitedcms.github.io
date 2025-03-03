@@ -14,17 +14,19 @@
 Vue.component('mega-menu', {
   props: [
     'logo',
-    'url'
+    'url',
+    'alt'
   ],
   template: `
 
     <div 
      class="hide-tablet
       top-0
+      bg-white
       border-b
       border-[--gray]
       sticky
-      z-20"
+      z-30"
     >
      <div 
       class="
@@ -43,7 +45,7 @@ Vue.component('mega-menu', {
             <img
               :src="logo"
               class="w-[150px]"
-              alt="Ignitedcms logo"
+              :alt="alt"
             ></img>
           </a>
         </div>
@@ -100,8 +102,10 @@ Vue.component('menu-items', {
         >
          {{title}}
         </button>
-        <span class="ml v-a">
-          <i data-feather="chevron-down"></i>
+        <span class="ml-2 v-a">
+           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+           </svg>
         </span>
       </div>
       <ul
@@ -116,11 +120,11 @@ Vue.component('menu-items', {
          overflow-hidden
          fade-in-bottom
          bg-white
-         p
+         p-2
          rounded-[--big-radius]
          border
          border-[--gray]
-         shadow-md"
+         shadow-lg"
       >
         <slot></slot>
       </ul>
@@ -160,8 +164,8 @@ Vue.component('menu-item', {
          col
          v-a
          m
-         hover:bg-light-gray
-         rounded-sm"
+         hover:bg-slate-100
+         rounded-md"
       >
         
         <div class="ml-2">{{title}}</div>

@@ -170,62 +170,21 @@
          <div class="foo">
 <div class="foo">
             
-	        <div class="row">
-        <div class="col-12 m-t">
-			<h3>Menus</h3><p>Menus are perfect for top level navigation, IgnitedCMS ships with two menu components the main menu and the mobile menu. These can be configured easily in the component settings.</p>        </div>
+   <div class="row">
+      <div class="col-12 m-t">
+         <h3>Menus</h3><p>Menus are perfect for top level navigation, IgnitedCMS ships with two menu components the main menu and the mobile menu. These can be configured easily in the component settings.</p>        
+      </div>
+   </div>
+	
+    
+
+	<div class="row">
+            <div class="col">
+               <a href="block-site-menu.html" class="underline" target="_blank">Full menu and mobile menu</a>
+               <br>
+               <img src="/img/fullmenu.png" alt="full menu" class="img-responsive border rounded-md mt-4"></img>
+            </div>
          </div>
-	
-    
-    
-
-	
-	
-
-	
-
-	
-
-	
-    
-            <div class="row">
-            <div class="col-12 m-t">
-                <mega-menu v-cloak title="Login" logo="../img/ignitedcms-logo.svg" 
-         url="https://www.ignitedcms.com">
-         <menu-items title="Resources" children="yes">
-            <menu-item 
-               title="Documentation" 
-               icon="https://www.ignitedcms.com/resources/assets/images/book.svg" 
-               url="">
-            </menu-item>
-           
-            </menu-item>
-            <menu-item 
-               title="Ignited CSS" 
-               icon="https://www.ignitedcms.com/resources/assets/images/book.svg" 
-               url="">
-            </menu-item>
-            <menu-item
-               title="Ignited JS"
-               icon="https://www.ignitedcms.com/resources/assets/images/book.svg"
-               url="">
-            </menu-item>
-         </menu-items>
-         <menu-items 
-            title="Blog" 
-            url="">
-         </menu-items>
-         <menu-items 
-            title="Contact" 
-            url="">
-         </menu-items>
-      </mega-menu>            </div>
-         </div>
-	
-
-	
-	
-
-	
 
 	
 
@@ -234,94 +193,65 @@
     
 
 	
-	        <div class="foo">
-<div class="foo">
-<pre class="code">
-&lt;mega-menu v-cloak  logo=&quot;/path/to/image&quot; url=&quot;https://www.ignitedcms.com&quot;&gt;
+         <div class="foo mt-4">
+            <div class="foo">
+               <pre class="code">
+&lt;mega-menu v-cloak  logo=&quot;assets/images/ignitedcms-logo.svg&quot; alt=&quot;test&quot; url=&quot;#&quot;&gt;
    &lt;menu-items title=&quot;Resources&quot; children=&quot;yes&quot;&gt;
       &lt;menu-item
          title=&quot;Documentation&quot;
-         url=&quot;&quot;&gt;
+         url=&quot;#&quot;&gt;
       &lt;/menu-item&gt;
       &lt;/menu-item&gt;
       &lt;menu-item
-         title=&quot;Ignited CSS&quot;
-         url=&quot;&quot;&gt;
+         title=&quot;Kamijs&quot;
+         url=&quot;#&quot;&gt;
       &lt;/menu-item&gt;
       &lt;menu-item
-         title=&quot;Ignited JS&quot;
-         url=&quot;&quot;&gt;
+         title=&quot;Gozen&quot;
+         url=&quot;#&quot;&gt;
       &lt;/menu-item&gt;
    &lt;/menu-items&gt;
    &lt;menu-items
       title=&quot;Blog&quot;
-      url=&quot;&quot;&gt;
+      url=&quot;#&quot;&gt;
    &lt;/menu-items&gt;
    &lt;menu-items
       title=&quot;Contact&quot;
-      url=&quot;&quot;&gt;
+      url=&quot;#&quot;&gt;
    &lt;/menu-items&gt;
 &lt;/mega-menu&gt;
-</pre>
-            </div>
-         </div>        
-	
 
-	
 
-	
-
-	        <div class="row">
-        <div class="col-12 m-t">
-			<p>To add a menu that only shows on mobile is simple to:-</p>        </div>
-         </div>
-	
-    
-    
-
-	
-	
-
-	
-
-	
-
-	
-    
-    
-
-	
-	        <div class="foo">
-<div class="foo">
-<pre class="code">&lt;mobile-menu v-cloak  logo=&quot;path/to/image&quot; 
-   url=&quot;https://www.ignitedcms.com&quot;&gt;
-   &lt;mobile-menu-items 
-      title=&quot;Resources&quot; 
-      url=&quot;&quot; 
+&lt;mobile-menu v-cloak  logo=&quot;assets/images/ignitedcms-logo.svg&quot; alt=&quot;test&quot; url=&quot;#&quot;&gt;
+   &lt;mobile-menu-items
+      title=&quot;Resources&quot;
+      url=&quot;#&quot;
       children=&quot;yes&quot;&gt;
-      &lt;div class=&quot;menu-item-block&quot;&gt;
-         &lt;ul&gt;
+      &lt;div class=&quot;bg-light-gray p-4&quot;&gt;
+         &lt;ul class=&quot;rm-list-styles&quot;&gt;
             &lt;li&gt;
-               &lt;a href=&quot;&quot; &gt;Documentation&lt;/a&gt;
+               &lt;link-component title=&quot;Documentation&quot; url=&quot;#&quot;&gt;&lt;/link-component&gt;
             &lt;/li&gt;
             &lt;li&gt;
-               &lt;a href=&quot;&quot;&gt;Ignited CSS&lt;/a&gt;
+               &lt;link-component title=&quot;Kamijs&quot; url=&quot;#&quot;&gt;&lt;/link-component&gt;
             &lt;/li&gt;
             &lt;li&gt;
-               &lt;a href=&quot;&quot;&gt;Ignited JS&lt;/a&gt;
+               &lt;link-component title=&quot;Gozen&quot; url=&quot;#&quot;&gt;&lt;/link-component&gt;
             &lt;/li&gt;
          &lt;/ul&gt;
       &lt;/div&gt;
    &lt;/mobile-menu-items&gt;
-   &lt;mobile-menu-items 
+   &lt;mobile-menu-items
       title=&quot;Blog&quot;
-      url=&quot;&quot;&gt;
+      url=&quot;#&quot;&gt;
    &lt;/mobile-menu-items&gt;
-   &lt;mobile-menu-items 
+   &lt;mobile-menu-items
       title=&quot;Contact&quot;
-      url=&quot;&quot;&gt;
+      url=&quot;#&quot;&gt;
    &lt;/mobile-menu-items&gt;
-&lt;/mobile-menu &gt;</pre>
+&lt;/mobile-menu&gt;
+               </pre>
             </div>
          </div>        
 	
@@ -330,10 +260,13 @@
 
 	
 
+	        
 	
     
     
 
+	
+	
 	
 	
 

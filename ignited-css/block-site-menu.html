@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+   <head>
+      <title>Main menu</title>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+      <link href="../resources/assets/css/output.css" rel="stylesheet" />
+       <script src="../resources/assets/js/vue2.js"></script>
+   
+      <style>
+      [v-cloak] {
+         display: none;
+      }
+      </style>
+
+
+   </head>
+   <body class="h-screen v-screen bg-light-gray dark:bg-dark">
+      <div id="app">
+          <!--<dark-mode top="80px">-->
+         <!--</dark-mode>-->
+         <mega-menu v-cloak  logo="../resources/assets/images/ignitedcms-logo.svg" alt="test" url="#">
+            <menu-items title="Resources" children="yes">
+               <menu-item
+                     title="Documentation"
+                     url="#">
+               </menu-item>
+               </menu-item>
+               <menu-item
+                     title="Kamijs"
+                     url="#">
+               </menu-item>
+               <menu-item
+                     title="Gozen"
+                     url="#">
+               </menu-item>
+            </menu-items>
+            <menu-items
+                  title="Blog"
+                  url="#">
+            </menu-items>
+            <menu-items
+                  title="Contact"
+                  url="#">
+            </menu-items>
+         </mega-menu>
+
+         <mobile-menu v-cloak  logo="../resources/assets/images/ignitedcms-logo.svg" alt="test" url="#">
+            <mobile-menu-items
+               title="Resources"
+               url="#"
+               children="yes">
+               <div class="bg-light-gray p-4">
+                  <ul class="rm-list-styles">
+                     <li>
+                        <link-component title="Documentation" url="#"></link-component>
+                     </li>
+                     <li>
+                        <link-component title="Kamijs" url="#"></link-component>
+                     </li>
+                     <li>
+                        <link-component title="Gozen" url="#"></link-component>
+                     </li>
+                  </ul>
+               </div>
+            </mobile-menu-items>
+            <mobile-menu-items
+               title="Blog"
+               url="#">
+            </mobile-menu-items>
+            <mobile-menu-items
+               title="Contact"
+               url="#">
+            </mobile-menu-items>
+         </mobile-menu>
+
+         <div class="default-container mt-8 v-e" style="min-height:1200px;">
+            <div>
+             <header1>Some long content</header1>
+             <paragraph>
+             Scroll down to test the sticky header
+             </paragraph>
+             <header5 class="mt-4">Also</header5>
+             <paragraph>
+             Resize your browser to test the mobile menu
+             </paragraph>
+            </div>
+            <div>
+               <paragraph>
+               The end of the content
+               </paragraph>
+            </div>
+         </div>
+         <div class="gap"></div>
+      </div>
+      <script src="../resources/assets/js/click-outside.js"></script>
+      <script src="../resources/assets/js/focus-trap.js"></script>
+      <script src="../resources/assets/js/menu.js"></script>
+      <script src="../resources/assets/js/mobile-menu.js"></script>
+      <script src="../resources/assets/js/forms.js"></script>
+      <script src="../resources/assets/js/dark-mode.js"></script>
+      <script>
+         var app = new Vue({
+           el: "#app",
+           data: {
+             theme: "",
+           },
+         });
+      </script>
+      
+   </body>
+</html>

@@ -10,22 +10,22 @@
 | @since: 1.0
 |
 */
-
 Vue.component('mobile-menu', {
   props: [
     'title',
     'logo',
-    'url'
+    'url',
+    'alt'
   ],
   template: `
-    <div 
+    <div
      class="
      top-0
      sticky
      z-10
      show-tablet"
    >
-      <div 
+      <div
        class="
         h-e
         bg-white
@@ -36,27 +36,36 @@ Vue.component('mobile-menu', {
       >
         <div
          class="w-[150px]">
-          <a 
+          <a
             :href="url"
           >
-          <img 
+          <img
             class="v-a"
             :src="logo"
-            alt="logo"
+            :alt="alt"
           ></img>
           </a>
-        </div> 
-        <div>
-          <span 
-            @click="toggle"
-            class="select-none cursor-pointer"
-          >
-            <div>menu</div>
-          </span>
         </div>
+        <button
+          @click="toggle"
+          :aria-controls="menuId"
+          :aria-expanded="show.toString()"
+        >
+          <span class="select-none cursor-pointer">
+            <div>
+               <!-- Hamburger icon (visible when menu is closed) -->
+               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6" v-show="!show">
+                 <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 9h16.5m-16.5 6.75h16.5" />
+               </svg>
+               <!-- X icon (visible when menu is open) -->
+               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6" v-show="show">
+                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+               </svg>
+            </div>
+          </span>
+        </button>
       </div>
-
-      <div 
+      <div
         v-if="show"
         class="
          fixed
@@ -65,22 +74,22 @@ Vue.component('mobile-menu', {
          border-b
          border-gray-300
          fade-in-bottom
-         bg-white" 
+         bg-white"
+        :id="menuId"
       >
         <slot></slot>
-
-        <a 
-          href="#" 
+        <a
+          href="#"
           class="rm-link-styles w-[100%]"
         >
-          
         </a>
       </div>
     </div>
   `,
   data() {
     return {
-      show: false
+      show: false,
+      menuId: 'menu-' + Math.random().toString(36).substring(2)
     };
   },
    methods: {
@@ -89,7 +98,6 @@ Vue.component('mobile-menu', {
       }
    }
 });
-
 Vue.component('mobile-menu-items', {
   props: [
     'title',
@@ -97,49 +105,67 @@ Vue.component('mobile-menu-items', {
     'children'
   ],
   template: `
-    <div> 
-      <a 
-        v-if="children !== 'yes'" 
-        :href="url" 
+    <div>
+      <a
+        v-if="children !== 'yes'"
+        :href="url"
         class="rm-link-styles"
       >
-        <div 
+        <div
           class="
            row
            p-4
            bg-white
-           v-a 
+           v-a
            border-b
-           border-gray-300 
+           border-gray-300
            cursor-pointer"
         >
           {{title}}
         </div>
       </a>
-
-      <div 
-        v-if="children === 'yes'" 
+      <button
+        v-if="children === 'yes'"
         class="
          v-a
          bg-white
+         w-full
          p-4
          h-e
          cursor-pointer
          border-b
-         border-gray-300"
-
-        @click="toggle" 
+         border-gray-300
+         group"
+        @click="toggle"
+        :aria-controls="submenuId"
+        :aria-expanded="show.toString()"
       >
         <div>
           {{title}}
         </div>
         <div>
-          +
+          <!-- Plus icon (visible when not expanded) -->
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="size-5 group-[.active]:hidden"
+            v-show="!show"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+          </svg>
+          <!-- x icon (visible when expanded) -->
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5" v-show="show">
+           <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+         </svg>
         </div>
-      </div>
-      <div 
-        v-if="show" 
+      </button>
+      <div
+        v-if="show"
         class="no-select"
+        :id="submenuId"
       >
         <slot></slot>
       </div>
@@ -147,7 +173,8 @@ Vue.component('mobile-menu-items', {
   `,
   data() {
     return {
-      show: false
+      show: false,
+      submenuId: 'submenu-' + Math.random().toString(36).substring(2)
     };
   },
   methods: {
@@ -159,4 +186,3 @@ Vue.component('mobile-menu-items', {
     }
   }
 });
-
