@@ -181,7 +181,7 @@
       <div class="row">
          <div class="col-12 m-t">
             <div class="form-group v-a h-a border" style="min-height:300px;">
-               <div class="form-group" style="width:300px;">
+               <div class="form-group" style="width:80%;">
                   <textarea-component v-model="foo">
                   </textarea-component>
                   <div class="mt-2">
@@ -204,15 +204,53 @@
    </pre>
 </div>
 
+<h3 class="mt-4">With text</h3>
+
 <div class="row">
-   <div class="col-12">
-      <div class="panel">
-         Make sure you include the 'forms' script
+         <div class="col-12 ">
+            <div class=" v-a h-a border" style="min-height:300px;">
+               <div class="form-group" style="width:80%;">
+                  <label-component>
+                  Your message
+                  </label-component>
+                  <textarea-component placeholder="Type your message here" >
+                  </textarea-component>
+                     <description>
+                     Your message will be copied to the support team.
+                     </description>
+
+                     
+                  
+               </div>
+            </div>
+         </div>
       </div>
-   </div>
-</div>
 
+<h3 class="mt-4">With button</h3>
 
+<div class="row">
+         <div class="col-12 ">
+            <div class=" v-a h-a border" style="min-height:300px;">
+               <div class="form-group" style="width:80%;">
+                  <form>
+                  <label-component>
+                     Bio
+                  </label-component>
+                  <textarea-component placeholder="Type your message here" >
+                  </textarea-component>
+                     <description>
+                     You can @mention other users and organizations.
+                     </description>
+
+                     <button-component variant="primary" class="mt-4" type="submit">
+                        Submit
+                     </button-component>
+                  
+                  </form>
+               </div>
+            </div>
+         </div>
+      </div>
 
 
 

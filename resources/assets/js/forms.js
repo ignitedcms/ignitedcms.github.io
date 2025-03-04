@@ -234,11 +234,11 @@ Vue.component('radio-component', {
 
 
 Vue.component('select-component', {
-  props: [''],
+  props: ['name'],
   template: `
   <select 
    class="form-select form-dark" 
-   name="a" 
+   :name="name" 
    @input="$emit('input', $event.target.value)"
    aria-label="Default select example"
    >
@@ -267,12 +267,12 @@ Vue.component('select-item', {
 
 
 Vue.component('input-component', {
-  props: ['value', 'placeholder'],
+  props: ['value', 'placeholder','name'],
   template: `
   <input
    class="form-control form-dark"
    type="text"
-   name="a"
+   :name="name"
    :value="value"
    :placeholder="placeholder || 'Type'"
    @input="$emit('input',$event.target.value)" />
@@ -284,11 +284,11 @@ Vue.component('input-component', {
 });
 
 Vue.component('textarea-component', {
-  props: ['value', 'placeholder'],
+  props: ['value', 'placeholder','name'],
   template: `
   <textarea 
     class="form-control form-dark" 
-    name="a" 
+    :name="name" 
     @input="$emit('input',$event.target.value)"
     :placeholder="placeholder || 'Type'" 
     rows="4">{{value}}</textarea>
