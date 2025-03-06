@@ -182,21 +182,47 @@
 
 
 <div class="row">
-            <div class="col-12 m-t">
-               <div class="form-group v-a h-a border" style="min-height:300px;">
-                  <div class="form-group">
-                        <link-component title="Open google" url="https://www.google.com" newtab="yes">
-                        </link-component>
-                  </div>
-               </div>
-            </div>
+   <div class="col-12 m-t">
+      <div class="form-group v-a h-a border" style="min-height:300px;">
+         <div class="form-group">
+            <link-component title="Open google" url="https://www.google.com" newtab="yes">
+            </link-component>
          </div>
+      </div>
+   </div>
+</div>
 
 
 <div class="mt-4">
    <pre class="code">
 <div v-pre>
 &lt;link-component title=&quot;Open google&quot; url=&quot;https://www.google.com&quot; newtab=&quot;yes&quot;&gt;
+&lt;/link-component&gt;
+</div>
+   </pre>
+</div>
+
+      
+<h3 class="mt-8">Link as button</h3>
+<div class="row">
+   <div class="col-12 m-t">
+      <div class="form-group v-a h-a border" style="min-height:300px;">
+         <div class="form-group">
+            <link-component title="Open google" url="https://www.google.com" newtab="yes" style="text-decoration:none;" class="btn-white !no-underline">
+            </link-component>
+         </div>
+      </div>
+   </div>
+</div>
+
+<div class="mt-4">
+   <pre class="code">
+<div v-pre>
+&lt;link-component
+   title=&quot;Open google&quot;
+   url=&quot;https://www.google.com&quot;
+   newtab=&quot;yes&quot;
+   class=&quot;btn-white !no-underline&quot;&gt;
 &lt;/link-component&gt;
 </div>
    </pre>

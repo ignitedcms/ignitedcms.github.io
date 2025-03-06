@@ -183,16 +183,17 @@
             <div class="col-12 m-t">
                <div class="form-group v-a h-a border" style="min-height:300px;">
                   <div class="form-group" style="width:300px;">
-                     <select-component v-model="foo">
-                        <select-item title="one">
-                        </select-item >
-                        <select-item title="two">
-                        </select-item >
-                        <select-item title="three">
-                        </select-item >
+                     <select-component v-model="sel">
+                        <select-item title="one" value="one">
+                        </select-item>
+                        <select-item title="two" value="two">
+                        </select-item>
+                        <select-item title="three" value="three">
+                        </select-item>
                      </select-component>
+                     
                      <div class="mt-2">
-                       Selected: {{foo}}
+                       Selected: {{sel}}
                      </div>
                   </div>
                </div>
@@ -203,13 +204,12 @@
 <div class="mt-4">
    <pre class="code">
 <div v-pre>
-{{foo}}
 &lt;select-component v-model=&quot;foo&quot;&gt;
-   &lt;select-item title=&quot;one&quot;&gt;
+   &lt;select-item title=&quot;one&quot; value=&quot;one&quot;&gt;
    &lt;/select-item&gt;
-   &lt;select-item title=&quot;two&quot;&gt;
+   &lt;select-item title=&quot;two&quot; value=&quot;two&quot;&gt;
    &lt;/select-item&gt;
-   &lt;select-item title=&quot;three&quot;&gt;
+   &lt;select-item title=&quot;three&quot; value=&quot;three&quot;&gt;
    &lt;/select-item&gt;
 &lt;/select-component&gt;
 </div>
@@ -299,6 +299,7 @@
               message: 'Add Items. . . ',
               show: false,
               dark:false,
+              sel: 'one',
               foo:'hello',
               bar: 'none',
               otp:'',

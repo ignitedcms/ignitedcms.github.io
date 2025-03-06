@@ -163,7 +163,7 @@ Vue.component('header5', {
 
 
 Vue.component('checkbox-component', {
-  props: ['options','value'],
+  props: ['options', 'value'],
   template: `
    <div>
     <div v-for="(option, index) in options" :key="index">
@@ -172,23 +172,22 @@ Vue.component('checkbox-component', {
        type="checkbox" 
        :id="'checkbox-' + index" 
        v-model="checkedOptions" 
-       :value="option" 
+       :value="option.value || option" 
        @change="handleChange">
-      <label class="ml-2 text-sm text-dark" :for="'checkbox-' + index">{{ option }}</label>
+      <label class="ml-2 text-sm text-dark" :for="'checkbox-' + index">{{ option.title || option }}</label>
     </div>
   </div>
-  
   `,
   data() {
-     return {
-        checkedOptions: [...this.value]
-     }
+    return {
+      checkedOptions: [...this.value]
+    }
   },
-   methods: {
-     handleChange() {
-        this.$emit('input', this.checkedOptions); // emit input event with updated value
-     }
-   }
+  methods: {
+    handleChange() {
+      this.$emit('input', this.checkedOptions); // emit input event with updated value
+    }
+  }
 });
 
 
@@ -204,7 +203,7 @@ Vue.component('link-component', {
 });
 
 Vue.component('radio-component', {
-  props: ['options','value'],
+  props: ['options', 'value'],
   template: `
    <div>
     <div v-for="(option, index) in options" :key="index">
@@ -213,16 +212,15 @@ Vue.component('radio-component', {
       type="radio" 
       :id="'radio-' + index" 
       v-model="radioOptions" 
-      :value="option" 
+      :value="option.value || option" 
       @change="handleChange">
-      <label class="ml-2 text-sm text-dark" :for="'radio-' + index">{{ option }}</label>
+      <label class="ml-2 text-sm text-dark" :for="'radio-' + index">{{ option.title || option }}</label>
     </div>
   </div>
-  
   `,
   data() {
      return {
-        radioOptions: [...this.value]
+        radioOptions: this.value
      }
   },
    methods: {
@@ -254,9 +252,9 @@ Vue.component('select-component', {
 
 
 Vue.component('select-item', {
-  props: ['title'],
+  props: ['title','value'],
   template: `
-     <option :value="title">{{title}}</option>
+     <option :value="value">{{title}}</option>
   `,
   data() {
      return {

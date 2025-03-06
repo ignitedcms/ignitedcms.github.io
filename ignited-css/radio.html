@@ -199,13 +199,31 @@ A set of checkable buttons—known as radio buttons—where no more than one of 
    <pre class="code">
 <div v-pre>
 &lt;label for=&quot;radios&quot; class=&quot;text-dark&quot;&gt;Radios&lt;/label&gt;
-&lt;radio-component v-model=&quot;selectedRadioOptions&quot; :options=&quot;options&quot;&gt;
+&lt;radio-component v-model=&quot;selectedRadioOption&quot; :options=&quot;options&quot;&gt;
 &lt;/radio-component&gt;
-&lt;p&gt;Selected options: {{ selectedRadioOptions }}&lt;/p&gt;
+&lt;p&gt;Selected options: {{ selectedRadioOption }}&lt;/p&gt;
 </div>
    </pre>
 </div>
 
+         <div class="row">
+            <div class="col-12">
+               Where options accepts a json array with two parameters,
+               title and value e.g
+            </div>
+         </div>
+
+         <div class="mt-4">
+            <pre class="code">
+<div v-pre>
+options:[
+    { title: &apos;Home&apos;, value: &apos;home&apos; },
+    { title: &apos;Office&apos;, value: &apos;office&apos; },
+    { title: &apos;Other Location&apos;, value: &apos;other&apos; }
+]
+</div>
+            </pre>
+         </div>
 
 
 
