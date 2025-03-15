@@ -208,7 +208,7 @@
          </div>        
 	
          <div class="row">
-            <div class="col-12 m-t">
+            <div class="col-12 mt">
                <h5>Custom size and border radius</h5>
                <div class="row bg-white border" style="min-height:300px;">
                   <div class="col v-a h-a">
@@ -223,14 +223,107 @@
 	
          <div class="foo mt-4">
             <div class="foo">
-               <pre class="code">
-&lt;avatar alt=&quot;pic&quot; path=&quot;img/lady.png&quot; class=&quot;!rounded-sm !shadow-none !size-4&quot;&gt;&lt;/avatar&gt;
-
-               </pre>
+               <pre class="code">&lt;avatar alt=&quot;pic&quot; path=&quot;img/lady.png&quot; class=&quot;!rounded-sm !shadow-none !size-4&quot;&gt;&lt;/avatar&gt;</pre>
             </div>
          </div>
 
-	
+
+         <div class="mt-4">
+            <h3>Different sizes</h3>
+         </div>
+
+         <div class="panel h-a v-a min-h-[300px] space-x-5 flex">
+
+
+                <avatar class="" alt="A picture of a lady" path="../img/lady-bg.jpg">
+                </avatar>
+                <avatar class="!size-[50px]" alt="A picture of a lady" path="../img/lady-bg.jpg">
+                </avatar>
+                <avatar class="!size-[40px]" alt="A picture of a lady" path="../img/lady-bg.jpg">
+                </avatar>
+
+          </div>
+
+          <div class="mt-4">
+             <h3>Grouped or stacked</h3>
+          </div>
+
+           <div class="panel h-a v-a min-h-[300px] -space-x-5 flex">
+
+
+                <avatar class="" alt="A picture of a lady" path="../img/lady-bg.jpg">
+                </avatar>
+                <avatar class="" alt="A picture of a lady" path="../img/lady-bg.jpg">
+                </avatar>
+
+                <avatar class="" alt="A picture of a lady" path="../img/lady-bg.jpg">
+                </avatar>
+
+
+
+          </div>
+
+          <div class="mt-4">
+             <h3>With badges or indicators</h3>
+          </div>
+
+           <div class="panel h-a v-a min-h-[300px] space-x-4 flex">
+
+               <div class="relative w-[60px]">
+
+                  <avatar  alt="A picture of a lady" path="../img/lady-bg.jpg">
+                  </avatar>
+
+                  <div class="z-80 absolute bottom-[0px] border-2 border-white right-[-5px] bg-green-600 size-[20px] rounded-full">
+                  </div>
+               </div>
+
+               <div class="relative w-[60px]">
+
+                  <avatar  alt="A picture of a lady" path="../img/lady-bg.jpg">
+                  </avatar>
+
+                  <div class="z-80 absolute bottom-[0px] border-2 border-white right-[-5px] bg-red-600 size-[20px] rounded-full">
+                  </div>
+               </div>
+
+               <div class="relative w-[60px]">
+
+                  <avatar  alt="A picture of a lady" path="../img/lady-bg.jpg">
+                  </avatar>
+
+                  <div class="z-80 absolute bottom-[0px] border-2 border-white right-[-5px] bg-slate-200 size-[20px] rounded-full">
+                  </div>
+               </div>
+
+            </div>
+
+            <div class="mt-4">
+               <h3>With hover</h3>
+            </div>
+
+             <div class="panel h-a v-a min-h-[300px]">
+               <hovercard>
+               <hovercard-trigger class="">
+                  <avatar class="!size-12 rounded-md !shadow-none"  alt="A picture of a lady" path="../img/lady-bg.jpg">
+                  </avatar>
+               </hovercard-trigger>
+
+               <hovercard-content class="!w-[300px]">
+                  <div class="row">
+                     <div class="col-12">
+
+                        <p class="text-center">
+                        Helen Spiby's twitter bio, you get the idea hopefully
+                        </p>
+                     </div>
+                  </div>
+               </hovercard-content>
+               </hovercard>
+
+
+
+            </div>
 
   <div class="gap"></div>
             </div>
@@ -290,6 +383,7 @@
 <script src="../resources/assets/js/splide.min.js"></script>
 <script src="../resources/assets/js/small-menu.js"></script>
 <script src="../resources/assets/js/carousel.js"></script>
+<script src="../resources/assets/js/hover-card.js"></script>
 
 <!-- end feather icons js lib -->
 
