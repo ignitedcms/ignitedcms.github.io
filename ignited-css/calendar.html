@@ -181,9 +181,257 @@
 	
     
     
-
+         <div class="panel overflow-auto pt-8">
+            <table-component>
+   <table-caption class="caption-bottom text-sm text-muted text-dark">
+      Calendar API
+   </table-caption>
+   <table-header>
+      <table-row>
+         <table-head>Prop</table-head>
+         <table-head>Description</table-head>
+      </table-row>
+   </table-header>
+   <table-body>
+      <table-row>
+         <table-cell>
+            v-model
+         </table-cell>
+         <table-cell>
+            Binds the calendar to a v-model property.
+         </table-cell>
+      </table-row>
+      <table-row>
+         <table-cell>
+            name
+         </table-cell>
+         <table-cell>
+            Name attribute for the calendar. Automatically set when using <code>v-model</code>.
+         </table-cell>
+      </table-row>
+      <table-row>
+         <table-cell>
+            value
+         </table-cell>
+         <table-cell>
+            Selected date(s).<br> Format depends on <code>mode</code>: single date (<code>Y-m-d</code>), multiple dates (comma-separated <code>Y-m-d</code>), or range (<code>Y-m-d/Y-m-d</code>).
+         </table-cell>
+      </table-row>
+      <table-row>
+         <table-cell>
+            mode
+         </table-cell>
+         <table-cell>
+            Selection mode. Options: <code>single</code> (default), <code>multiple</code>, <code>range</code>.
+         </table-cell>
+      </table-row>
+      <table-row>
+         <table-cell>
+            min
+         </table-cell>
+         <table-cell>
+            Earliest selectable date. Can be a date string or "today".
+         </table-cell>
+      </table-row>
+      <table-row>
+         <table-cell>
+            max
+         </table-cell>
+         <table-cell>
+            Latest selectable date. Can be a date string or "today".
+         </table-cell>
+      </table-row>
+      <table-row>
+         <table-cell>
+            size
+         </table-cell>
+         <table-cell>
+            Calendar size. Options: <code>base</code> (default), <code>xs</code>, <code>sm</code>, <code>lg</code>, <code>xl</code>, <code>2xl</code>.
+         </table-cell>
+      </table-row>
+      <table-row>
+         <table-cell>
+            months
+         </table-cell>
+         <table-cell>
+            Number of months to display. Default: <code>1</code> for single/multiple modes, <code>2</code> for range mode.
+         </table-cell>
+      </table-row>
+      <table-row>
+         <table-cell>
+            min-range
+         </table-cell>
+         <table-cell>
+            Minimum number of days that can be selected in range mode.
+         </table-cell>
+      </table-row>
+      <table-row>
+         <table-cell>
+            max-range
+         </table-cell>
+         <table-cell>
+            Maximum number of days that can be selected in range mode.
+         </table-cell>
+      </table-row>
+      <table-row>
+         <table-cell>
+            navigation
+         </table-cell>
+         <table-cell>
+            If <code>false</code>, hides month navigation controls. Default: <code>true</code>.
+         </table-cell>
+      </table-row>
+      <table-row>
+         <table-cell>
+            static
+         </table-cell>
+         <table-cell>
+            If <code>true</code>, makes the calendar non-interactive (display-only). Default: <code>false</code>.
+         </table-cell>
+      </table-row>
+      <table-row>
+         <table-cell>
+            multiple
+         </table-cell>
+         <table-cell>
+            If <code>true</code>, enables multiple date selection mode. Default: <code>false</code>.
+         </table-cell>
+      </table-row>
+      <table-row>
+         <table-cell>
+            week-numbers
+         </table-cell>
+         <table-cell>
+            If <code>true</code>, displays week numbers in the calendar. Default: <code>false</code>.
+         </table-cell>
+      </table-row>
+      <table-row>
+         <table-cell>
+            selectable-header
+         </table-cell>
+         <table-cell>
+            If <code>true</code>, displays month and year dropdowns for quick navigation. Default: <code>false</code>.
+         </table-cell>
+      </table-row>
+      <table-row>
+         <table-cell>
+            with-today
+         </table-cell>
+         <table-cell>
+            If <code>true</code>, displays a button to quickly navigate to today's date. Default: <code>false</code>.
+         </table-cell>
+      </table-row>
+      
+   </table-body>
+   <table-footer>
+      <table-row>
+         <table-cell colspan="2"></table-cell>
+      </table-row>
+   </table-footer>
+</table-component>
+         </div>
 	
 	
+         <div class="panel overflow-auto mt-8">
+            <table-component>
+   <table-caption class="caption-bottom text-sm text-muted text-dark">
+      Date Range static methods
+   </table-caption>
+   <table-header>
+      <table-row>
+         <table-head>Static Method</table-head>
+         <table-head>Description</table-head>
+      </table-row>
+   </table-header>
+   <table-body>
+      <table-row>
+         <table-cell>
+            today()
+         </table-cell>
+         <table-cell>
+            Create a DateRange for today.
+         </table-cell>
+      </table-row>
+      <table-row>
+         <table-cell>
+            yesterday()
+         </table-cell>
+         <table-cell>
+            Create a DateRange for yesterday.
+         </table-cell>
+      </table-row>
+      <table-row>
+         <table-cell>
+            thisWeek()
+         </table-cell>
+         <table-cell>
+            Create a DateRange for the current week.
+         </table-cell>
+      </table-row>
+      <table-row>
+         <table-cell>
+            lastWeek()
+         </table-cell>
+         <table-cell>
+            Create a DateRange for the previous week.
+         </table-cell>
+      </table-row>
+      <table-row>
+         <table-cell>
+            last7Days()
+         </table-cell>
+         <table-cell>
+            Create a DateRange for the last 7 days.
+         </table-cell>
+      </table-row>
+      <table-row>
+         <table-cell>
+            thisMonth()
+         </table-cell>
+         <table-cell>
+            Create a DateRange for the current month.
+         </table-cell>
+      </table-row>
+      <table-row>
+         <table-cell>
+            lastMonth()
+         </table-cell>
+         <table-cell>
+            Create a DateRange for the previous month.
+         </table-cell>
+      </table-row>
+      <table-row>
+         <table-cell>
+            thisYear()
+         </table-cell>
+         <table-cell>
+            Create a DateRange for the current year.
+         </table-cell>
+      </table-row>
+      <table-row>
+         <table-cell>
+            lastYear()
+         </table-cell>
+         <table-cell>
+            Create a DateRange for the previous year.
+         </table-cell>
+      </table-row>
+      <table-row>
+         <table-cell>
+            yearToDate()
+         </table-cell>
+         <table-cell>
+            Create a DateRange from January 1st to today.
+         </table-cell>
+      </table-row>
+   </table-body>
+   <table-footer>
+      <table-row>
+         <table-cell colspan="2"></table-cell>
+      </table-row>
+   </table-footer>
+</table-component>
+         </div>
 
 	
 
@@ -196,11 +444,12 @@
 	
 	
 
-	        <div class="row">
-        <div class="col-12 m-t">
-            <div class="panel">
-			    <p>To be completed</p>            </div>
-        </div>
+         <div class="row">
+            <div class="col-12 mt-4">
+               <div class="panel">
+                  <p>To be completed</p>
+               </div>
+            </div>
          </div>
 	
 
@@ -264,6 +513,7 @@
 <script src="../resources/assets/js/splide.min.js"></script>
 <script src="../resources/assets/js/small-menu.js"></script>
 <script src="../resources/assets/js/carousel.js"></script>
+<script src="../resources/assets/js/table.js"></script>
 
 <!-- end feather icons js lib -->
 
