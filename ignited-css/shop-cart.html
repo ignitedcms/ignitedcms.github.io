@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>cart</title>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+
+
+      <link href="../resources/assets/css/output.css" rel="stylesheet" />
+      <script src="../resources/assets/js/vue2.js"></script>
+   </head>
+   <body class="h-screen v-screen bg-white dark:bg-darker">
+      <div id="app">
+
+		   <mega-menu v-cloak  logo="../resources/assets/images/ignitedcms-logo.svg" alt="logo" url="shop.html">
+			   <menu-items
+					   title="Account"
+					   url="shop-account.html">
+
+			   </menu-items>
+			   <menu-items
+					   title=""
+					   url="shop-cart.html">
+
+               <sheet position="right">
+               <sheet-trigger class="">
+                  Cart (2)
+               </sheet-trigger>
+               <sheet-overlay>
+                  <sheet-content>
+                     <sheet-header class="p-4">
+                        <sheet-title>Your cart</sheet-title>
+                        <sheet-description>
+                           Contents of your cart
+                        </sheet-description>
+                     </sheet-header>
+                     <div class="p-4">
+
+                        <div class="row">
+                           <div class="col-4 m-0">
+                              <img src="../img/t-shirt.jpg" 
+                              class="size-16 rounded-xl border border-slate-400  cursor-pointer overflow-auto"></img>
+                           </div>
+                           <div class="col-4 m-0">
+                              <header5 class="mb-0">
+                              Apparel
+                              </header5>
+                              <description>Gray T-shirt</description>
+                           </div>
+                           <div class="col-4 m-0">
+                              <description>£299</description>
+                           </div>
+                        </div>
+                        <div class="row mt-2">
+                           <div class="col-4 m-0">
+                              <img src="../img/t-shirt.jpg" 
+                              class="size-16 rounded-xl border border-slate-400  cursor-pointer overflow-auto"></img>
+                           </div>
+                           <div class="col-4 m-0">
+                              <header5 class="mb-0">
+                              Apparel
+                              </header5>
+                              <description>Gray T-shirt</description>
+                           </div>
+                           <div class="col-4 m-0">
+                              <description>£299</description>
+                           </div>
+                        </div>
+
+                        <div class="row mt-4">
+                           <div class="col-12 m-0 h-e">
+                              <header5>
+                              Subtotal
+                              </header5>
+                              <div>
+                                 <header5>
+                                 £499
+                                 </header5>
+                              </div>
+                           </div>
+                        </div>
+
+                        <a href="shop-cart.html">
+                           <button-component variant="dark" class="w-full mt-2">
+                              Go to cart
+                           </button-component>
+                        </a>
+                        
+
+                     </div>
+                  </sheet-content>
+               </sheet-overlay>
+               </sheet>
+
+			   </menu-items>
+		   </mega-menu>
+
+         <mobile-menu v-cloak  logo="../resources/assets/images/ignitedcms-logo.svg" alt="test" url="#">
+            
+            <mobile-menu-items
+                  title="Account"
+                  url="shop-account.html">
+            </mobile-menu-items>
+            <mobile-menu-items
+                  title="Cart"
+                  url="shop-cart.html">
+            </mobile-menu-items>
+         </mobile-menu>
+         
+         
+
+         <div class="bg-white cart-content min-h-[500px]">
+            <div class="gap"></div>
+            <div class="default-container">
+               <div class="row">
+                  <div class="col-8">
+                     <div class="h-e">
+                        <div>
+                           <h4>Already have an account?</h4>
+                           <div>Sign in for a better experience</div>
+                        </div>
+
+                        <div class="mr-4">
+                           <a href="shop-account.html">
+                              <button-component variant="outline">
+                                 Sign in
+                              </button-component>
+                           </a>
+                           
+                        </div>
+                     </div>
+
+
+                     <div class="form-group">
+
+                        <h3>Cart</h3>
+                        <!--the cart needs to be a table-->
+                        <div class="row">
+                           <div class="col">
+                              <div class="text-black font-medium mb-2">Item</div>
+                              <img src="../img/t-shirt.jpg" class="h-[90px] w-[90px] rounded-md border border-[--gray] overflow-auto"></img>
+                           </div>
+                           <div class="col">
+                              <div class="text-black font-medium mb-2">Quantity</div>
+                              <div class="v-a">
+
+                                 <button-component variant="outline" style="padding:0px; border:none;" >
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                       <path stroke-linecap="round" stroke-linejoin="round" d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0" />
+                                    </svg>
+                                 </button-component>
+                              
+
+
+                              <select class="ml-2 form-select w-[60px]" name="a" aria-label="Default select example">
+                                 <option value="1" selected>1</option>
+                                 <option value="2">2</option>
+                                 <option value="3">3</option>
+                              </select>
+                              
+                              </div>
+
+                           </div>
+                           <div class="col">
+                              <div class="text-black font-medium mb-2">Price</div>
+                              <div>£299</div>
+
+                           </div>
+
+                           <div class="col">
+                              <div class="text-black font-medium mb-2">Total</div>
+                              <div>£299</div>
+
+                           </div>
+                        </div>
+                     </div>
+                      
+
+                  </div>
+                  <div class="col-4">
+                     <h4>Summary</h4>
+
+                     <div class="text-sm text-info select-none cursor-pointer" @click="toggle">Add discount code</div>
+
+                     <div class="row" v-if="show">
+                        <div class="col-9">
+                           <input 
+                            class="form-control" 
+                            type="text"
+                            name="a" 
+                            value="" 
+                            placeholder="Discount code" />
+                        </div>
+                        <div class="col-3">
+                           <button-component variant="outline" class="w-full" @click.native="checkDiscountCode">
+                              Apply
+                           </button-component>
+                        </div>
+                     </div>
+
+                     <div class="divider"></div>
+                     <div class="form-group">
+                        <div class="h-e">
+                           <div>Subtotal</div>
+                           <div>£299</div>
+                        </div>
+                     </div>
+                     <div class="">
+                        <div class="h-e">
+                           <div>Shipping</div>
+                           <div>£299</div>
+                        </div>
+                     </div>
+                     <div class="">
+                        <div class="h-e">
+                           <div>Taxes</div>
+                           <div>£299</div>
+                        </div>
+                     </div>
+                     <div class="form-group">
+
+                        <div class="h-e">
+                              <div class="text-black font-medium mb-2">Total</div>
+                              <div class="text-black font-medium">£299</div>
+                        </div>
+                     </div>
+   
+
+                     <div class="divider"></div>
+
+                     <div class="form-group">
+                        <a href="shop-checkout.html">
+                           <button-component variant="dark" class="w-full">
+                              Go to checkout
+                           </button-component>
+                        </a>
+
+                     </div>
+
+
+                  </div>
+               </div>
+            </div>
+
+
+         </div>
+         
+         <div class="gap"></div>
+
+         
+
+         <div class="bg-white border-t border-[--gray] footer ">
+            <div class="default-container h-[400px] pt-16 pb-16">
+               <div class="row">
+                  <div class="col-8">
+                     <div class="h-[200px] v-e">
+
+                        <div class="text-black">Acme store</div>
+                        <div class="text-muted text-sm">© 2024 Acme Store. All rights reserved.</div>
+                     </div>
+                  </div>
+                  <div class="col-4">
+                     <h5>Links</h5>
+                     <a href="#" class="underline">
+                        Categories
+                     </a> <br>
+                     <a href="#" class="underline">
+                        Hoodies
+                     </a> <br>
+                     <a href="#" class="underline">
+                        Accessories
+                     </a> <br>
+                     <a href="#" class="underline">
+                        Returns
+                     </a> <br>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+
+
+      </div>
+      <script src="../resources/assets/js/click-outside.js"></script>
+      <script src="../resources/assets/js/focus-trap.js"></script>
+      <script src="../resources/assets/js/dark-mode.js"></script>
+      <script src="../resources/assets/js/buttons.js"></script>
+      <script src="../resources/assets/js/forms.js"></script>
+      <script src="../resources/assets/js/sheet.js"></script>
+      <script src="../resources/assets/js/menu.js"></script>
+      <script src="../resources/assets/js/mobile-menu.js"></script>
+
+      <script>
+         var app = new Vue({
+            el: '#app',
+            data:{
+               show:false
+            },
+            methods:{
+               toggle()
+               {
+                  this.show = !this.show
+               },
+               checkDiscountCode()
+               {
+                  alert('code invalid')
+               }
+            }
+         });
+      </script>
+      
+
+
+   </body>
+</html>

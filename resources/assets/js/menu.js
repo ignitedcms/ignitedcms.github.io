@@ -1,5 +1,4 @@
 /*
-|---------------------------------------------------------------
 | menu component
 |---------------------------------------------------------------
 |
@@ -10,7 +9,6 @@
 | @since: 1.0
 |
 */
-
 Vue.component('mega-menu', {
   props: [
     'logo',
@@ -18,8 +16,7 @@ Vue.component('mega-menu', {
     'alt'
   ],
   template: `
-
-    <div 
+    <div
      class="hide-tablet
       top-0
       bg-white
@@ -28,7 +25,7 @@ Vue.component('mega-menu', {
       sticky
       z-30"
     >
-     <div 
+     <div
       class="
        h-e
        v-a
@@ -49,12 +46,12 @@ Vue.component('mega-menu', {
             ></img>
           </a>
         </div>
-        <nav class="min-w-[250px]">
-          <ul class="rm-list-styles h-e">
+        <nav class="">
+          <ul class="space-x-4 rm-list-styles h-e v-a">
           <slot></slot>
           </ul>
         </nav>
-        
+
       </div>
     </div>
   `,
@@ -65,7 +62,6 @@ Vue.component('mega-menu', {
   },
   methods: {}
 });
-
 Vue.component('menu-items', {
   props: [
     'title',
@@ -83,6 +79,7 @@ Vue.component('menu-items', {
         >
           {{title}}
         </a>
+        <slot></slot>
       </div>
       <div
         v-if="children === 'yes'"
@@ -90,7 +87,6 @@ Vue.component('menu-items', {
          v-a
          relative
          cursor-pointer"
-
         @click="toggle"
         v-click-outside="away"
       >
@@ -112,7 +108,7 @@ Vue.component('menu-items', {
         v-if="show"
         @click.stop
         class="
-         absolute 
+         absolute
          top-[40px]
          left-[-10px]
          min-h-[100px]
@@ -147,7 +143,6 @@ Vue.component('menu-items', {
     }
   }
 });
-
 Vue.component('menu-item', {
   props: [
     'title',
@@ -167,7 +162,7 @@ Vue.component('menu-item', {
          hover:bg-slate-100
          rounded-md"
       >
-        
+
         <div class="ml-2">{{title}}</div>
       </a>
     </li>

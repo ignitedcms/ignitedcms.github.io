@@ -1,0 +1,215 @@
+<!doctype html>
+<html>
+   <head>
+      <title>test</title>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+      <link href="../resources/assets/css/output.css" rel="stylesheet" />
+      <script src="../resources/assets/js/vue2.js"></script>
+   </head>
+   <body class="h-screen v-screen bg-white dark:bg-dark">
+      <div id="app">
+         <div class="gap"></div>
+         <div class="default-container">
+            <header1>
+            Settings
+            </header1>
+            <div>
+            Manage your account settings and e-mail preferences
+            </div>
+
+            <tabs class="mt-4">
+            <tab-item title="Profile">
+               <div class="p-2">
+                  <header4>
+                     Profile
+                  </header4>
+                  <paragraph>
+                     This is how others will see you on the
+                     site
+                  </paragraph>
+                  <separator>
+                  </separator>
+                  <label-component>
+                     Username
+                  </label-component>
+                  <input-component placeholder="Start typing" class="mt-2">
+                  </input-component>
+                  <description class="mt-2">
+                  This is your public display name. It can be your real name or a pseudonym. You can only change this once every 30 days.
+                  </description>
+                  <separator>
+                  </separator>
+                  <label-component>
+                     Email
+                  </label-component>
+                  <input-component placeholder="Start typing" class="mt-2">
+                  </input-component>
+                  <description class="mt-2">
+                  Please choose a vaild email address
+                  you have access to
+                  </description>
+                  <separator>
+                  </separator>
+                  <label-component>
+                     Bio
+                  </label-component>
+                  <textarea-component placeholder="Start typing" class="mt-2">
+                  </textarea-component>
+                  <description class="mt-2">
+                  You can mention others with @others
+                  </description>
+
+                  <div class="mt-2">
+                     <button-component variant="dark">
+                        Update profile
+                     </button-component>
+                  </div>
+
+               </div>
+            </tab-item>
+            <tab-item title="Account">
+               <div class="p-2">
+                  <header4>
+                  Account
+                  </header4>
+                  <paragraph>
+                  Update your account settings.
+                  Set your preferred language and timezone.
+                  </paragraph>
+                  <separator>
+                  </separator>
+                  <label-component>
+                     Name
+                  </label-component>
+                  <input-component placeholder="Start typing" class="mt-2">
+                  </input-component>
+                  <description class="mt-2">
+                  This is your public display name. 
+                  </description>
+                  <separator>
+                  </separator>
+                  <label-component>
+                     Date of birth
+                  </label-component>
+
+                  <datepicker name="foo" value="2025-09-09"></datepicker>
+                  
+                  <description class="mt-2">
+                  Your date of birth is used
+                  to calculate your age
+                  </description>
+                  <separator>
+                  </separator>
+                  <label-component>
+                     Language
+                  </label-component>
+                  <combobox name="lang" value="English">
+                  <combo-item val="1" label="English"></combo-item>
+                  <combo-item val="2" label="Deutsh"></combo-item>
+                  <combo-item val="3" label="Japanese"></combo-item>
+                  <combo-item val="4" label="French"></combo-item>
+                  <combo-item val="5" label="Spanish"></combo-item>
+                  </combobox>
+                  
+                  <description class="mt-2">
+                  The language that will be used
+                  in your dashboard
+                  </description>
+
+                  <div class="mt-2">
+                     <button-component variant="dark">
+                        Update account
+                     </button-component>
+                  </div>
+
+               </div>
+               
+            </tab-item>
+            <tab-item title="Notifications">
+               <div class="p-2">
+               
+                  <header4>
+                  Notifications
+                  </header4>
+                  <paragraph>
+                  Configure how you receive notifications
+                  </paragraph>
+                  <separator>
+                  </separator>
+                  <header5>
+                  Email notifications
+                  <header5>
+                  <div class="form-group" style="width:60%;">
+                   <div class="panel h-e v-a">
+                      <div>
+
+                         <label for="marketing">Marketing emails</label>
+                         <div class="text-sm text-muted">Receive emails about new products, features and more.</div>
+                      </div>
+                      <switch-ios name="b" value="checked" id="marketing" ></switch-ios>
+                   </div>
+                   <div class="panel h-e v-a mt-4">
+                      <div>
+
+                         <label for="security">Security emails</label>
+                         <div class="text-sm text-muted">Receive emails about your account security .</div>
+                      </div>
+                      <switch-ios name="c" value="" id="security" ></switch-ios>
+                   </div>
+                   <separator>
+                   </separator>
+                   <checkbox-component v-model="selectedOptions" :options="options">
+                  </checkbox-component>
+                  <description>
+                  <p class="ml-7">
+                  You can manage your mobile notifications in the mobile settings page.
+                  </p>
+                  </description>
+
+                   <div class="mt-6">
+                      <button-component variant="dark">
+                         Update notifications
+                      </button-component>
+                   </div>
+                </div>
+               </div>
+            </tab-item>
+            </tabs>
+
+
+
+         </div>
+         <div class="gap"></div>
+         
+      </div>
+      <script src="../resources/assets/js/click-outside.js"></script>
+      <script src="../resources/assets/js/focus-trap.js"></script>
+      <script src="../resources/assets/js/dark-mode.js"></script>
+      <script src="../resources/assets/js/datepicker.js"></script>
+      <script src="../resources/assets/js/collapsible.js"></script>
+      <script src="../resources/assets/js/combobox.js"></script>
+      <script src="../resources/assets/js/forms.js"></script>
+      <script src="../resources/assets/js/popover.js"></script>
+      <script src="../resources/assets/js/buttons.js"></script>
+      <script src="../resources/assets/js/tabs.js"></script>
+      <script src="../resources/assets/js/separator.js"></script>
+      <script src="../resources/assets/js/switch.js"></script>
+      <script>
+         var app = new Vue({
+           el: "#app",
+           data: {
+             theme: "",
+              selectedOptions:'',
+              options:[
+                { title: 'Use different settings for my mobile device', value: 'home' },
+            ],
+           },
+         });
+      </script>
+      
+   </body>
+</html>

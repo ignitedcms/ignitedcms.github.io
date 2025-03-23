@@ -77,7 +77,7 @@ Vue.component('breadcrumb-item', {
     text-dark
     "
   >
-  <a :href="url">
+  <a :href="url" class="text-dark">
    {{ title }}
   </a>
   </li>

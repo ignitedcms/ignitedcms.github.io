@@ -17,7 +17,7 @@ Vue.component('dark-mode', {
 <button
    @click="toggleDarkMode"
    class="fixed
-   z-10
+   z-50
    p-1
    right-4
    border
