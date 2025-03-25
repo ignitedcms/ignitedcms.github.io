@@ -37,7 +37,7 @@ Vue.component("combobox", {
          p
          h-e
          v-a 
-         w-[250px]
+         w-full
          h-[40px]
          text-sm
          dark:bg-darkest 
