@@ -15,7 +15,7 @@
         <form method="post">
             <div>
                 <label for="directory">Directory Path:</label><br>
-                <input value="/Users/user/Documents/GitHub/ignitedcms.github.io" type="text" name="directory" id="directory" style="width: 100%;" required>
+                <input value="/Users/user/Documents/herd/ignitedcms.github.io" type="text" name="directory" id="directory" style="width: 100%;" required>
             </div>
             <div>
                 <label for="original">Original String:</label><br>
