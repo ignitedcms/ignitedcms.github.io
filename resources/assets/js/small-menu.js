@@ -34,7 +34,7 @@ Vue.component("small-menu", {
   </button>
      <div class="text-center text-2xl">
      <div><a href="/index.html" class="hover:text-black">IgnitedCMS</a></div>
-     <div><a href="/kamijs.html" class="hover:text-black">Kamijs</a></div>
+     <div><a href="/kamijs.html" class="hover:text-black">Fission UI</a></div>
      <div><a href="/blog.html" class="hover:text-black">Blog</a></div>
      <div><a href="/about.html" class="hover:text-black">About</a></div>
      <div><a href="/contact.html" class="hover:text-black">Contact</a></div>

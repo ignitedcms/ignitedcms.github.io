@@ -31,6 +31,7 @@ Vue.component("combobox", {
         aria-haspopup="dialog"
         :aria-expanded="arr"
         :aria-controls="name"
+        style="width:250px"
         ref="button"
         class="
          form-control 
