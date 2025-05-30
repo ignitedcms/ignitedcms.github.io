@@ -175,7 +175,7 @@
             
 	        <div class="row">
         <div class="col-12 m-t">
-			<h3>Accordion components</h3>
+			<h3>Accordion</h3>
          A vertically stacked set of interactive headings that each reveal a section of content.
         </div>
          </div>
@@ -192,49 +192,42 @@
 
 	
     
-            <div class="row">
-            <div class="col-12 m-t">
-                <div class="panel v-a h-a bg-light border" style="min-height:300px;">  
+            
+            
 
-         <accordion style="width:60%;">
-            <accordion-item title="Is it accessible?">
-               <p class="text-muted">
-                  Yes. It adheres to the WAI-ARIA design pattern.
-               </p>
-            </accordion-item>
-            <accordion-item title="Is it styled?">
-               <p class="text-muted">
-                  Yes. It comes with default styles that matches the other 
-                  components' aesthetic.
-               </p>
-            </accordion-item>
-            <accordion-item title="Is it animated?">
-               <p class="text-muted">
-                  Yes. It's animated by default, but you can disable it 
-                  if you prefer.
-               </p>
-            </accordion-item>
-         </accordion>
 
-</div>            </div>
-         </div>
-	
+               <tabs>
+               <tab-item title="Preview">
 
-	
-	
+                  <div class="panel v-a h-a bg-light border mt-4" style="min-height:300px;">  
 
-	
+                     <accordion style="width:60%;">
+                     <accordion-item title="Is it accessible?">
+                        <p class="text-muted">
+                        Yes. It adheres to the WAI-ARIA design pattern.
+                        </p>
+                     </accordion-item>
+                     <accordion-item title="Is it styled?">
+                        <p class="text-muted">
+                        Yes. It comes with default styles that matches the other 
+                        components' aesthetic.
+                        </p>
+                     </accordion-item>
+                     <accordion-item title="Is it animated?">
+                        <p class="text-muted">
+                        Yes. It's animated by default, but you can disable it 
+                        if you prefer.
+                        </p>
+                     </accordion-item>
+                     </accordion>
 
-	
-
-	
-    
-    
-
-	
-	        <div class="foo mt-4">
+                  </div>
+               </tab-item>
+               <tab-item title="Code">
+<div class="foo mt-4">
 <div class="foo">
-<pre class="code">&lt;div class=&quot;panel&quot;&gt;
+<code-block>
+&lt;div class=&quot;panel&quot;&gt;
    &lt;div class=&quot;row&quot;&gt;
       &lt;div class=&quot;col&quot;&gt;
          &lt;h3&gt;Accordions&lt;/h3&gt;
@@ -259,9 +252,46 @@
          &lt;/accordion&gt;
       &lt;/div&gt;
    &lt;/div&gt;
-&lt;/div&gt;</pre>
+&lt;/div&gt;
+
+</code-block>
             </div>
-         </div>        
+         </div>
+               </tab-item>
+               </tabs>
+
+
+                           
+         
+	
+
+	
+	
+<!--button nav-->
+<div class="h-e mt-8">
+   <link-component
+   title="Components"
+   url="components.html"
+   newtab="no"
+   class="btn-white !no-underline">
+</link-component>
+<link-component
+   title="Alerts"
+   url="alerts.html"
+   newtab="no"
+   class="btn-white !no-underline">
+</link-component>
+</div>   
+	
+
+	
+
+	
+    
+    
+
+	
+	                
 	
 
 	
@@ -302,6 +332,7 @@
 <script src="../resources/assets/js/dropdown.js"></script>
 <script src="../resources/assets/js/file-upload.js"></script>
 <script src="../resources/assets/js/datepicker.js"></script>
+<script src="../resources/assets/js/forms.js"></script>
 <script src="../resources/assets/js/accordions.js"></script>
 <script src="../resources/assets/js/switch.js"></script>
 <script src="../resources/assets/js/sidebar.js"></script>
@@ -325,6 +356,10 @@
 <script src="../resources/assets/js/splide.min.js"></script>
 <script src="../resources/assets/js/small-menu.js"></script>
 <script src="../resources/assets/js/carousel.js"></script>
+
+
+<script src="../resources/assets/js/clipboard.min.js"></script>
+<script src="../resources/assets/js/code-block.js"></script>
 
 <!-- end feather icons js lib -->
 
@@ -419,6 +454,9 @@
         });    
     </script>
 
+<script>
+         new ClipboardJS('.code-copy');
+</script>
 
 <script>
          const ctx = document.getElementById('myChart');
