@@ -181,32 +181,22 @@
         </div>
          </div>
 	
-	
-    
-         <div class="row">
-            <div class="col-12 m-t">
-               <div class="form-group v-a h-a border p-4" style="min-height:300px;">
-                  
-                     <breadcrumb>
-                     <breadcrumb-item title="Home"></breadcrumb-item>
-                     <breadcrumb-separator></breadcrumb-separator>
-                     <breadcrumb-item title="Components"></breadcrumb-item>
-                     <breadcrumb-separator></breadcrumb-separator>
-                     <breadcrumb-item title="Breadcrumb" url="test"></breadcrumb-item>
-                     </breadcrumb>
-                  
-                     
-                  
+         <tabs>
+         <tab-item title="Preview">
+            <div class="panel v-a h-a mt-8" style="min-height:300px;">
 
-               </div>           
+               <breadcrumb>
+               <breadcrumb-item title="Home"></breadcrumb-item>
+               <breadcrumb-separator></breadcrumb-separator>
+               <breadcrumb-item title="Components"></breadcrumb-item>
+               <breadcrumb-separator></breadcrumb-separator>
+               <breadcrumb-item title="Breadcrumb" url="test"></breadcrumb-item>
+               </breadcrumb>
+
             </div>
-         </div>
-	
-
-	
-	        <div class="foo mt-4">
-<div class="foo">
-<pre class="code">
+         </tab-item>
+         <tab-item title="Code" class="mt-8">
+<code-block>
 &lt;breadcrumb&gt;
    &lt;breadcrumb-item title=&quot;Home&quot;&gt;&lt;/breadcrumb-item&gt;
    &lt;breadcrumb-separator&gt;&lt;/breadcrumb-separator&gt;
@@ -214,9 +204,20 @@
    &lt;breadcrumb-separator&gt;&lt;/breadcrumb-separator&gt;
    &lt;breadcrumb-item title=&quot;Breadcrumb&quot; url=&quot;test&quot;&gt;&lt;/breadcrumb-item&gt;
 &lt;/breadcrumb&gt;
-</pre>
-            </div>
-         </div>        
+</code-block>
+         </tab-item>
+         </tabs>	
+   
+
+                          
+	
+
+	
+	        
+
+
+            
+                 
 	
 
 	
@@ -231,7 +232,22 @@
 	
 
 	
-    
+    <!--button nav-->
+<div class="h-e mt-8">
+   <link-component
+   title="Blocks"
+   url="blocks.html"
+   newtab="no"
+   class="btn-white !no-underline">
+</link-component>
+<link-component
+   title="Buttons"
+   url="buttons.html"
+   newtab="no"
+   class="btn-white !no-underline">
+</link-component>
+</div>   
+
     
 
 	
@@ -271,6 +287,7 @@
 <script src="../resources/assets/js/badges.js"></script>
 <script src="../resources/assets/js/breadcrumbs.js"></script>
 <script src="../resources/assets/js/avatar.js"></script>
+<script src="../resources/assets/js/forms.js"></script>
 <script src="../resources/assets/js/tooltip.js"></script>
 <script src="../resources/assets/js/popover.js"></script>
 <script src="../resources/assets/js/modals.js"></script>
@@ -300,6 +317,10 @@
 <script src="../resources/assets/js/splide.min.js"></script>
 <script src="../resources/assets/js/small-menu.js"></script>
 <script src="../resources/assets/js/carousel.js"></script>
+
+
+<script src="../resources/assets/js/clipboard.min.js"></script>
+<script src="../resources/assets/js/code-block.js"></script>
 
 <!-- end feather icons js lib -->
 
@@ -394,6 +415,10 @@
         });    
     </script>
 
+<script>
+
+         new ClipboardJS('.code-copy');
+</script>
 
 <script>
          const ctx = document.getElementById('myChart');

@@ -185,61 +185,54 @@
 
 	
 	
-
-	
-
-	
-
-	
-    
-            <div class="row">
-            <div class="col-12 m-t">
-                <div class="form-group v-a h-a border" style="min-height:300px;">
-<div class="form-group">
-   <badge variant="primary">Badge</badge>
-          <badge variant="dark">Badge</badge>
-          <badge variant="secondary">Badge</badge>
-          <badge variant="outline">Badge</badge>
-          <badge variant="destructive">Badge</badge>
-</div>
-</div>            </div>
-         </div>
-	
-
-	
-	
-
-	
-
-	
-
-	
-    
-    
-
-	
-	        <div class="foo mt-4">
-<div class="foo">
-<pre class="code">&lt;div class=&quot;form-group&quot;&gt;
-   &lt;badge variant=&quot;primary&quot;&gt;Badge&lt;/badge&gt;
-   &lt;badge variant=&quot;dark&quot;&gt;Badge&lt;/badge&gt;
-   &lt;badge variant=&quot;secondary&quot;&gt;Badge&lt;/badge&gt;
-   &lt;badge variant=&quot;outline&quot;&gt;Badge&lt;/badge&gt;
-   &lt;badge variant=&quot;destructive&quot;&gt;Badge&lt;/badge&gt;
-&lt;/div&gt;</pre>
+<tabs>
+   <tab-item title="Preview">
+      <div class="panel mt-8">
+            <div class="form-group v-a h-a space-x-1" style="min-height:300px;">
+               <badge variant="primary">Badge</badge>
+               <badge variant="dark">Badge</badge>
+               <badge variant="secondary">Badge</badge>
+               <badge variant="outline">Badge</badge>
+               <badge variant="destructive">Badge</badge>
             </div>
-         </div>        
-	
-
-	
-
-	
-
-	
+         </div>
+   </tab-item>
+   <tab-item title="Code" class="mt-8">
+      <code-block>
+&lt;badge variant=&quot;primary&quot;&gt;Badge&lt;/badge&gt;
+&lt;badge variant=&quot;dark&quot;&gt;Badge&lt;/badge&gt;
+&lt;badge variant=&quot;secondary&quot;&gt;Badge&lt;/badge&gt;
+&lt;badge variant=&quot;outline&quot;&gt;Badge&lt;/badge&gt;
+&lt;badge variant=&quot;destructive&quot;&gt;Badge&lt;/badge&gt;
+      </code-block>
+   </tab-item>
+</tabs>
     
-    
+            
+            
+                     
+         
+	
 
 	
+	
+
+	
+<!--button nav-->
+<div class="h-e mt-8">
+   <link-component
+   title="Avatars"
+   url="avatars.html"
+   newtab="no"
+   class="btn-white !no-underline">
+</link-component>
+<link-component
+   title="Blocks"
+   url="blocks.html"
+   newtab="no"
+   class="btn-white !no-underline">
+</link-component>
+</div>   
 	
 
 	        
@@ -283,6 +276,7 @@
 <script src="../resources/assets/js/file-upload.js"></script>
 <script src="../resources/assets/js/datepicker.js"></script>
 <script src="../resources/assets/js/accordions.js"></script>
+<script src="../resources/assets/js/forms.js"></script>
 <script src="../resources/assets/js/switch.js"></script>
 <script src="../resources/assets/js/sidebar.js"></script>
 <script src="../resources/assets/js/range-sliders.js"></script>
@@ -306,6 +300,9 @@
 <script src="../resources/assets/js/small-menu.js"></script>
 <script src="../resources/assets/js/carousel.js"></script>
 
+
+<script src="../resources/assets/js/clipboard.min.js"></script>
+<script src="../resources/assets/js/code-block.js"></script>
 <!-- end feather icons js lib -->
 
 <script>
@@ -399,6 +396,9 @@
         });    
     </script>
 
+<script>
+         new ClipboardJS('.code-copy');
+</script>
 
 <script>
          const ctx = document.getElementById('myChart');

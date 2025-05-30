@@ -181,31 +181,40 @@
          </div>
 	
     
-    
-         <div class="row">
-            <div class="col-12 mt">
-               <div class="panel v-a h-a bg-light border" style="min-height:300px;">
-                  <alert variant="success" style="width:80%;">
-                  <alert-title> Heads up </alert-title>
-                  <alert-content>
-                     You can add components to the app
-                  </alert-content>
-                  </alert>            
-               </div>
-            </div>
-         </div>
+         <tabs>
+         <tab-item title="Preview">
 
-         <div class="row">
-            <div class="col-12 mt">
-               <div class="panel v-a h-a bg-light border" style="min-height:300px;">
-
-                  <alert variant="destructive" style="width:80%;">
-                  <alert-title> Error </alert-title>
-                  <alert-content> Your session has expired! </alert-content>
-                  </alert>            
-               </div>
+            <div class="panel v-a h-a bg-light border mt-8" style="min-height:300px;">
+               <alert variant="success" style="width:80%;">
+               <alert-title> Heads up </alert-title>
+               <alert-content>
+                  You can add components to the app
+               </alert-content>
+               </alert>            
             </div>
-         </div>
+
+            <div class="panel v-a h-a bg-light border mt-8" style="min-height:300px;">
+
+               <alert variant="destructive" style="width:80%;">
+               <alert-title> Error </alert-title>
+               <alert-content> Your session has expired! </alert-content>
+               </alert>            
+            </div>
+         </tab-item>
+         <tab-item title="Code">
+<code-block class="mt-8">
+&lt;alert variant=&quot;success&quot;&gt;
+   &lt;alert-title&gt; Error &lt;/alert-title&gt;
+   &lt;alert-content&gt; Your session has expired! &lt;/alert-content&gt;
+&lt;/alert&gt;
+
+&lt;alert variant=&quot;destructive&quot;&gt;
+   &lt;alert-title&gt; Error &lt;/alert-title&gt;
+   &lt;alert-content&gt; Your session has expired! &lt;/alert-content&gt;
+&lt;/alert&gt;
+</code-block>
+         </tab-item>
+         </tabs>
 
          <div class="row mt-2">
             <div class="col-12">
@@ -213,9 +222,9 @@
             </div>
          </div>
 
-         <div class="row">
-            <div class="col-12 mt">
-               <div class="panel v-a h-a " style="min-height:300px;">
+         
+         
+            <div class="panel v-a h-a " style="min-height:300px;">
                   <alert variant="success" style="width:80%;">
                   <div class="v-a" style="height:40px;">
                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 text-dark">
@@ -252,12 +261,15 @@
 
                   
                </div>
-            </div>
-         </div>
+         
+         
+         
+            
+               
+            
+         
 
-         <div class="row">
-            <div class="col-12 mt">
-               <div class="panel v-a h-a " style="min-height:300px;">
+               <div class="panel v-a h-a mt-4 " style="min-height:300px;">
                   <alert variant="destructive" style="width:80%;">
 
                   <div class="v-a">
@@ -276,28 +288,30 @@
                   </alert-content>
                   </alert>
                </div>
-            </div>
-         </div>
 	
 	
     
     
 
 	
-	        <div class="foo mt-4">
-<div class="foo">
-<pre class="code">&lt;alert variant=&quot;success&quot;&gt;
-   &lt;alert-title&gt; Error &lt;/alert-title&gt;
-   &lt;alert-content&gt; Your session has expired! &lt;/alert-content&gt;
-&lt;/alert&gt;
-
-&lt;alert variant=&quot;destructive&quot;&gt;
-   &lt;alert-title&gt; Error &lt;/alert-title&gt;
-   &lt;alert-content&gt; Your session has expired! &lt;/alert-content&gt;
-&lt;/alert&gt;</pre>
-            </div>
-         </div>        
 	
+
+<!--button nav-->
+<div class="h-e mt-8">
+   <link-component
+   title="Accordions"
+   url="accordions.html"
+   newtab="no"
+   class="btn-white !no-underline">
+</link-component>
+<link-component
+   title="Avatars"
+   url="avatars.html"
+   newtab="no"
+   class="btn-white !no-underline">
+</link-component>
+</div>   
+
 
 
   <div class="gap"></div>
@@ -335,6 +349,7 @@
 <script src="../resources/assets/js/dropdown.js"></script>
 <script src="../resources/assets/js/file-upload.js"></script>
 <script src="../resources/assets/js/datepicker.js"></script>
+<script src="../resources/assets/js/forms.js"></script>
 <script src="../resources/assets/js/accordions.js"></script>
 <script src="../resources/assets/js/switch.js"></script>
 <script src="../resources/assets/js/sidebar.js"></script>
@@ -358,6 +373,10 @@
 <script src="../resources/assets/js/splide.min.js"></script>
 <script src="../resources/assets/js/small-menu.js"></script>
 <script src="../resources/assets/js/carousel.js"></script>
+
+
+<script src="../resources/assets/js/clipboard.min.js"></script>
+<script src="../resources/assets/js/code-block.js"></script>
 
 <!-- end feather icons js lib -->
 
@@ -451,7 +470,9 @@
            }
         });    
     </script>
-
+<script>
+         new ClipboardJS('.code-copy');
+</script>
 
 <script>
          const ctx = document.getElementById('myChart');

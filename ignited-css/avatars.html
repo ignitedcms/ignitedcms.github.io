@@ -184,49 +184,61 @@
     
 	
     
-         <div class="row">
-            <div class="col-12 m-t">
-               <div class="row bg-white border" style="min-height:300px;">
-                  <div class="col v-a h-a">
-                     <avatar alt="pic" path="../img/lady.png">
-                     </avatar>
-                     </img>
+         
+   <tabs>
+   <tab-item title="Preview">
+      <div class="panel mt-8">
+         <div class="v-a h-a" style="min-height:300px;">
+            <avatar alt="pic" path="../img/lady.png">
+            </avatar>
+            </img>
 
-                  </div>
-               </div>
-            </div>
          </div>
+      </div>
+   </tab-item>
+   <tab-item title="Code" class="mt-8">
+      <code-block>&lt;avatar alt=&quot;A picture of a lady&quot; path=&quot;assets/images/lady.png&quot;&gt;&lt;/avatar&gt;</code-block>
+   </tab-item>
+   </tabs>
+               
+            
+         
          
 	
 
 	
 
 	
-         <div class="foo mt-4">
-            <div class="foo">
-               <pre class="code">&lt;avatar alt=&quot;A picture of a lady&quot; path=&quot;assets/images/lady.png&quot;&gt;&lt;/avatar&gt;</pre>
-            </div>
-         </div>        
 	
          <div class="row">
             <div class="col-12 mt">
                <h3>Custom size and border radius</h3>
-               <div class="row bg-white border" style="min-height:300px;">
-                  <div class="col v-a h-a">
-                     <avatar alt="pic" path="../img/lady.png" style="border-radius:8px; height:40px; width:40px; box-shadow:none;">
-                     </avatar>
-                     </img>
+               
+            </div>
+         </div>
 
-                  </div>
-               </div>
+         <tabs>
+         <tab-item title="Preview">
+         <div class="panel mt-8">
+            <div class="v-a h-a" style="min-height:300px;">
+               <avatar alt="pic" path="../img/lady.png" style="border-radius:8px; height:40px; width:40px; box-shadow:none;">
+               </avatar>
+               </img>
+
             </div>
-         </div>
-	
-         <div class="foo mt-4">
-            <div class="foo">
-               <pre class="code">&lt;avatar alt=&quot;pic&quot; path=&quot;img/lady.png&quot; class=&quot;!rounded-sm !shadow-none !size-4&quot;&gt;&lt;/avatar&gt;</pre>
-            </div>
-         </div>
+         </div>   
+         </tab-item>
+         <tab-item title="Code" class="mt-8">
+            <code-block>
+&lt;avatar alt=&quot;pic&quot; path=&quot;img/lady.png&quot; class=&quot;!rounded-sm !shadow-none !size-4&quot;&gt;&lt;/avatar&gt;
+            </code-block>
+         </tab-item>
+         </tabs>
+
+         
+
+
+         
 
 
          <div class="mt-4">
@@ -358,6 +370,22 @@
 
             </div>
 
+
+<!--button nav-->
+<div class="h-e mt-8">
+   <link-component
+   title="Alerts"
+   url="alerts.html"
+   newtab="no"
+   class="btn-white !no-underline">
+</link-component>
+<link-component
+   title="Badges"
+   url="badges.html"
+   newtab="no"
+   class="btn-white !no-underline">
+</link-component>
+</div>   
             
 
              
@@ -397,6 +425,7 @@
 <script src="../resources/assets/js/dropdown.js"></script>
 <script src="../resources/assets/js/file-upload.js"></script>
 <script src="../resources/assets/js/datepicker.js"></script>
+<script src="../resources/assets/js/forms.js"></script>
 <script src="../resources/assets/js/accordions.js"></script>
 <script src="../resources/assets/js/switch.js"></script>
 <script src="../resources/assets/js/sidebar.js"></script>
@@ -422,6 +451,9 @@
 <script src="../resources/assets/js/carousel.js"></script>
 <script src="../resources/assets/js/hover-card.js"></script>
 
+
+<script src="../resources/assets/js/clipboard.min.js"></script>
+<script src="../resources/assets/js/code-block.js"></script>
 <!-- end feather icons js lib -->
 
 <script>
@@ -515,6 +547,9 @@
         });    
     </script>
 
+<script>
+         new ClipboardJS('.code-copy');
+</script>
 
 <script>
          const ctx = document.getElementById('myChart');
