@@ -176,28 +176,33 @@
    </div>
 </div>
 
-<div class="row">
-            <div class="col-12 m-t">
-               <div class="form-group v-a h-a border" style="min-height:300px;">
-                  <div class="form-group" style="width:300px;">
-                     <checkbox-component v-model="selectedOptions" :options="options">
-                     </checkbox-component>
-                     <p>Selected: {{ selectedOptions }}</p>
-                  </div>
-               </div>
-            </div>
+
+<tabs>
+   <tab-item title="Preview">
+      <div class="panel v-a h-a min-h-[300px] mt-8">
+         <div class="form-group" style="width:300px;">
+            <checkbox-component v-model="selectedOptions" :options="options">
+            </checkbox-component>
+            <p>Selected: {{ selectedOptions }}</p>
          </div>
 
+      </div>
 
-         <div class="mt-4">
-            <pre class="code">
-<div v-pre>
+   </tab-item>
+   <tab-item title="Code" class="mt-8">
+      <code-block v-pre>
 &lt;checkbox-component v-model=&quot;selectedOptions&quot; :options=&quot;options&quot;&gt;
 &lt;/checkbox-component&gt;
 &lt;p&gt;Selected: {{ selectedOptions }}&lt;/p&gt;
-</div>
-            </pre>
-         </div>
+      </code-block>
+
+   </tab-item>
+</tabs>
+
+
+
+
+         
 
          <div class="row">
             <div class="col-12">
@@ -218,6 +223,23 @@ options:[
             </pre>
          </div>
 
+
+
+    <!--button nav-->
+<div class="h-e mt-8">
+   <link-component
+   title="Carousel"
+   url="carousel.html"
+   newtab="no"
+   class="btn-white !no-underline">
+</link-component>
+<link-component
+   title="Code blocks"
+   url="code.html"
+   newtab="no"
+   class="btn-white !no-underline">
+</link-component>
+</div>   
             
 </sidebar>
 
@@ -272,6 +294,9 @@ options:[
 <script src="../resources/assets/js/small-menu.js"></script>
 <script src="../resources/assets/js/carousel.js"></script>
 <script src="../resources/assets/js/forms.js"></script>
+
+<script src="../resources/assets/js/clipboard.min.js"></script>
+<script src="../resources/assets/js/code-block.js"></script>
 
 <!-- end feather icons js lib -->
 
@@ -366,6 +391,10 @@ options:[
                
            }
         });    
+    </script>
+
+<script>
+       new ClipboardJS('.code-copy');
     </script>
 
 

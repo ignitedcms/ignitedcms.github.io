@@ -173,38 +173,47 @@
          <div class="foo">
 <div class="foo">
             
-	        <div class="row">
-        <div class="col-12 m-t">
-			<h3>Color picker</h3> 
+   <div class="row">
+      <div class="col-12 m-t">
+         <h3>Color picker</h3> 
          <p>This uses the native html input type='color'</p>
-        </div>
-         </div>
-	
+      </div>
+   </div>
 
-	
-    
-         <div class="row">
-            <div class="col-12 m-t">
-               <div class="row min-h-[300px] border border-[--gray] rounded-[--big-radius]">
-                  <div class="col v-a h-a">
-                     <div class="form-group">
-                        <input 
-                          type="color"
-                          name="colr"
-                          />
-                     </div>
-                  </div>
-               </div>
+   <tabs>
+      <tab-item title="Preview">
+         <div class="panel v-a h-a min-h-[300px] mt-8">
+            <div class="form-group">
+               <input 
+                 type="color"
+                 name="colr"
+                 />
             </div>
          </div>
+
+      </tab-item>
+      <tab-item title="Code" class="mt-8">
+         <code-block>&lt;input type=&quot;color&quot;/&gt;</code-block>
+      </tab-item>
+   </tabs>
 	
 
-         <div class="mt-4">
-<pre class="code">&lt;input type=&quot;color&quot;/&gt;</pre>
-         </div>
 	
-	
-
+<!--button nav-->
+<div class="h-e mt-8">
+   <link-component
+   title="Code"
+   url="code.html"
+   newtab="no"
+   class="btn-white !no-underline">
+</link-component>
+<link-component
+   title="Collapsible"
+   url="collapsible.html"
+   newtab="no"
+   class="btn-white !no-underline">
+</link-component>
+</div>   
 	
 
 	
@@ -238,6 +247,7 @@
 <script src="../resources/assets/js/badges.js"></script>
 <script src="../resources/assets/js/breadcrumbs.js"></script>
 <script src="../resources/assets/js/avatar.js"></script>
+<script src="../resources/assets/js/forms.js"></script>
 <script src="../resources/assets/js/tooltip.js"></script>
 <script src="../resources/assets/js/popover.js"></script>
 <script src="../resources/assets/js/modals.js"></script>
@@ -268,6 +278,8 @@
 <script src="../resources/assets/js/small-menu.js"></script>
 <script src="../resources/assets/js/carousel.js"></script>
 
+<script src="../resources/assets/js/clipboard.min.js"></script>
+<script src="../resources/assets/js/code-block.js"></script>
 <!-- end feather icons js lib -->
 
 <script>
@@ -361,7 +373,10 @@
         });    
     </script>
 
+<script>
 
+         new ClipboardJS('.code-copy');
+</script>
 <script>
          const ctx = document.getElementById('myChart');
 

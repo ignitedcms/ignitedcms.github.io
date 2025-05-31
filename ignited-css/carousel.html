@@ -173,30 +173,22 @@
          <div class="foo">
 <div class="foo">
             
-	        <div class="row">
-        <div class="col-12 m-t">
-			<h4>Carousel</h4>
+   <div class="row">
+      <div class="col-12 m-t">
+         <h4>Carousel</h4>
          <p>A lightweight carousel that works with mobile gestures. You can customize this and have as many as you like on the page.
          It is also fully accessible too.</p>
-        
+
          <br> 
          <p>Due to the carousel bundle size, we have included this as a separate file.</p>
 
-        </div>
-         </div>
+      </div>
+   </div>
 	
     
-    
-
-	
-	
-
-	
-
-	
-
-	
-    		<carousel>
+    <tabs>
+       <tab-item title="Preview">
+<carousel>
    <carousel-item>               
       1
    </carousel-item>
@@ -213,31 +205,13 @@
       5
    </carousel-item>
 </carousel>
-<carousel>
-   <carousel-item>               
-      test
-   </carousel-item>
-   <carousel-item>               
-      testing
-   </carousel-item>
-</carousel>	
-    
-
-	
 	
 
-	
 
-	
-
-	
-    
-    
-
-	
-	        <div class="foo mt-4">
-<div class="foo">
-<pre class="code">&lt;carousel&gt;
+       </tab-item>
+       <tab-item title="Code" class="mt-8">
+          <code-block>
+&lt;carousel&gt;
    &lt;carousel-item&gt;               
       1
    &lt;/carousel-item&gt;
@@ -245,16 +219,52 @@
       2
    &lt;/carousel-item&gt;
 &lt;/carousel&gt;
-&lt;carousel&gt;
-   &lt;carousel-item&gt;               
-      test
-   &lt;/carousel-item&gt;
-   &lt;carousel-item&gt;               
-      testing
-   &lt;/carousel-item&gt;
-&lt;/carousel&gt;</pre>
-            </div>
-         </div>        
+          </code-block>
+
+       </tab-item>
+    </tabs>
+
+	
+	
+
+<!--button nav-->
+<div class="h-e mt-8">
+   <link-component
+   title="Calendar"
+   url="calendar.html"
+   newtab="no"
+   class="btn-white !no-underline">
+</link-component>
+<link-component
+   title="Checkbox"
+   url="checkbox.html"
+   newtab="no"
+   class="btn-white !no-underline">
+</link-component>
+</div>   
+	
+
+	
+
+	
+    
+
+	
+	
+
+	
+
+	
+
+	
+    
+    
+
+	
+	        
+
+            
+                 
 	
 
 	
@@ -308,6 +318,7 @@
 <script src="../resources/assets/js/badges.js"></script>
 <script src="../resources/assets/js/breadcrumbs.js"></script>
 <script src="../resources/assets/js/avatar.js"></script>
+<script src="../resources/assets/js/forms.js"></script>
 <script src="../resources/assets/js/tooltip.js"></script>
 <script src="../resources/assets/js/popover.js"></script>
 <script src="../resources/assets/js/modals.js"></script>
@@ -338,7 +349,8 @@
 <script src="../resources/assets/js/small-menu.js"></script>
 <script src="../resources/assets/js/carousel.js"></script>
 
-<!-- end feather icons js lib -->
+<script src="../resources/assets/js/clipboard.min.js"></script>
+<script src="../resources/assets/js/code-block.js"></script>
 
 <script>
         /*                                                                          
@@ -431,6 +443,9 @@
         });    
     </script>
 
+<script>
+       new ClipboardJS('.code-copy');
+    </script>
 
 <script>
          const ctx = document.getElementById('myChart');
