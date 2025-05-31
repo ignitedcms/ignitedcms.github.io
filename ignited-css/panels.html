@@ -170,59 +170,62 @@
 </ul>
          
 
-         <div class="foo">
 <div class="foo">
-            
-	        <div class="row">
-        <div class="col-12 m-t">
-			<h3>Panels</h3><p>Useful for creating panel content</p>        </div>
-         </div>
-	
-    
-    
+   <div class="foo">
 
-	
-	
+      <div class="row">
+         <div class="col-12 m-t">
+            <h3>Panels</h3><p>Useful for creating panel content</p>        </div>
+      </div>
 
-	
 
-	
 
-	
-    
-            <div class="row">
-            <div class="col-12 m-t">
-                <div class="panel">Lorem ...</div>            </div>
-         </div>
-	
 
-	
-	
+<tabs>
+   <tab-item title="Preview">
 
-	
+      <div class="panel v-a h-a min-h-[300px] mt-8">
 
-	
+            <div class="panel">Lorem ...</div>
+      </div>
 
-	
-    
-    
+   </tab-item>
+   <tab-item title="Code" class="mt-8">
+      <code-block>&lt;div class=&quot;panel &quot;&gt;Lorem ...&lt;/div&gt;</code-block>
 
-	
-	        <div class="foo mt-4">
-<div class="foo">
-<pre class="code">&lt;div class=&quot;panel &quot;&gt;Lorem ...&lt;/div&gt;</pre>
-            </div>
-         </div>        
-	
+   </tab-item>
+</tabs>
 
-	
 
-	
+      
 
-  <div class="gap"></div>
-            </div>
-            
-         </div>
+              
+
+
+      <!--button nav-->
+      <div class="h-e mt-8">
+         <link-component
+               title="Nestable"
+               url="nestable.html"
+               newtab="no"
+               class="btn-white !no-underline">
+         </link-component>
+         <link-component
+               title="Pagination"
+               url="pagination.html"
+               newtab="no"
+               class="btn-white !no-underline">
+         </link-component>
+      </div>   
+
+
+
+
+
+      <div class="gap"></div>
+   </div>
+
+</div>
             
             
          </sidebar>
@@ -245,6 +248,7 @@
 <script src="../resources/assets/js/alerts.js"></script>
 <script src="../resources/assets/js/tabs.js"></script>
 <script src="../resources/assets/js/buttons.js"></script>
+<script src="../resources/assets/js/forms.js"></script>
 <script src="../resources/assets/js/badges.js"></script>
 <script src="../resources/assets/js/breadcrumbs.js"></script>
 <script src="../resources/assets/js/avatar.js"></script>
@@ -277,6 +281,9 @@
 <script src="../resources/assets/js/splide.min.js"></script>
 <script src="../resources/assets/js/small-menu.js"></script>
 <script src="../resources/assets/js/carousel.js"></script>
+
+<script src="../resources/assets/js/clipboard.min.js"></script>
+<script src="../resources/assets/js/code-block.js"></script>
 
 <!-- end feather icons js lib -->
 
@@ -370,6 +377,11 @@
            }
         });    
     </script>
+
+<script>
+
+         new ClipboardJS('.code-copy');
+</script>
 
 
 <script>

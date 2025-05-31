@@ -179,48 +179,46 @@
          <p>Renders an accessible label associated with controls.</p>
       </div>
    </div>
-	
-    
-    
-         <div class="row">
-            <div class="col-12 mt">
-               <div class="panel v-a h-a bg-light border" style="min-height:300px;">
-               
-                  <label-component htmlfor="title">
+
+<tabs>
+   <tab-item title="Preview">
+      <div class="panel v-a h-a min-h-[300px] mt-8">
+<label-component htmlfor="title">
                      A title
                   </label-component>
-                              
-               </div>
-            </div>
-         </div>
+      </div>
 
+   </tab-item>
+   <tab-item title="Code" class="mt-8">
+      <code-block>&lt;label-component htmlfor=&quot;title&quot;&gt;
+   A title
+&lt;/label-component&gt;</code-block>
+
+   </tab-item>
+</tabs>   
+    
+    
          
 	
-	
     
     
 
 	
-         <div class="foo mt-4">
-            <div class="foo">
-               <pre class="code">
-&lt;label-component htmlfor=&quot;title&quot;&gt;
-   A title
-&lt;/label-component&gt;
-               </pre>
-            </div>
-         </div>        
-	
-
-	
-
-	
-
-	
-    
-    
-
-	
+    <!--button nav-->
+<div class="h-e mt-8">
+   <link-component
+   title="Input OTP"
+   url="input-otp.html"
+   newtab="no"
+   class="btn-white !no-underline">
+</link-component>
+<link-component
+   title="Links"
+   url="links.html"
+   newtab="no"
+   class="btn-white !no-underline">
+</link-component>
+</div>   
 	
 
 	        
@@ -287,6 +285,9 @@
 <script src="../resources/assets/js/small-menu.js"></script>
 <script src="../resources/assets/js/carousel.js"></script>
 <script src="../resources/assets/js/forms.js"></script>
+
+<script src="../resources/assets/js/clipboard.min.js"></script>
+<script src="../resources/assets/js/code-block.js"></script>
 
 <!-- end feather icons js lib -->
 
@@ -380,7 +381,10 @@
            }
         });    
     </script>
+<script>
 
+         new ClipboardJS('.code-copy');
+</script>
 
 <script>
          const ctx = document.getElementById('myChart');

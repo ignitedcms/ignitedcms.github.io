@@ -182,69 +182,56 @@
          </p>
         </div>
          </div>
-	
-   <div class="row min-h-[300px] border border-[--gray] rounded-[--big-radius]">
-             <div class="col-12 v-a h-a">
-                <modal>
-                <modal-trigger class="btn btn-white">
-                   Show dialog
-                </modal-trigger>
-                <modal-overlay>
-                <modal-content>
-                   <modal-header class="p-4">
-                      <modal-title>Edit profile</modal-title>
-                      <modal-description>
-                         Make changes to your profile here. Click save when you're done.
-                      </modal-description>
-                   </modal-header>
 
-                   <div class="row px-4 text-dark dark:bg-darker">
-                      <div class="col">
-                         <label for="title" class="text-dark">Name</label>
-                         <input 
-                          class="form-control form-dark" 
-                          type="text"
-                          value="pedro" 
-                          placeholder="test" />
-                         <div class="mt-2"></div>
-                         <label for="title" class="text-dark">Username</label>
-                         <input 
-                          class="form-control form-dark" 
-                          type="text"
-                          value="@pedro" 
-                          placeholder="test" />
-                         
-                         <button-component variant="dark" class="float-right mt-4">
-                            Save changes
-                         </button-component>
-                      </div>
-                   </div>
-                   
-                </modal-content>
 
-                </modal-overlay>
-                </modal>
-             </div>
-          </div> 
-    
+<tabs>
+   <tab-item title="Preview">
+      <div class="panel v-a h-a min-h-[300px] mt-8">
+         <modal>
+         <modal-trigger class="btn btn-white">
+            Show dialog
+         </modal-trigger>
+         <modal-overlay>
+            <modal-content>
+               <modal-header class="p-4">
+                  <modal-title>Edit profile</modal-title>
+                  <modal-description>
+                     Make changes to your profile here. Click save when you're done.
+                  </modal-description>
+               </modal-header>
 
-	
-	
+               <div class="row px-4 text-dark dark:bg-darker">
+                  <div class="col">
+                     <label for="title" class="text-dark">Name</label>
+                     <input 
+                                        class="form-control form-dark" 
+                                        type="text"
+                                        value="pedro" 
+                                        placeholder="test" />
+                     <div class="mt-2"></div>
+                     <label for="title" class="text-dark">Username</label>
+                     <input 
+                                        class="form-control form-dark" 
+                                        type="text"
+                                        value="@pedro" 
+                                        placeholder="test" />
 
-	
+                     <button-component variant="dark" class="float-right mt-4">
+                        Save changes
+                     </button-component>
+                  </div>
+               </div>
 
-	
+            </modal-content>
 
-	
+         </modal-overlay>
+         </modal>
 
-	
-    
-    
+      </div>
 
-	
-	        <div class="foo mt-4">
-<div class="foo">
-<pre class="code">
+   </tab-item>
+   <tab-item title="Code" class="mt-8">
+      <code-block>
 &lt;modal&gt;
    &lt;modal-trigger class=&quot;btn btn-white&quot;&gt;
       Show dialog
@@ -280,16 +267,31 @@
       &lt;/modal-content&gt;
    &lt;/modal-overlay&gt;
 &lt;/modal&gt;
-</pre>
-            </div>
-         </div>        
+      </code-block>
+
+   </tab-item>
+</tabs>
 	
+    
 
 	
 
 	
-
-	
+<!--button nav-->
+<div class="h-e mt-8">
+   <link-component
+   title="Menubar"
+   url="menubar.html"
+   newtab="no"
+   class="btn-white !no-underline">
+</link-component>
+<link-component
+   title="Nestable"
+   url="nestable.html"
+   newtab="no"
+   class="btn-white !no-underline">
+</link-component>
+</div>   
     
     
 
@@ -333,6 +335,7 @@
 <script src="../resources/assets/js/tooltip.js"></script>
 <script src="../resources/assets/js/popover.js"></script>
 <script src="../resources/assets/js/modals.js"></script>
+<script src="../resources/assets/js/forms.js"></script>
 <script src="../resources/assets/js/dropdown.js"></script>
 <script src="../resources/assets/js/file-upload.js"></script>
 <script src="../resources/assets/js/datepicker.js"></script>
@@ -360,7 +363,9 @@
 <script src="../resources/assets/js/small-menu.js"></script>
 <script src="../resources/assets/js/carousel.js"></script>
 
-<!-- end feather icons js lib -->
+<script src="../resources/assets/js/clipboard.min.js"></script>
+<script src="../resources/assets/js/code-block.js"></script>
+
 
 <script>
         /*                                                                          
@@ -452,6 +457,10 @@
            }
         });    
     </script>
+<script>
+
+         new ClipboardJS('.code-copy');
+</script>
 
 
 <script>

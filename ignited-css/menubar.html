@@ -226,11 +226,12 @@
          </div>
 	
     
-    
+<tabs>
+   <tab-item title="Preview">
+      <div class="panel v-a h-a min-h-[300px] mt-8">
 
-	<div class="row">
-         <div class="col-12 m-t">
-            <div class="form-group v-a h-a border p-4" style="min-height:300px;">
+         
+            
                <div style="min-width:400px;" id="main-menu" class="flex bg-white p-1 m-0 border border-gray-300 rounded-md shadow-sm text-muted list-none" role="menubar" aria-label="Main Menu">
   <div id="file-menu" class="menu-item" tabindex="0" role="menuitem" aria-haspopup="true" aria-expanded="false" aria-controls="file-submenu">File
     <div id="file-submenu" class="submenu fade-in-bottom p-1 rounded-md shadow-md border border-gray-300" role="menu" aria-labelledby="file-menu">
@@ -284,35 +285,14 @@
     </div>
   </div>
 </div>
-            </div>           
-         </div>
+                       
+         
+      
       </div>
-	
 
-	
-
-	
-
-	
-    
-    
-
-	
-	
-
-	        
-	
-
-	
-
-	
-    
-    
-
-	
-	        <div class="foo mt-4">
-<div class="foo">
-<pre class="code">
+   </tab-item>
+   <tab-item title="Code" class="mt-8">
+      <code-block>
 &lt;menubar&gt;
    &lt;menubar-menu&gt;
       &lt;menubar-trigger&gt;File&lt;/menubar-trigger&gt;
@@ -405,11 +385,31 @@
       &lt;/menubar-content&gt;
    &lt;/menubar-menu&gt;
 &lt;/menubar&gt;
-</pre>
-            </div>
-         </div>        
+      </code-block>
+
+   </tab-item>
+</tabs>
+
+
+	
+	                
 	
 
+<!--button nav-->
+<div class="h-e mt-8">
+   <link-component
+   title="Menus"
+   url="menus.html"
+   newtab="no"
+   class="btn-white !no-underline">
+</link-component>
+<link-component
+   title="Modals"
+   url="modals.html"
+   newtab="no"
+   class="btn-white !no-underline">
+</link-component>
+</div>   
 	
 
 	
@@ -443,6 +443,7 @@
 <script src="../resources/assets/js/badges.js"></script>
 <script src="../resources/assets/js/breadcrumbs.js"></script>
 <script src="../resources/assets/js/avatar.js"></script>
+<script src="../resources/assets/js/forms.js"></script>
 <script src="../resources/assets/js/tooltip.js"></script>
 <script src="../resources/assets/js/popover.js"></script>
 <script src="../resources/assets/js/modals.js"></script>
@@ -473,7 +474,8 @@
 <script src="../resources/assets/js/small-menu.js"></script>
 <script src="../resources/assets/js/carousel.js"></script>
 
-<!-- end feather icons js lib -->
+<script src="../resources/assets/js/clipboard.min.js"></script>
+<script src="../resources/assets/js/code-block.js"></script>
 
 <script>
         /*                                                                          
@@ -566,7 +568,9 @@
         });    
     </script>
 
-
+<script>
+      new ClipboardJS('.code-copy');
+</script>
 
 <script>
 

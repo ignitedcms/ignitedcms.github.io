@@ -195,7 +195,7 @@
          </div>
          </div>
 
-         <pre class="code">
+         <code-block>
 &lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;en&quot;&gt;
    &lt;head&gt;
@@ -213,7 +213,7 @@
       &lt;/script&gt;
    &lt;/body&gt;
 &lt;/html&gt;
-         </pre>
+         </code-block>
 
          <div class="row">
             <div class="col">
@@ -320,6 +320,9 @@
 <script src="../resources/assets/js/small-menu.js"></script>
 <script src="../resources/assets/js/carousel.js"></script>
 
+<script src="../resources/assets/js/clipboard.min.js"></script>
+<script src="../resources/assets/js/code-block.js"></script>
+
 <!-- end feather icons js lib -->
 
 <script>
@@ -411,6 +414,10 @@
                
            }
         });    
+    </script>
+    <script>
+
+       new ClipboardJS('.code-copy');
     </script>
 
 

@@ -183,55 +183,74 @@
    </div>
 </div>
 
-
-<div class="row">
-   <div class="col-12 m-t">
-      <div class="form-group v-a h-a border" style="min-height:300px;">
-         <div class="form-group">
-            <link-component title="Open google" url="https://www.google.com" newtab="yes">
+<tabs>
+   <tab-item title="Preview">
+      <div class="panel v-a h-a min-h-[300px] mt-8">
+<link-component title="Open google" url="https://www.google.com" newtab="yes">
             </link-component>
-         </div>
       </div>
-   </div>
-</div>
 
-
-<div class="mt-4">
-   <pre class="code">
-<div v-pre>
+   </tab-item>
+   <tab-item title="Code" class="mt-8">
+      <code-block >
 &lt;link-component title=&quot;Open google&quot; url=&quot;https://www.google.com&quot; newtab=&quot;yes&quot;&gt;
 &lt;/link-component&gt;
-</div>
-   </pre>
-</div>
+      </code-block>
+
+   </tab-item>
+</tabs>
+
+
+
+
 
       
 <h3 class="mt-8">Link as button</h3>
-<div class="row">
-   <div class="col-12 m-t">
-      <div class="form-group v-a h-a border" style="min-height:300px;">
-         <div class="form-group">
-            <link-component title="Open google" url="https://www.google.com" newtab="yes" style="text-decoration:none;" class="btn-white !no-underline">
-            </link-component>
-         </div>
-      </div>
-   </div>
-</div>
 
-<div class="mt-4">
-   <pre class="code">
-<div v-pre>
+<tabs>
+   <tab-item title="Preview">
+      <div class="panel v-a h-a min-h-[300px] mt-8">
+<link-component title="Open google" url="https://www.google.com" newtab="yes" style="text-decoration:none;" class="btn-white !no-underline">
+            </link-component>
+      </div>
+
+   </tab-item>
+   <tab-item title="Code" class="mt-8">
+      <code-block>
 &lt;link-component
    title=&quot;Open google&quot;
    url=&quot;https://www.google.com&quot;
    newtab=&quot;yes&quot;
    class=&quot;btn-white !no-underline&quot;&gt;
 &lt;/link-component&gt;
-</div>
-   </pre>
-</div>
+      </code-block>
+
+   </tab-item>
+</tabs>
 
 
+
+
+
+
+
+
+
+    <!--button nav-->
+<div class="h-e mt-8">
+   <link-component
+   title="Labels"
+   url="label.html"
+   newtab="no"
+   class="btn-white !no-underline">
+</link-component>
+<link-component
+   title="Menus"
+   url="menus.html"
+   newtab="no"
+   class="btn-white !no-underline">
+</link-component>
+</div>   
 
   <div class="gap"></div>
             </div>
@@ -293,6 +312,9 @@
 <script src="../resources/assets/js/carousel.js"></script>
 <script src="../resources/assets/js/forms.js"></script>
 
+
+<script src="../resources/assets/js/clipboard.min.js"></script>
+<script src="../resources/assets/js/code-block.js"></script>
 <!-- end feather icons js lib -->
 
 <script>
@@ -386,7 +408,10 @@
         });    
     </script>
 
+<script>
 
+         new ClipboardJS('.code-copy');
+</script>
 <script>
          const ctx = document.getElementById('myChart');
 

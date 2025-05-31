@@ -175,7 +175,7 @@
             
    <div class="row">
       <div class="col-12 m-t">
-         <h3>Menus</h3><p>Menus are perfect for top level navigation, IgnitedCMS ships with two menu components the main menu and the mobile menu. These can be configured easily in the component settings.</p>        
+         <h3>Menus</h3><p>Menus are perfect for top level navigation, Fission UI ships with two menu components the main menu and the mobile menu. These can be configured easily in the component settings.</p>        
       </div>
    </div>
 	
@@ -184,21 +184,20 @@
 	<div class="row">
             <div class="col">
                <a href="block-site-menu.html" class="underline" target="_blank">Full menu and mobile menu</a>
-               <br>
-               <img src="/img/fullmenu.png" alt="full menu" class="img-responsive border rounded-md mt-4"></img>
             </div>
          </div>
 
 	
+<tabs>
+   <tab-item title="Preview">
+      <div class="panel v-a h-a min-h-[300px] mt-8">
 
-	
-    
-    
+               <img src="/img/fullmenu.png" alt="full menu" class="img-responsive border rounded-md mt-4"></img>
+      </div>
 
-	
-         <div class="foo mt-4">
-            <div class="foo">
-               <pre class="code">
+   </tab-item>
+   <tab-item title="Code" class="mt-8">
+      <code-block>
 &lt;mega-menu v-cloak  logo=&quot;assets/images/ignitedcms-logo.svg&quot; alt=&quot;test&quot; url=&quot;#&quot;&gt;
    &lt;menu-items title=&quot;Resources&quot; children=&quot;yes&quot;&gt;
       &lt;menu-item
@@ -254,9 +253,17 @@
       url=&quot;#&quot;&gt;
    &lt;/mobile-menu-items&gt;
 &lt;/mobile-menu&gt;
-               </pre>
-            </div>
-         </div>        
+      </code-block>
+
+
+   </tab-item>
+</tabs>
+	
+    
+    
+
+	
+                 
 	
 
 	
@@ -267,6 +274,22 @@
 	
     
     
+
+<!--button nav-->
+<div class="h-e mt-8">
+   <link-component
+   title="Links"
+   url="links.html"
+   newtab="no"
+   class="btn-white !no-underline">
+</link-component>
+<link-component
+   title="Menubar"
+   url="menubar.html"
+   newtab="no"
+   class="btn-white !no-underline">
+</link-component>
+</div>   
 
 	
 	
@@ -307,6 +330,7 @@
 <script src="../resources/assets/js/badges.js"></script>
 <script src="../resources/assets/js/breadcrumbs.js"></script>
 <script src="../resources/assets/js/avatar.js"></script>
+<script src="../resources/assets/js/forms.js"></script>
 <script src="../resources/assets/js/tooltip.js"></script>
 <script src="../resources/assets/js/popover.js"></script>
 <script src="../resources/assets/js/modals.js"></script>
@@ -336,6 +360,9 @@
 <script src="../resources/assets/js/splide.min.js"></script>
 <script src="../resources/assets/js/small-menu.js"></script>
 <script src="../resources/assets/js/carousel.js"></script>
+
+<script src="../resources/assets/js/clipboard.min.js"></script>
+<script src="../resources/assets/js/code-block.js"></script>
 
 <!-- end feather icons js lib -->
 
@@ -430,6 +457,10 @@
         });    
     </script>
 
+<script>
+
+         new ClipboardJS('.code-copy');
+</script>
 
 <script>
          const ctx = document.getElementById('myChart');
