@@ -63,12 +63,12 @@ Vue.component('tabs', {
   },
   mounted() {
      // Retrieve the active tab index from localStorage
-    const storedIndex = localStorage.getItem('activeTabIndex');
-    if (storedIndex !== null) {
-      this.currentIndex = parseInt(storedIndex, 10);
-    } else {
-      this.currentIndex = 0;
-    }
+    //const storedIndex = localStorage.getItem('activeTabIndex');
+    //if (storedIndex !== null) {
+      //this.currentIndex = parseInt(storedIndex, 10);
+    //} else {
+      //this.currentIndex = 0;
+    //}
     this.selectTab(this.currentIndex);
   },
   methods: {
@@ -81,7 +81,7 @@ Vue.component('tabs', {
       });
 
       // Store the active tab index in localStorage
-      localStorage.setItem('activeTabIndex', i);
+      //localStorage.setItem('activeTabIndex', i);
     },
      onTabKeyDown(event, index) {
         const tabsCount = this.tabs.length;
