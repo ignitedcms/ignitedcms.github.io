@@ -181,8 +181,8 @@
       </div>
 
 
-
-
+<tabs>
+   <tab-item title="Preview">
       <div class="row">
          <div class="col-12 m-t">
             <div class="row">
@@ -211,11 +211,36 @@
          </div>           
       </div>
 
+   </tab-item>
+   <tab-item title="Code" class="mt-8">
+      <code-block>
+      </code-block>
+
+   </tab-item>
+</tabs>
+
+      
+
    </div>
 
 
 
 
+<!--button nav-->
+<div class="h-e mt-8">
+   <link-component
+   title="Sidebars"
+   url="sidebars.html"
+   newtab="no"
+   class="btn-white !no-underline">
+</link-component>
+<link-component
+   title="Sortable blocks"
+   url="sortable-blocks.html"
+   newtab="no"
+   class="btn-white !no-underline">
+</link-component>
+</div>   
 
 
 
@@ -250,6 +275,7 @@
 <script src="../resources/assets/js/badges.js"></script>
 <script src="../resources/assets/js/breadcrumbs.js"></script>
 <script src="../resources/assets/js/avatar.js"></script>
+<script src="../resources/assets/js/forms.js"></script>
 <script src="../resources/assets/js/tooltip.js"></script>
 <script src="../resources/assets/js/popover.js"></script>
 <script src="../resources/assets/js/modals.js"></script>
@@ -279,6 +305,9 @@
 <script src="../resources/assets/js/splide.min.js"></script>
 <script src="../resources/assets/js/small-menu.js"></script>
 <script src="../resources/assets/js/carousel.js"></script>
+
+<script src="../resources/assets/js/clipboard.min.js"></script>
+<script src="../resources/assets/js/code-block.js"></script>
 
 <!-- end feather icons js lib -->
 
@@ -372,6 +401,10 @@
            }
         });    
     </script>
+
+<script>
+         new ClipboardJS('.code-copy');
+</script>
 
 
 <script>

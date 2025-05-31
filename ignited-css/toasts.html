@@ -173,62 +173,45 @@
          <div class="foo">
 <div class="foo">
             
-	        <div class="row">
-        <div class="col-12 m-t">
-			<h3>Toasts</h3><p>A succinct message that is displayed temporarily.</p>        </div>
-         </div>
-	
-    
-    
-
-	
-	
-
-	
-
-	
-
-	
-    
-            <div class="row">
-            <div class="col-12 m-t">
-                <div class="form-group v-a h-a border" style="min-height:300px;">  
-<div class="row">
-   <div class="col">
-   
-      <div class="form-group">
-         <button class="btn btn-white" @click="showToast">Add to calendar</button>
-      </div>
+   <div class="row">
+      <div class="col-12 m-t">
+         <h3>Toasts</h3><p>A succinct message that is displayed temporarily.</p>        </div>
    </div>
-</div>
-<div class="toasts">
-   <toast ref="toast">
-      <div class="p-4">
-         <div class="text-black">Scheduled catch up</div>
-         <div class="text-muted small">Friday, February 10, 2010</div>
-      </div>
-   </toast>
+	
+    
+    
+
+	
+	
+<tabs>
+   <tab-item title="Preview">
+      <div class="panel v-a h-a min-h-[300px] mt-8">
   
-</div>
-</div>            </div>
-         </div>
-	
+            <div class="row">
+               <div class="col">
 
-	
-	
+                  <div class="form-group">
+                     <button class="btn btn-white" @click="showToast">Add to calendar</button>
+                  </div>
+               </div>
+            </div>
+            <div class="toasts">
+               <toast ref="toast">
+               <div class="p-4">
+                  <div class="text-black">Scheduled catch up</div>
+                  <div class="text-muted small">Friday, February 10, 2010</div>
+               </div>
+               </toast>
 
-	
+            </div>
+         
 
-	
+      </div>
 
-	
-    
-    
-
-	
-	        <div class="foo mt-4">
-<div class="foo">
-<pre class="code">&lt;div class=&quot;row&quot;&gt;
+   </tab-item>
+   <tab-item title="Code" class="mt-8">
+      <code-block>
+&lt;div class=&quot;row&quot;&gt;
       &lt;div class=&quot;col&quot;&gt;
          &lt;div class=&quot;form-group&quot;&gt;
             &lt;button class=&quot;btn btn-white&quot; @click=&quot;showToast&quot;&gt;Add to calendar&lt;/button&gt;
@@ -242,46 +225,19 @@
             &lt;div class=&quot;text-muted small&quot;&gt;Friday, February 10, 2010&lt;/div&gt;
          &lt;/div&gt;
       &lt;/toast&gt;
-&lt;/div&gt;</pre>
-            </div>
-         </div>        
-	
+&lt;/div&gt;
+      </code-block>
+      <div class="row">
+         <div class="col-12 m-t">
+            <p>Then with the click handler, add a method to your vue script</p>        </div>
+      </div>
 
-	
-
-	
-
-	        <div class="row">
-        <div class="col-12 m-t">
-			<p>Then with the click handler, add a method to your vue script</p>        </div>
-         </div>
-	
-    
-    
-
-	
-	
-
-	
-
-	
-
-	
-    
-    
-
-	
-         <div class="foo mt-4">
-            <div class="foo">
-               <pre class="code">showToast() {
+      <code-block>showToast() {
       this.$refs.toast.showToast(3000);
-}</pre>
-            </div>
-         </div>        
-	
+}</code-block>
 
-	
-
+   </tab-item>
+</tabs>
 	
 
 	
@@ -289,6 +245,21 @@
     
 
 	
+<!--button nav-->
+<div class="h-e mt-8">
+   <link-component
+   title="Textarea"
+   url="textarea.html"
+   newtab="no"
+   class="btn-white !no-underline">
+</link-component>
+<link-component
+   title="Tooltips"
+   url="tooltips.html"
+   newtab="no"
+   class="btn-white !no-underline">
+</link-component>
+</div>   
 	
 
 	        
@@ -325,6 +296,7 @@
 <script src="../resources/assets/js/badges.js"></script>
 <script src="../resources/assets/js/breadcrumbs.js"></script>
 <script src="../resources/assets/js/avatar.js"></script>
+<script src="../resources/assets/js/forms.js"></script>
 <script src="../resources/assets/js/tooltip.js"></script>
 <script src="../resources/assets/js/popover.js"></script>
 <script src="../resources/assets/js/modals.js"></script>
@@ -354,6 +326,9 @@
 <script src="../resources/assets/js/splide.min.js"></script>
 <script src="../resources/assets/js/small-menu.js"></script>
 <script src="../resources/assets/js/carousel.js"></script>
+
+<script src="../resources/assets/js/clipboard.min.js"></script>
+<script src="../resources/assets/js/code-block.js"></script>
 
 <!-- end feather icons js lib -->
 
@@ -447,6 +422,10 @@
            }
         });    
     </script>
+
+<script>
+         new ClipboardJS('.code-copy');
+</script>
 
 
 <script>

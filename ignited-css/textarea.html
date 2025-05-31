@@ -181,31 +181,33 @@
       </div>
 
 
-      <div class="row">
-         <div class="col-12 m-t">
-            <div class="form-group v-a h-a border" style="min-height:300px;">
-               <div class="form-group" style="width:80%;">
-                  <textarea-component v-model="foo">
-                  </textarea-component>
-                  <div class="mt-2">
-                     {{foo}}
-                  </div>
-               </div>
+<tabs>
+   <tab-item title="Preview">
+      <div class="panel v-a h-a min-h-[300px] mt-8">
+         <div class="form-group" style="width:80%;">
+            <textarea-component v-model="foo">
+            </textarea-component>
+            <div class="mt-2">
+               {{foo}}
             </div>
          </div>
+
       </div>
 
-
-<div class="mt-4">
-   <pre class="code">
-<div v-pre>
-{{foo}}
+   </tab-item>
+   <tab-item title="Code" class="mt-8">
+      <code-block>
 &lt;textarea-component v-model=&quot;foo&quot; placeholder=&quot;Type&quot;&gt;
 &lt;/textarea-component&gt;
 
-</div>
-   </pre>
-</div>
+      </code-block>
+
+   </tab-item>
+</tabs>
+      
+
+
+
 
 <h3 class="mt-4">With text</h3>
 
@@ -257,6 +259,24 @@
 
 
 
+<!--button nav-->
+<div class="h-e mt-8">
+   <link-component
+   title="Testimonials"
+   url="testimonials.html"
+   newtab="no"
+   class="btn-white !no-underline">
+</link-component>
+<link-component
+   title="Toasts"
+   url="toasts.html"
+   newtab="no"
+   class="btn-white !no-underline">
+</link-component>
+</div>   
+
+
+
       <div class="gap"></div>
    </div>
 
@@ -286,6 +306,7 @@
 <script src="../resources/assets/js/badges.js"></script>
 <script src="../resources/assets/js/breadcrumbs.js"></script>
 <script src="../resources/assets/js/avatar.js"></script>
+<script src="../resources/assets/js/forms.js"></script>
 <script src="../resources/assets/js/tooltip.js"></script>
 <script src="../resources/assets/js/popover.js"></script>
 <script src="../resources/assets/js/modals.js"></script>
@@ -316,6 +337,9 @@
 <script src="../resources/assets/js/small-menu.js"></script>
 <script src="../resources/assets/js/carousel.js"></script>
 <script src="../resources/assets/js/forms.js"></script>
+
+<script src="../resources/assets/js/clipboard.min.js"></script>
+<script src="../resources/assets/js/code-block.js"></script>
 
 <!-- end feather icons js lib -->
 
@@ -409,6 +433,10 @@
            }
         });    
     </script>
+
+<script>
+         new ClipboardJS('.code-copy');
+</script>
 
 
 <script>

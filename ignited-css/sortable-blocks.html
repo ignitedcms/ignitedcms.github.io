@@ -189,12 +189,11 @@
             </div>
          </div>
 
-         <pre class="code mt-4">
-#sortable-list {
+<code-block> #sortable-list {
   touch-action: none; /* Critical for preventing page scrolling on mobile */
   user-select: none; /* Prevent text selection during drag */
-}
-         </pre>
+}</code-block> 
+         
 
 	
     
@@ -248,16 +247,23 @@
 
 	
 
+<!--button nav-->
+<div class="h-e mt-8">
+   <link-component
+   title="Skeleton"
+   url="skeleton.html"
+   newtab="no"
+   class="btn-white !no-underline">
+</link-component>
+<link-component
+   title="Spinners"
+   url="spinners.html"
+   newtab="no"
+   class="btn-white !no-underline">
+</link-component>
+</div>   
 	
 
-	
-    
-    
-
-	
-	
-
-	        
 	
 
 	
@@ -291,6 +297,7 @@
 <script src="../resources/assets/js/badges.js"></script>
 <script src="../resources/assets/js/breadcrumbs.js"></script>
 <script src="../resources/assets/js/avatar.js"></script>
+<script src="../resources/assets/js/forms.js"></script>
 <script src="../resources/assets/js/tooltip.js"></script>
 <script src="../resources/assets/js/popover.js"></script>
 <script src="../resources/assets/js/modals.js"></script>
@@ -320,6 +327,9 @@
 <script src="../resources/assets/js/splide.min.js"></script>
 <script src="../resources/assets/js/small-menu.js"></script>
 <script src="../resources/assets/js/carousel.js"></script>
+
+<script src="../resources/assets/js/clipboard.min.js"></script>
+<script src="../resources/assets/js/code-block.js"></script>
 
 <!-- end feather icons js lib -->
 
@@ -423,6 +433,9 @@
         });    
     </script>
 
+<script>
+         new ClipboardJS('.code-copy');
+</script>
 
 <script>
          const ctx = document.getElementById('myChart');

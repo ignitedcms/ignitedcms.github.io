@@ -173,139 +173,126 @@
          <div class="foo">
 <div class="foo">
             
-	        <div class="row">
-        <div class="col-12 m-t">
-			<h3>Tabs</h3>
+   <div class="row">
+      <div class="col-12 m-t">
+         <h3>Tabs</h3>
          A set of layered sections of content—known as tab panels—that are displayed one at a time.
          Usage: Use the 'tab' key to initially focus, then use 'left' or 'right' arrowkeys to navigate.
-        </div>
-         </div>
+      </div>
+   </div>
 	
     
     
 
-	
-	
+	<tabs>
+	   <tab-item title="Preview">
+	      <div class="panel v-a h-a min-h-[300px] mt-8">
+            <tabs>
+            <tab-item title="Account">
+               <div class="p-4">
+                  <div class="form-group">
+                     <h4>Account</h4>
+                     <div>Make changes to your account here. Click save when you're done.</div>
+                  </div>
+                  <div class="form-group">
+                     <label for="name">Name</label>
+                     <div class="m-b"></div>
+                     <input class="form-control" 
+                            name="name" 
+                            placeholder="test" />
+                  </div>
+                  <div class="form-group">
+                     <label for="name">Username</label>
+                     <div class="m-b"></div>
+                     <input class="form-control" 
+                            name="username" 
+                            placeholder="test" />
+                  </div>
+                  <div class="form-group">
+                     <button-component variant="primary">
+                        Save
+                     </button-component>
+                  </div>
+               </div>
+            </tab-item>
+            <tab-item title="Password">
+               <div class="p-4">
+                  <div class="form-group">
+                     <h4>Password</h4>
+                     <div>Make changes to your password here. Click save when you're done.</div>
+                  </div>
+                  <div class="form-group">
+                     <label for="password">Current password</label>
+                     <div class="m-b"></div>
+                     <input class="form-control"
+                            name="password"
+                            placeholder="test" />
+                  </div>
+                  <div class="form-group">
+                     <label for="new password">New password</label>
+                     <div class="m-b"></div>
+                     <input class="form-control"
+                            name="new_password"
+                            placeholder="test" />
+                  </div>
+                  <div class="form-group">
+                     <button-component variant="primary">
+                        Save
+                     </button-component>
+                  </div>
+               </div>
 
-	
+            </tab-item>
 
-	
+            </tabs>
 
-	
-    
-            <div class="row">
-            <div class="col-12 m-t">
-                <div class="form-group v-a h-a border p-4" style="min-height:300px;">  
-<div class="col panel  small-container">
-             
-               <tabs>
-                  <tab-item title="Account">
-                     <div class="p-4">
-                        <div class="form-group">
-                           <h4>Account</h4>
-                           <div>Make changes to your account here. Click save when you're done.</div>
-                        </div>
-                        <div class="form-group">
-                           <label for="name">Name</label>
-                           <div class="m-b"></div>
-                           <input class="form-control" 
-                                 name="name" 
-                                 placeholder="test" />
-                        </div>
-                        <div class="form-group">
-                           <label for="name">Username</label>
-                           <div class="m-b"></div>
-                           <input class="form-control" 
-                                 name="username" 
-                                 placeholder="test" />
-                        </div>
-                        <div class="form-group">
-                           <button-component variant="primary">
-                               Save
-                           </button-component>
-                        </div>
-                     </div>
-                  </tab-item>
-                  <tab-item title="Password">
-                     <div class="p-4">
-                        <div class="form-group">
-                           <h4>Password</h4>
-                           <div>Make changes to your password here. Click save when you're done.</div>
-                        </div>
-                        <div class="form-group">
-                           <label for="password">Current password</label>
-                           <div class="m-b"></div>
-                           <input class="form-control"
-                                 name="password"
-                                 placeholder="test" />
-                        </div>
-                        <div class="form-group">
-                           <label for="new password">New password</label>
-                           <div class="m-b"></div>
-                           <input class="form-control"
-                                 name="new_password"
-                                 placeholder="test" />
-                        </div>
-                        <div class="form-group">
-                            <button-component variant="primary">
-                               Save
-                           </button-component>
-                        </div>
-                     </div>
-                     
-                  </tab-item>
-                  
-               </tabs>
-            </div>
-</div>            </div>
-         </div>
-	
+	      </div>
 
-	
-	
-
-	
-
-	
-
-	
-    
-    
-
-	
-	        <div class="foo mt-4">
-<div class="foo">
-<pre class="code">&lt;tabs&gt;
+	   </tab-item>
+	   <tab-item title="Code" class="mt-8">
+	      <code-block>&lt;tabs&gt;
    &lt;tab-item title=&quot;tab 1&quot;&gt;
       &lt;div class=&quot;p-2&quot;&gt;
          Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
-    
       &lt;/div&gt;
    &lt;/tab-item&gt;
    &lt;tab-item title=&quot;tab 2&quot;&gt;
       &lt;div class=&quot;p-2&quot;&gt;
          &lt;p&gt;
             Leverage agile frameworks to provide a robust synopsis for 
-           
          &lt;/p&gt;
       &lt;/div&gt;
    &lt;/tab-item&gt;
-&lt;/tabs&gt;</pre>
-            </div>
-         </div>        
+&lt;/tabs&gt;</code-block>
+
+	   </tab-item>
+	</tabs>
 	
+
 
 	
 
 	
-
-	
+<!--button nav-->
+<div class="h-e mt-8">
+   <link-component
+   title="Switches"
+   url="switches.html"
+   newtab="no"
+   class="btn-white !no-underline">
+</link-component>
+<link-component
+   title="Tables"
+   url="tables.html"
+   newtab="no"
+   class="btn-white !no-underline">
+</link-component>
+</div>   
     
     
 
 	
 	
-
 	        
 	
 
@@ -340,6 +327,7 @@
 <script src="../resources/assets/js/badges.js"></script>
 <script src="../resources/assets/js/breadcrumbs.js"></script>
 <script src="../resources/assets/js/avatar.js"></script>
+<script src="../resources/assets/js/forms.js"></script>
 <script src="../resources/assets/js/tooltip.js"></script>
 <script src="../resources/assets/js/popover.js"></script>
 <script src="../resources/assets/js/modals.js"></script>
@@ -369,6 +357,9 @@
 <script src="../resources/assets/js/splide.min.js"></script>
 <script src="../resources/assets/js/small-menu.js"></script>
 <script src="../resources/assets/js/carousel.js"></script>
+
+<script src="../resources/assets/js/clipboard.min.js"></script>
+<script src="../resources/assets/js/code-block.js"></script>
 
 <!-- end feather icons js lib -->
 
@@ -462,6 +453,10 @@
            }
         });    
     </script>
+
+<script>
+         new ClipboardJS('.code-copy');
+</script>
 
 
 <script>

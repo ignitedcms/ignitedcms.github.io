@@ -180,8 +180,11 @@
          make sure you use the class 'overflow-auto'
       </div>
    </div>
-	
-   <div class="panel overflow-auto">
+
+
+<tabs>
+   <tab-item title="Preview">
+    <div class="panel overflow-auto mt-8">
       <div class="mt-4"></div>
       <table-component>
          <table-caption class="caption-bottom text-sm text-muted text-dark">A list of your recent invoices.</table-caption>
@@ -244,13 +247,10 @@
          </table-footer>
       </table-component>
    </div>  
-    
-    
 
-	<div class="foo mt-4">
-      <div class="foo">
-         <pre class="code">
-&lt;table-component&gt;
+   </tab-item>
+   <tab-item title="Code" class="mt-8">
+      <code-block>&lt;table-component&gt;
    &lt;table-caption class=&quot;caption-bottom text-sm text-muted text-dark&quot;&gt;A list of your recent invoices.&lt;/table-caption&gt;
    &lt;table-header&gt;
       &lt;table-row&gt;
@@ -309,14 +309,34 @@
          &lt;table-cell&gt;footer&lt;/table-cell&gt;
       &lt;/table-row&gt;
    &lt;/table-footer&gt;
-&lt;/table-component&gt;
-         </pre>
-      </div>
-   </div>
+&lt;/table-component&gt;</code-block>
+
+   </tab-item>
+</tabs>
+
+     
+    
 
 	
 
 	
+
+	
+<!--button nav-->
+<div class="h-e mt-8">
+   <link-component
+   title="Tabs"
+   url="tabs.html"
+   newtab="no"
+   class="btn-white !no-underline">
+</link-component>
+<link-component
+   title="Tag input"
+   url="tags.html"
+   newtab="no"
+   class="btn-white !no-underline">
+</link-component>
+</div>   
 
   <div class="gap"></div>
             </div>
@@ -347,6 +367,7 @@
 <script src="../resources/assets/js/badges.js"></script>
 <script src="../resources/assets/js/breadcrumbs.js"></script>
 <script src="../resources/assets/js/avatar.js"></script>
+<script src="../resources/assets/js/forms.js"></script>
 <script src="../resources/assets/js/tooltip.js"></script>
 <script src="../resources/assets/js/popover.js"></script>
 <script src="../resources/assets/js/modals.js"></script>
@@ -377,6 +398,9 @@
 <script src="../resources/assets/js/splide.min.js"></script>
 <script src="../resources/assets/js/small-menu.js"></script>
 <script src="../resources/assets/js/carousel.js"></script>
+
+<script src="../resources/assets/js/clipboard.min.js"></script>
+<script src="../resources/assets/js/code-block.js"></script>
 
 <!-- end feather icons js lib -->
 
@@ -470,6 +494,10 @@
            }
         });    
     </script>
+
+<script>
+         new ClipboardJS('.code-copy');
+</script>
 
 
 <script>

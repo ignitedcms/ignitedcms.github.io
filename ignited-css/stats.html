@@ -173,73 +173,68 @@
          <div class="foo">
 <div class="foo">
             
-	        <div class="row">
-        <div class="col-12 m-t">
-			<h4>Stats</h4>       
+   <div class="row">
+      <div class="col-12 m-t">
+         <h4>Stats</h4>       
          A simple way to show stats.
-        </div>
+      </div>
+   </div>
+	
+    
+    
+<tabs>
+   <tab-item title="Preview">
+      
+<div class="row">
+   <div class="col-12 m-t">
+      <div class="row panel min-h-[300px]" >
+         <div class="col v-a h-a">
+            <div class="">
+               <h1 class="text-center">44 million</h1>
+               <p class="text-center">Transactions every 24 hours</p>
+            </div>
          </div>
-	
-    
-    
-
-	
-	
-
-	
-
-	
-
-	
-    
-            <div class="row">
-            <div class="col-12 m-t">
-                <div class="row panel min-h-[300px]" >
-   <div class="col v-a h-a">
-      <div class="">
-         <h1 class="text-center">44 million</h1>
-         <p class="text-center">Transactions every 24 hours</p>
+         <div class="col v-a h-a">
+            <div class="">
+               <h1 class="text-center">$110 Trillion</h1>
+               <p class="text-center">Assets under holding</p>
+            </div>
+         </div>
+         <div class="col v-a h-a">
+            <div class="">
+               <h1 class="text-center ">46,000</h1>
+               <p class="text-center">New users anually</p>
+            </div>
+         </div>
       </div>
-   </div>
-   <div class="col v-a h-a">
-      <div class="">
-         <h1 class="text-center">$110 Trillion</h1>
-         <p class="text-center">Assets under holding</p>
-      </div>
-   </div>
-   <div class="col v-a h-a">
-      <div class="">
-         <h1 class="text-center ">46,000</h1>
-         <p class="text-center">New users anually</p>
-      </div>
-   </div>
+      <div class="mb-4"></div>
+      <div class="row  bg-primary min-h-[300px] rounded-md text-white" >
+         <div class="col v-a h-a">
+            <div class="">
+               <h1 class="text-center text-white">44 million</h1>
+               <p class="text-center">Transactions every 24 hours</p>
+            </div>
+         </div>
+         <div class="col v-a h-a">
+            <div class="">
+               <h1 class="text-center text-white">$110 Trillion</h1>
+               <p class="text-center">Assets under holding</p>
+            </div>
+         </div>
+         <div class="col v-a h-a">
+            <div class="">
+               <h1 class="text-center text-white">46,000</h1>
+               <p class="text-center">New users anually</p>
+            </div>
+         </div>
+      </div>            </div>
 </div>
-<div class="mb-4"></div>
-<div class="row  bg-primary min-h-[300px] rounded-md text-white" >
-   <div class="col v-a h-a">
-      <div class="">
-         <h1 class="text-center text-white">44 million</h1>
-         <p class="text-center">Transactions every 24 hours</p>
-      </div>
-   </div>
-   <div class="col v-a h-a">
-      <div class="">
-         <h1 class="text-center text-white">$110 Trillion</h1>
-         <p class="text-center">Assets under holding</p>
-      </div>
-   </div>
-   <div class="col v-a h-a">
-      <div class="">
-         <h1 class="text-center text-white">46,000</h1>
-         <p class="text-center">New users anually</p>
-      </div>
-   </div>
-</div>            </div>
-         </div>
-	
 
-<div class="mt-4">
-   <pre class="code">
+      
+
+   </tab-item>
+   <tab-item title="Code" class="mt-8">
+      <code-block>
 &lt;div class=&quot;row panel min-h-[300px]&quot; &gt;
    &lt;div class=&quot;col v-a h-a&quot;&gt;
       &lt;div class=&quot;&quot;&gt;
@@ -281,11 +276,41 @@
       &lt;/div&gt;
    &lt;/div&gt;
 &lt;/div&gt;
-   </pre>
-</div>
+      </code-block>
+
+   </tab-item>
+</tabs>
 	
 	
 
+	
+
+	
+
+	
+    
+
+	
+
+
+	
+	
+
+<!--button nav-->
+<div class="h-e mt-8">
+   <link-component
+   title="Spinners"
+   url="spinners.html"
+   newtab="no"
+   class="btn-white !no-underline">
+</link-component>
+<link-component
+   title="Switches"
+   url="switches.html"
+   newtab="no"
+   class="btn-white !no-underline">
+</link-component>
+</div>   
 	
 
 	
@@ -319,6 +344,7 @@
 <script src="../resources/assets/js/badges.js"></script>
 <script src="../resources/assets/js/breadcrumbs.js"></script>
 <script src="../resources/assets/js/avatar.js"></script>
+<script src="../resources/assets/js/forms.js"></script>
 <script src="../resources/assets/js/tooltip.js"></script>
 <script src="../resources/assets/js/popover.js"></script>
 <script src="../resources/assets/js/modals.js"></script>
@@ -348,6 +374,9 @@
 <script src="../resources/assets/js/splide.min.js"></script>
 <script src="../resources/assets/js/small-menu.js"></script>
 <script src="../resources/assets/js/carousel.js"></script>
+
+<script src="../resources/assets/js/clipboard.min.js"></script>
+<script src="../resources/assets/js/code-block.js"></script>
 
 <!-- end feather icons js lib -->
 
@@ -441,6 +470,11 @@
            }
         });    
     </script>
+
+<script>
+
+         new ClipboardJS('.code-copy');
+</script>
 
 
 <script>
