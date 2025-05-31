@@ -188,21 +188,28 @@
     
     
 
-	
-	
-
-	
-
-	
-
-	
-    
-            <div class="row">
-            <div class="col-12 m-t">
-                <div class="form-group v-a h-a border" style="min-height:300px;">  
+	<tabs>
+	   <tab-item title="Preview">
+	      <div class="panel v-a h-a min-h-[300px] mt-8">
 <datepicker name="foo" value="2000-09-09"></datepicker>
-</div>            </div>
-         </div>
+	      </div>
+
+	   </tab-item>
+	   <tab-item title="Code" class="mt-8">
+	      <code-block>&lt;datepicker name=&quot;foo&quot; value=&quot;2000-09-09&quot;&gt;&lt;/datepicker&gt;
+&lt;datepicker v-model=&quot;foo&quot;&gt;&lt;/datepicker&gt;</code-block>
+
+	   </tab-item>
+	</tabs>
+	
+
+	
+
+	
+
+	
+    
+            
 	
 
 	
@@ -215,15 +222,8 @@
 	
     
     
-	<div class="py-4">
-      <p>You can bind the datepicker with either value or v-model</p>
-   </div>
-	        <div class="foo">
-<div class="foo">
-<pre class="code">&lt;datepicker name=&quot;foo&quot; value=&quot;2000-09-09&quot;&gt;&lt;/datepicker&gt;
-&lt;datepicker v-model=&quot;foo&quot;&gt;&lt;/datepicker&gt;</pre>
-            </div>
-         </div>        
+	
+	                
 	
 
 	
@@ -262,6 +262,21 @@ We're borrowing a lot of the stuff from <a href="https://raw.githack.com/mymth/v
 
 	
 	
+<!--button nav-->
+<div class="h-e mt-8">
+   <link-component
+   title="Datatables"
+   url="datatables.html"
+   newtab="no"
+   class="btn-white !no-underline">
+</link-component>
+<link-component
+   title="Dropdown menu"
+   url="dropdowns.html"
+   newtab="no"
+   class="btn-white !no-underline">
+</link-component>
+</div>   
 
 	        
 	
@@ -301,6 +316,7 @@ We're borrowing a lot of the stuff from <a href="https://raw.githack.com/mymth/v
 <script src="../resources/assets/js/popover.js"></script>
 <script src="../resources/assets/js/modals.js"></script>
 <script src="../resources/assets/js/dropdown.js"></script>
+<script src="../resources/assets/js/forms.js"></script>
 <script src="../resources/assets/js/file-upload.js"></script>
 <script src="../resources/assets/js/datepicker.js"></script>
 <script src="../resources/assets/js/accordions.js"></script>
@@ -327,7 +343,8 @@ We're borrowing a lot of the stuff from <a href="https://raw.githack.com/mymth/v
 <script src="../resources/assets/js/small-menu.js"></script>
 <script src="../resources/assets/js/carousel.js"></script>
 
-<!-- end feather icons js lib -->
+<script src="../resources/assets/js/clipboard.min.js"></script>
+<script src="../resources/assets/js/code-block.js"></script>
 
 <script>
         /*                                                                          
@@ -420,7 +437,10 @@ We're borrowing a lot of the stuff from <a href="https://raw.githack.com/mymth/v
         });    
     </script>
 
+<script>
 
+         new ClipboardJS('.code-copy');
+</script>
 <script>
          const ctx = document.getElementById('myChart');
 

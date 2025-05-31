@@ -188,61 +188,54 @@
          </div>
 
 
-	
-    
-    
-
-	
-	
-
-	
-
-	
-
-	
-    
-            <div class="row">
-            <div class="col-12 m-t">
-                <div class="form-group v-a h-a border" style="min-height:300px;">  
-<div class="form-group">
-  <combobox name="Frameworks" value="Astro">
+         <tabs>
+            <tab-item title="Preview">
+               <div class="panel v-a h-a min-h-[300px] mt-8">
+<combobox name="Frameworks" value="Astro">
    <combo-item val="1" label="Next.js"></combo-item>
    <combo-item val="2" label="Sveltekit"></combo-item>
    <combo-item val="3" label="Nuxt.js"></combo-item>
    <combo-item val="4" label="Remix"></combo-item>
    <combo-item val="5" label="Astro"></combo-item>
 </combobox>
-</div>
-</div>            </div>
-         </div>
-	
+               </div>
 
-	
-	
-
-	
-
-	
-
-	
-    
-    
-
-	
-	        <div class="foo mt-4">
-<div class="foo">
-<pre class="code">&lt;combobox name=&quot;Frameworks&quot; value=&quot;Astro&quot;&gt;
+            </tab-item>
+            <tab-item title="Code" class="mt-8">
+               <code-block>
+&lt;combobox name=&quot;Frameworks&quot; value=&quot;Astro&quot;&gt;
    &lt;combo-item val=&quot;1&quot; label=&quot;Next.js&quot;&gt;&lt;/combo-item&gt;
    &lt;combo-item val=&quot;2&quot; label=&quot;Sveltekit&quot;&gt;&lt;/combo-item&gt;
    &lt;combo-item val=&quot;3&quot; label=&quot;Nuxt.js&quot;&gt;&lt;/combo-item&gt;
    &lt;combo-item val=&quot;4&quot; label=&quot;Remix&quot;&gt;&lt;/combo-item&gt;
    &lt;combo-item val=&quot;5&quot; label=&quot;Astro&quot;&gt;&lt;/combo-item&gt;
-&lt;/combobox&gt;</pre>
-            </div>
-         </div>        
+&lt;/combobox&gt;
+               </code-block>
+
+            </tab-item>
+         </tabs>
+	
+    
+            
+	
 	
 
 	
+<!--button nav-->
+<div class="h-e mt-8">
+   <link-component
+   title="Collapsible"
+   url="collapsible.html"
+   newtab="no"
+   class="btn-white !no-underline">
+</link-component>
+<link-component
+   title="Command"
+   url="command.html"
+   newtab="no"
+   class="btn-white !no-underline">
+</link-component>
+</div>   
 
 	
 
@@ -272,6 +265,7 @@
 <script src="../resources/assets/js/alerts.js"></script>
 <script src="../resources/assets/js/tabs.js"></script>
 <script src="../resources/assets/js/buttons.js"></script>
+<script src="../resources/assets/js/forms.js"></script>
 <script src="../resources/assets/js/badges.js"></script>
 <script src="../resources/assets/js/breadcrumbs.js"></script>
 <script src="../resources/assets/js/avatar.js"></script>
@@ -305,7 +299,9 @@
 <script src="../resources/assets/js/small-menu.js"></script>
 <script src="../resources/assets/js/carousel.js"></script>
 
-<!-- end feather icons js lib -->
+
+<script src="../resources/assets/js/clipboard.min.js"></script>
+<script src="../resources/assets/js/code-block.js"></script>
 
 <script>
         /*                                                                          
@@ -397,7 +393,10 @@
            }
         });    
     </script>
+<script>
 
+         new ClipboardJS('.code-copy');
+</script>
 
 <script>
          const ctx = document.getElementById('myChart');

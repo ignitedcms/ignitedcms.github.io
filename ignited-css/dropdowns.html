@@ -226,9 +226,10 @@
 
 
 
-      <div class="row">
-         <div class="col-12 m-t">
-            <div class="form-group v-a h-a border p-4" style="min-height:300px;">
+      <tabs>
+         <tab-item title="Preview">
+            <div class="panel v-a h-a min-h-[300px] mt-8">
+<div class="foo">
 
                <div id="main-menu" class="list-none" role="menubar" aria-label="Main Menu">
             <div id="file-menu" style="padding:10px;" class="menu-item btn btn-white" aria-haspopup="true" aria-expanded="false" aria-controls="file-submenu" tabindex="0" role="menuitem">Open
@@ -527,13 +528,12 @@
 
          </div>
 
-            </div>           
-         </div>
-      </div>	
+            </div>
+            </div>
 
-<div class="foo mt-4">
-            <div class="foo">
-               <pre class="code">
+         </tab-item>
+         <tab-item title="Code" class="mt-8">
+            <code-block>
 &lt;dropdown&gt;
    &lt;dropdown-trigger&gt;
       &lt;div class=&quot;btn-white&quot;&gt;
@@ -586,9 +586,16 @@
       &lt;dropdown-item inset disabled&gt;Advanced&lt;/dropdown-item&gt;
    &lt;/dropdown-content&gt;
 &lt;/dropdown&gt;
-               </pre>
-            </div>
-         </div>
+            </code-block>
+
+         </tab-item>
+      </tabs>
+         
+                       
+         
+      	
+
+
 
 
 
@@ -664,6 +671,21 @@
    </div>
 
 
+<!--button nav-->
+<div class="h-e mt-8">
+   <link-component
+   title="Datepickers"
+   url="datepickers.html"
+   newtab="no"
+   class="btn-white !no-underline">
+</link-component>
+<link-component
+   title="Feeds"
+   url="feeds.html"
+   newtab="no"
+   class="btn-white !no-underline">
+</link-component>
+</div>   
 
 
 
@@ -701,6 +723,7 @@
 <script src="../resources/assets/js/badges.js"></script>
 <script src="../resources/assets/js/breadcrumbs.js"></script>
 <script src="../resources/assets/js/avatar.js"></script>
+<script src="../resources/assets/js/forms.js"></script>
 <script src="../resources/assets/js/tooltip.js"></script>
 <script src="../resources/assets/js/popover.js"></script>
 <script src="../resources/assets/js/modals.js"></script>
@@ -732,7 +755,9 @@
 <script src="../resources/assets/js/carousel.js"></script>
 <script src="../resources/assets/js/table.js"></script>
 
-<!-- end feather icons js lib -->
+
+<script src="../resources/assets/js/clipboard.min.js"></script>
+<script src="../resources/assets/js/code-block.js"></script>
 
 <script>
         /*                                                                          
@@ -824,6 +849,11 @@
            }
         });    
     </script>
+
+<script>
+
+         new ClipboardJS('.code-copy');
+</script>
 
 <script>
 
