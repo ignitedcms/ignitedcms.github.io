@@ -173,66 +173,48 @@
          <div class="foo">
 <div class="foo">
             
-	        <div class="row">
-        <div class="col-12 m-t">
-			<h3>File uploads</h3><p>A beautifully styled file upload button</p>        </div>
-         </div>
+   <div class="row">
+      <div class="col-12 m-t">
+         <h3>File uploads</h3><p>A beautifully styled file upload button</p>        </div>
+   </div>
 	
     
     
-
-	
-	
-
-	
-
-	
-
-	
-    
-            <div class="row">
-            <div class="col-12 m-t">
-                <div class="form-group v-a h-a border" style="min-height:300px;">  
-<div class="form-group">
+<tabs>
+   <tab-item title="Preview">
+      <div class="panel v-a h-a min-h-[300px] mt-8">
    <file-upload name="foo"> </file-upload>
-</div>
-</div>            </div>
-         </div>
-	
+      </div>
 
-	
-	
-
-	
-
-	
-
-	
-    
-    
-
-	
-	        <div class="foo mt-4">
-<div class="foo">
-<pre class="code">&lt;div class=&quot;form-group&quot;&gt;
+   </tab-item>
+   <tab-item title="Code" class="mt-8">
+      <code-block>&lt;div class=&quot;form-group&quot;&gt;
    &lt;file-upload name=&quot;foo&quot;&gt; &lt;/file-upload&gt;
-&lt;/div&gt;</pre>
-            </div>
-         </div>        
+&lt;/div&gt;</code-block>
+
+   </tab-item>
+</tabs>
+	
 	
 
-	
-
-	
-
-	
-    
-    
-
-	
 	
 
 	        
+<!--button nav-->
+<div class="h-e mt-8">
+   <link-component
+   title="Feeds"
+   url="feeds.html"
+   newtab="no"
+   class="btn-white !no-underline">
+</link-component>
+<link-component
+   title="Full calendar"
+   url="full-calendar.html"
+   newtab="no"
+   class="btn-white !no-underline">
+</link-component>
+</div>   
 	
 
 	
@@ -266,6 +248,7 @@
 <script src="../resources/assets/js/badges.js"></script>
 <script src="../resources/assets/js/breadcrumbs.js"></script>
 <script src="../resources/assets/js/avatar.js"></script>
+<script src="../resources/assets/js/forms.js"></script>
 <script src="../resources/assets/js/tooltip.js"></script>
 <script src="../resources/assets/js/popover.js"></script>
 <script src="../resources/assets/js/modals.js"></script>
@@ -296,6 +279,8 @@
 <script src="../resources/assets/js/small-menu.js"></script>
 <script src="../resources/assets/js/carousel.js"></script>
 
+<script src="../resources/assets/js/clipboard.min.js"></script>
+<script src="../resources/assets/js/code-block.js"></script>
 <!-- end feather icons js lib -->
 
 <script>
@@ -388,7 +373,10 @@
            }
         });    
     </script>
+<script>
 
+         new ClipboardJS('.code-copy');
+</script>
 
 <script>
          const ctx = document.getElementById('myChart');

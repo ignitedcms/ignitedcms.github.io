@@ -285,6 +285,7 @@ func UploadFile(w http.ResponseWriter, r *http.Request) {
 <script src="../resources/assets/js/badges.js"></script>
 <script src="../resources/assets/js/breadcrumbs.js"></script>
 <script src="../resources/assets/js/avatar.js"></script>
+<script src="../resources/assets/js/forms.js"></script>
 <script src="../resources/assets/js/tooltip.js"></script>
 <script src="../resources/assets/js/popover.js"></script>
 <script src="../resources/assets/js/modals.js"></script>
@@ -315,7 +316,9 @@ func UploadFile(w http.ResponseWriter, r *http.Request) {
 <script src="../resources/assets/js/small-menu.js"></script>
 <script src="../resources/assets/js/carousel.js"></script>
 
-<!-- end feather icons js lib -->
+<script src="../resources/assets/js/clipboard.min.js"></script>
+<script src="../resources/assets/js/code-block.js"></script>
+
 
 <script>
         /*                                                                          
@@ -407,6 +410,11 @@ func UploadFile(w http.ResponseWriter, r *http.Request) {
            }
         });    
     </script>
+
+<script>
+
+         new ClipboardJS('.code-copy');
+</script>
 
 
 <script>
