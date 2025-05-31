@@ -184,37 +184,34 @@
       </div>    
     
 
-	
-<div class="row">
-            <div class="col-12 ">
-               <div class="v-a h-a border" style="min-height:300px;">
-                  <div class="form-group" style="width:60%;">
-                        <input-component v-model="foo" >
-                        </input-component>
-                        <div class="mt-2">
-                        {{ foo }}
-                        </div>
-                  </div>
-               </div>
-            </div>
-         </div>
+<tabs>
+   <tab-item title="Preview">
+      <div class="panel v-a h-a min-h-[300px] mt-8">
+
+         <input-component v-model="foo" placeholder="Type here" >
+         </input-component>
+            
+      </div>
+
+   </tab-item>
+   <tab-item title="Code" class="mt-8">
+      <code-block>&lt;input-component v-model=&quot;foo&quot; placeholder=&quot;Type&quot;&gt;&lt;/input-component&gt;</code-block>
+
+   </tab-item>
+</tabs>
 
 
-<div class="mt-4">
-   <pre class="code">
-<div v-pre>
-{{foo}}
-&lt;input-component v-model=&quot;foo&quot; placeholder=&quot;Type&quot;&gt;&lt;/input-component&gt;
-</div>
-   </pre>
-</div>
+
+
+
+
 
 
             <h3 class="mt-4">With label</h3>
 
       <div class="row">
          <div class="col-12">
-            <div class="v-a h-a border" style="min-height:300px;">
+            <div class="panel v-a h-a" style="min-height:300px;">
                <div  style="width:60%;">
                   <label-component htmlfor="e2">
                      Email
@@ -235,7 +232,7 @@
 
             <div class="row">
                <div class="col-12">
-                  <div class="v-a h-a border" style="min-height:300px;">
+                  <div class="v-a h-a panel" style="min-height:300px;">
                      <div  style="width:60%;">
                         <div class="row">
                            <div class="col-9">
@@ -256,6 +253,24 @@
                </div>
             </div>
 	
+
+
+<!--button nav-->
+<div class="h-e mt-8">
+   <link-component
+   title="Hovercard"
+   url="hover-card.html"
+   newtab="no"
+   class="btn-white !no-underline">
+</link-component>
+<link-component
+   title="Input OTP"
+   url="input-otp.html"
+   newtab="no"
+   class="btn-white !no-underline">
+</link-component>
+</div>   
+
 
   <div class="gap"></div>
             </div>
@@ -316,6 +331,9 @@
 <script src="../resources/assets/js/small-menu.js"></script>
 <script src="../resources/assets/js/carousel.js"></script>
 <script src="../resources/assets/js/forms.js"></script>
+
+<script src="../resources/assets/js/clipboard.min.js"></script>
+<script src="../resources/assets/js/code-block.js"></script>
 
 <!-- end feather icons js lib -->
 
@@ -409,6 +427,11 @@
            }
         });    
     </script>
+
+<script>
+
+         new ClipboardJS('.code-copy');
+</script>
 
 
 <script>
