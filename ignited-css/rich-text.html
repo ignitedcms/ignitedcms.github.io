@@ -173,27 +173,18 @@
          <div class="foo">
 <div class="foo">
             
-	        <div class="row">
-        <div class="col-12 m-t">
-			<h3>Rich text (quilljs)</h3><p>Our framework leverages Quilljs for a minimal lightweight rich text editor. 
+   <div class="row">
+      <div class="col-12 m-t">
+         <h3>Rich text editor </h3>
+         <p>Our framework  ships with a minimal lightweight rich text editor. 
          Usage is as follows: Note you can have multiple instances on one page.</p>        </div>
-         </div>
-	
-    
-    
-
-	
+   </div>
 	
 
-	
 
-	
-
-	
-    
-            <div class="row">
-            <div class="col-12 m-t">
-                <div class="panel br drop-shadow">                   
+<tabs>
+   <tab-item title="Preview">
+      <div class="panel v-a h-a min-h-[300px] mt-8">
  <quill-editor  
                      ref="quillEditor"
                      class="editor"
@@ -204,25 +195,13 @@
                      @focus="onEditorFocus($event)"
                      @ready="onEditorReady($event)"
                      />
-</div>            </div>
-         </div>
-	
 
-	
-	
+      </div>
 
-	
-
-	
-
-	
-    
-    
-
-	
-	        <div class="foo mt-4">
-<div class="foo">
-<pre class="code">&lt;div class=&quot;panel br drop-shadow&quot;&gt; 
+   </tab-item>
+   <tab-item title="Code" class="mt-8">
+      <code-block>
+&lt;div class=&quot;panel br drop-shadow&quot;&gt; 
    &lt;quill-editor  
    ref=&quot;quillEditor&quot;
    class=&quot;editor&quot;
@@ -232,30 +211,37 @@
    @focus=&quot;onEditorFocus($event)&quot;
    @ready=&quot;onEditorReady($event)&quot;
    /&gt;
-&lt;/div&gt;</pre>
-            </div>
-         </div>        
-	
+&lt;/div&gt;
+      </code-block>
 
-	
-
-	
-
-	
+   </tab-item>
+</tabs>   
     
-    
+            
 
+<div class="row">
+   <div class="col-12 m-t">
+      <div class="panel">
+         <p>Please make sure to include the richtext.min.js bundle</p>
+      </div>
+   </div>
+</div>
 	
-	
-
-	        <div class="row">
-        <div class="col-12 m-t">
-            <div class="panel">
-			    <p>Please make sure to include the richtext.min.js bundle</p>
-            </div>
-        </div>
-         </div>
-	
+<!--button nav-->
+<div class="h-e mt-8">
+   <link-component
+   title="Range slider"
+   url="range-sliders.html"
+   newtab="no"
+   class="btn-white !no-underline">
+</link-component>
+<link-component
+   title="Scroll area"
+   url="scroll-area.html"
+   newtab="no"
+   class="btn-white !no-underline">
+</link-component>
+</div>   
 
 	
 
@@ -288,6 +274,7 @@
 <script src="../resources/assets/js/badges.js"></script>
 <script src="../resources/assets/js/breadcrumbs.js"></script>
 <script src="../resources/assets/js/avatar.js"></script>
+<script src="../resources/assets/js/forms.js"></script>
 <script src="../resources/assets/js/tooltip.js"></script>
 <script src="../resources/assets/js/popover.js"></script>
 <script src="../resources/assets/js/modals.js"></script>
@@ -318,7 +305,9 @@
 <script src="../resources/assets/js/small-menu.js"></script>
 <script src="../resources/assets/js/carousel.js"></script>
 
-<!-- end feather icons js lib -->
+<script src="../resources/assets/js/clipboard.min.js"></script>
+<script src="../resources/assets/js/code-block.js"></script>
+
 
 <script>
         /*                                                                          
@@ -410,6 +399,10 @@
            }
         });    
     </script>
+
+<script>
+         new ClipboardJS('.code-copy');
+</script>
 
 
 <script>

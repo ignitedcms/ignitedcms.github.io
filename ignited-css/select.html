@@ -181,10 +181,10 @@
          </div>
       </div>
 
-
-<div class="row">
-            <div class="col-12 m-t">
-               <div class="form-group v-a h-a border" style="min-height:300px;">
+<tabs>
+   <tab-item title="Preview">
+      <div class="panel  min-h-[300px] mt-8">
+<div class="form-group v-a h-a" style="min-height:300px;">
                   <div class="form-group" style="width:300px;">
                      <select-component v-model="sel">
                         <select-item title="one" value="one">
@@ -200,27 +200,43 @@
                      </div>
                   </div>
                </div>
-            </div>
-         </div>
 
+      </div>
 
-<div class="mt-4">
-   <pre class="code">
-<div v-pre>
-&lt;select-component v-model=&quot;foo&quot;&gt;
+   </tab-item>
+   <tab-item title="Code" class="mt-8">
+      <code-block>&lt;select-component v-model=&quot;foo&quot;&gt;
    &lt;select-item title=&quot;one&quot; value=&quot;one&quot;&gt;
    &lt;/select-item&gt;
    &lt;select-item title=&quot;two&quot; value=&quot;two&quot;&gt;
    &lt;/select-item&gt;
    &lt;select-item title=&quot;three&quot; value=&quot;three&quot;&gt;
    &lt;/select-item&gt;
-&lt;/select-component&gt;
-</div>
-   </pre>
-</div>
+&lt;/select-component&gt;</code-block>
+
+   </tab-item>
+</tabs>
 
 
 
+
+
+
+<!--button nav-->
+<div class="h-e mt-8">
+   <link-component
+   title="Scroll area"
+   url="scroll-area.html"
+   newtab="no"
+   class="btn-white !no-underline">
+</link-component>
+<link-component
+   title="Separator"
+   url="separator.html"
+   newtab="no"
+   class="btn-white !no-underline">
+</link-component>
+</div>   
 
 
 
@@ -283,6 +299,9 @@
 <script src="../resources/assets/js/small-menu.js"></script>
 <script src="../resources/assets/js/carousel.js"></script>
 <script src="../resources/assets/js/forms.js"></script>
+
+<script src="../resources/assets/js/clipboard.min.js"></script>
+<script src="../resources/assets/js/code-block.js"></script>
 
 <!-- end feather icons js lib -->
 
@@ -378,6 +397,9 @@
         });    
     </script>
 
+<script>
+         new ClipboardJS('.code-copy');
+</script>
 
 <script>
          const ctx = document.getElementById('myChart');

@@ -173,41 +173,37 @@
          <div class="foo">
 <div class="foo">
             
-	        <div class="row">
-        <div class="col-12 m-t">
-			<h3>Pagination</h3> 
+   <div class="row">
+      <div class="col-12 m-t">
+         <h3>Pagination</h3> 
          Pagination with page navigation, next and previous links.
-        </div>
+      </div>
+   </div>
+
+   <tabs>
+      <tab-item title="Preview">
+         <div class="panel v-a h-a min-h-[300px] mt-8">
+            <pagination>
+               <pagination-content>
+                  <pagination-item>
+                     <pagination-previous href="foo" />
+                  </pagination-item>
+                  <pagination-item>
+                     <pagination-link href="#">1</pagination-link>
+                  </pagination-item>
+                  <pagination-item>
+                     <pagination-link active="true" href="#">2</pagination-link>
+                  </pagination-item>
+                  <pagination-item>
+                     <pagination-next href="#" />
+                  </pagination-item>
+               </pagination-content>
+            </pagination>
          </div>
 
-         <div class="dark:bg-darker row min-h-[300px] bg-white border border-[--gray] rounded-[--big-radius]">
-             <div class="col  v-a h-a">
-
-            <pagination>
-                 <pagination-content>
-                   <pagination-item>
-                     <pagination-previous href="foo" />
-                   </pagination-item>
-                   <pagination-item>
-                     <pagination-link href="#">1</pagination-link>
-                   </pagination-item>
-                   <pagination-item>
-                     <pagination-link active="true" href="#">2</pagination-link>
-                   </pagination-item>
-                   <pagination-item>
-                     <pagination-next href="#" />
-                   </pagination-item>
-                 </pagination-content>
-               </pagination>
-
-
-             </div>
-          </div>
-	
-    
-          <div class="foo mt-4">
-             <div class="foo">
-                <pre class="code">
+      </tab-item>
+      <tab-item title="Code" class="mt-8">
+         <code-block>
 &lt;pagination&gt;
    &lt;pagination-content&gt;
       &lt;pagination-item&gt;
@@ -224,12 +220,33 @@
       &lt;/pagination-item&gt;
    &lt;/pagination-content&gt;
 &lt;/pagination&gt;
-                </pre>
-             </div>
-          </div>
+         </code-block>
+
+      </tab-item>
+   </tabs>
+
+         
+	
+    
+          
     
 
 	
+<!--button nav-->
+<div class="h-e mt-8">
+   <link-component
+   title="Panels"
+   url="panels.html"
+   newtab="no"
+   class="btn-white !no-underline">
+</link-component>
+<link-component
+   title="Passwords"
+   url="passwords.html"
+   newtab="no"
+   class="btn-white !no-underline">
+</link-component>
+</div>   
 	
 
 	
@@ -265,6 +282,7 @@
 <script src="../resources/assets/js/badges.js"></script>
 <script src="../resources/assets/js/breadcrumbs.js"></script>
 <script src="../resources/assets/js/avatar.js"></script>
+<script src="../resources/assets/js/forms.js"></script>
 <script src="../resources/assets/js/tooltip.js"></script>
 <script src="../resources/assets/js/popover.js"></script>
 <script src="../resources/assets/js/modals.js"></script>
@@ -296,6 +314,9 @@
 <script src="../resources/assets/js/small-menu.js"></script>
 <script src="../resources/assets/js/carousel.js"></script>
 
+
+<script src="../resources/assets/js/clipboard.min.js"></script>
+<script src="../resources/assets/js/code-block.js"></script>
 <!-- end feather icons js lib -->
 
 <script>
@@ -388,6 +409,10 @@
            }
         });    
     </script>
+
+<script>
+         new ClipboardJS('.code-copy');
+</script>
 
 
 <script>
