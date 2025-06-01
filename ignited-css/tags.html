@@ -186,13 +186,27 @@
          </div>
       </div>
 
-      <div class="row">
-         <div class="col-12 m-t">
-            <div class="panel">
-               <p>We expect support for this to be available in v2</p>
-            </div>
+<tabs>
+   <tab-item title="Preview">
+      <div class="panel  min-h-[300px] mt-8">
+         <tags-input v-model="tags"></tags-input>
+         <div class="mt-4">
+            <strong class="text-black">Current Tags:</strong>
+            <div v-if="tags.length === 0">No tags added</div>
+            <div v-else>{{ tags.join(', ') }}</div>
          </div>
       </div>
+
+   </tab-item>
+   <tab-item title="Code" class="mt-8">
+      <code-block>
+      </code-block>
+
+   </tab-item>
+</tabs>
+
+
+      
 
 
 
@@ -261,6 +275,7 @@
 <script src="../resources/assets/js/combobox.js"></script>
 <script src="../resources/assets/js/forms.js"></script>
 <script src="../resources/assets/js/input-otp.js"></script>
+<script src="../resources/assets/js/tags.js"></script>
 
 <!-- Include the Quill library -->
 <script src="../resources/assets/js/quill.js"></script>
@@ -292,6 +307,7 @@
            el: '#app',
            data:
            {
+              tags: ['JavaScript', 'Vue.js'],
               message: 'Add Items. . . ',
               show: false,
               dark:false,
