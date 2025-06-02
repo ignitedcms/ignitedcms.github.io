@@ -177,11 +177,51 @@
       <div class="foo">
          <h4>Fetch API</h4>
          <p>
-         Docs coming soon
+         Using the the inbuilt browser's fetch API we can easily
+         perform GET and POST requests. The examples below use the jsonplaceholder
+         site. In addition, you can pass auth bearer tokens should you wish
+         for a traditional 'restful' API.
+         <br>
+
+         <button type="button" class="btn btn-white mt-2" @click="get">Get request</button>
+               <div class="code p mt-3">
+                  <pre> {{message1}}</pre>
+               </div>
+
+  <button type="button" class="btn btn-white mt-2" @click="post">Post request</button>
+               <div class="code p mt-3">
+                  <pre> {{message2}}</pre>
+               </div>
+
          </p>
          </p>
       </div>
    </div>
+
+<code-block class="mt-8">
+   async get() {
+      let response = await fetch(&apos;https://jsonplaceholder.typicode.com/todos/1&apos;);
+      let data = await response.json();
+      this.message1 = data;
+      alert(response.status);
+   },
+
+   async post() {
+      let response = await fetch(&apos;https://jsonplaceholder.typicode.com/posts&apos;, {
+         method: &apos;POST&apos;,
+         body: JSON.stringify({
+            title: &apos;foo&apos;,
+            body: &apos;bar&apos;,
+            userId: 1,
+         }),
+         headers: {
+            &apos;Content-type&apos;: &apos;application/json; charset=UTF-8&apos;,
+         },
+      })
+      let data = await response.json();
+      this.message2 = data;
+   }
+</code-block>
 	
 	
 
@@ -246,6 +286,9 @@
 <script src="../resources/assets/js/small-menu.js"></script>
 <script src="../resources/assets/js/carousel.js"></script>
 
+<script src="../resources/assets/js/clipboard.min.js"></script>
+<script src="../resources/assets/js/code-block.js"></script>
+
 <!-- end feather icons js lib -->
 
 <script>
@@ -262,6 +305,8 @@
            data:
            {
               message: 'Add Items. . . ',
+              message1: '',
+              message2: '', 
               show: false,
               dark:false,
               foo:'hello',
@@ -292,6 +337,29 @@
            },
            methods:
            {
+            async get() {
+                     let response = await fetch('https://jsonplaceholder.typicode.com/todos/1');
+                     let data = await response.json();
+                     this.message1 = data;
+                     alert(response.status);
+                 },
+
+                 async post() {
+                     let response = await fetch('https://jsonplaceholder.typicode.com/posts', {
+                         method: 'POST',
+                         body: JSON.stringify({
+                             title: 'foo',
+                             body: 'bar',
+                             userId: 1,
+                         }),
+                         headers: {
+                             'Content-type': 'application/json; charset=UTF-8',
+                         },
+                     })
+                     let data = await response.json();
+                     this.message2 = data;
+                 },
+
             showToast() {
                 this.$refs.toast.showToast(3000);
                 this.$refs.toast2.showToast(4000);
@@ -338,37 +406,12 @@
            }
         });    
     </script>
-
-
 <script>
-         const ctx = document.getElementById('myChart');
 
-         Chart.defaults.font.family = 'Instrument Sans';
-         Chart.defaults.font.size = 14;
+         new ClipboardJS('.code-copy');
+</script>
 
-         //Change from 'bar' to 'line' etc
-         new Chart(ctx, {
-           type: 'bar',
-           data: {
-             labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-             datasets: [{
-               label: '# of Votes',
-               data: [12, 19, 3, 5, 2, 3],
-               borderWidth: 1,
-               borderColor: '#292F3E',
-               backgroundColor: '#292F3E',
-             }]
-           },
-           options: {
-             responsive: true,
-             scales: {
-               y: {
-                 beginAtZero: true
-               }
-             }
-           }
-         });
-      </script>
+
 
 
 <script>
