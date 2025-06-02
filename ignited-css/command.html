@@ -35,15 +35,103 @@
          display: none;
       }
 
-      .checked {
-         color: orange;
-      }
 
-      .splide__pagination__page.is-active {
-          background: #333;
-          transform: scale(1.4);
-          z-index: 1;
-      }
+        .command {
+            max-width: 400px;
+            margin: 50px auto;
+            background: white;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            overflow: hidden;
+        }
+
+        .command-input {
+            width: 100%;
+            padding: 12px 16px;
+            border: none;
+            outline: none;
+            font-size: 14px;
+            background: transparent;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .command-input::placeholder {
+            color: #94a3b8;
+        }
+
+        .command-list {
+            max-height: 300px;
+            overflow-y: auto;
+            padding: 4px 0;
+        }
+
+        .command-empty {
+            padding: 12px 16px;
+            color: #64748b;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .command-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 8px 16px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.15s ease;
+        }
+
+        .command-item:hover {
+            background-color: #f1f5f9;
+        }
+
+        .command-item.selected {
+            background-color: #292F3E;
+            color: white;
+        }
+
+        .command-item.disabled {
+            color: #94a3b8;
+            cursor: not-allowed;
+        }
+
+        .command-item.disabled:hover {
+            background-color: transparent;
+        }
+
+        .command-shortcut {
+            font-size: 12px;
+            color: #64748b;
+            background: #f1f5f9;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+
+        .command-item.selected .command-shortcut {
+            background: rgba(255, 255, 255, 0.2);
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .command-separator {
+            height: 1px;
+            background: #e2e8f0;
+            margin: 4px 0;
+        }
+
+
+        .demo-button {
+            background: #292F3E;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+
 
       </style>
 </head>
@@ -173,14 +261,58 @@
          <div class="foo">
 <div class="foo">
             
-	        <div class="row">
-        <div class="col-12 m-t">
-			<h3>Command</h3>
+   <div class="row">
+      <div class="col-12 m-t">
+         <h3>Command</h3>
          Fast, composable, unstyled command menu
-        </div>
-         </div>
+      </div>
+   </div>
 	
-    
+<tabs>
+   <tab-item title="Preview">
+      <div class="panel v-a h-a min-h-[300px] mt-8">
+         <div style="width:80%;">
+  <command v-if="showCommand" @close="showCommand = false" @select="onSelect"></command>
+         </div>
+
+      </div>
+
+   </tab-item>
+   <tab-item title="Code" class="mt-8">
+      <code-block>
+&lt;command&gt;
+&lt;command-input&gt;Type a command or search...&lt;/command-input&gt;
+&lt;command-list&gt;
+   &lt;command-empty&gt;No results found.&lt;/command-empty&gt;
+   &lt;command-item&gt;
+      &lt;command-text&gt;Calendar&lt;/command-text&gt;
+   &lt;/command-item&gt;
+   &lt;command-item&gt;
+      &lt;command-text&gt;Search Emoji&lt;/command-text&gt;
+   &lt;/command-item&gt;
+   &lt;command-item disabled&gt;
+      &lt;command-text&gt;Calculator&lt;/command-text&gt;
+   &lt;/command-item&gt;
+   &lt;command-separator&gt;
+   &lt;/command-separator&gt;
+   &lt;command-item&gt;
+      &lt;command-text&gt;Profile&lt;/command-text&gt;
+      &lt;command-shortcut&gt;&#x2318;P&lt;/command-shortcut&gt;
+   &lt;/command-item&gt;
+   &lt;command-item&gt;
+      &lt;command-text&gt;Billing&lt;/command-text&gt;
+      &lt;command-shortcut&gt;&#x2318;B&lt;/command-shortcut&gt;
+   &lt;/command-item&gt;
+   &lt;command-item&gt;
+      &lt;command-text&gt;Settings&lt;/command-text&gt;
+      &lt;command-shortcut&gt;&#x2318;S&lt;/command-shortcut&gt;
+   &lt;/command-item&gt;
+&lt;/command-list&gt;
+&lt;/command&gt;
+      </code-block>
+
+   </tab-item>
+</tabs>    
     
 
 	
@@ -277,136 +409,199 @@
 <script src="../resources/assets/js/small-menu.js"></script>
 <script src="../resources/assets/js/carousel.js"></script>
 
-<!-- end feather icons js lib -->
+<script src="../resources/assets/js/clipboard.min.js"></script>
+<script src="../resources/assets/js/code-block.js"></script>
 
-<script>
-        /*                                                                          
-        |---------------------------------------------------------------            
-        | Base entry point                                                
-        |---------------------------------------------------------------            
-        |                                                                           
-        */       
-        Vue.use(window.VueQuillEditor);
-        var app = new Vue(
-        {
-           el: '#app',
-           data:
-           {
-              message: 'Add Items. . . ',
-              show: false,
-              dark:false,
-              foo:'hello',
-              bar: 'none',
-              otp:'',
-              items: [
-                    { id: 1, text: 'Item 1' },
-                    { id: 2, text: 'Item 2' },
-                    { id: 3, text: 'Item 3' },
-                    { id: 4, text: 'Item 4' },
-                    { id: 5, text: 'Item 5' }
-                ],
-              myquill: 'Hello',
-              editorOption: {
-                     modules: {
-                     toolbar: [
-                       ['bold', 'italic', 'underline' ],
-                       ['blockquote'],
-                       [{ 'header': 1 }, { 'header': 2 }],
-                       [{ 'list': 'ordered' }, { 'list': 'bullet' }],
-                       [{ 'align': [] }],
-                       ['clean'],
-                       ['link']
-                     ]
-                   },
-                   // theme: 'snow'
-                }
-           },
-           methods:
-           {
-            showToast() {
-                this.$refs.toast.showToast(3000);
-                this.$refs.toast2.showToast(4000);
-            },
-            toggleMenu(){
-              this.$refs.jx.toggle();
-
-             },
-             toggle_sidemenu()
-             {
-                this.show = !this.show;
-                if (this.show) 
-                {
-                    this.bar = 'block'
-                }
-                else
-                {
-                    this.bar = 'none'
-                }
-             },
-              away()
-              {
-                 this.show = false;
-                 this.bar = 'none'
-              },
-              onEditorBlur(quill) {
-                    console.log('editor blur!', quill)
-                },
-                onEditorFocus(quill) {
-                    console.log('editor focus!', quill)
-                },
-                onEditorReady(quill) {
-                    console.log('editor ready!', quill)
-                }
-           },
-           computed: {
-                editor() {
-                    return this.$refs.quillEditor.quill
+  <script>
+        // Command Component
+        Vue.component('command', {
+            template: `
+                <div class="command" @keydown="handleKeydown" tabindex="0" ref="command">
+                    <command-input 
+                        v-model="searchQuery" 
+                        @input="filterItems"
+                        placeholder="Type a command or search...">
+                    </command-input>
+                    <command-list>
+                        <command-empty v-if="filteredItems.length === 0">
+                            No results found.
+                        </command-empty>
+                        <template v-for="(item, index) in filteredItems">
+                            <command-separator 
+                                v-if="item.type === 'separator'" 
+                                :key="'sep-' + index">
+                            </command-separator>
+                            <command-item 
+                                v-else
+                                :key="item.id"
+                                :disabled="item.disabled"
+                                :selected="selectedIndex === getSelectableIndex(index)"
+                                @click="selectItem(item)"
+                                @mouseenter="selectedIndex = getSelectableIndex(index)">
+                                <span>{{ item.text }}</span>
+                                <command-shortcut v-if="item.shortcut">
+                                    {{ item.shortcut }}
+                                </command-shortcut>
+                            </command-item>
+                        </template>
+                    </command-list>
+                </div>
+            `,
+            data() {
+                return {
+                    searchQuery: '',
+                    selectedIndex: 0,
+                    items: [
+                        { id: 1, text: 'Calendar', disabled: false },
+                        { id: 2, text: 'Search Emoji', disabled: false },
+                        { id: 3, text: 'Calculator', disabled: true },
+                        { type: 'separator' },
+                        { id: 4, text: 'Profile', shortcut: '⌘ P', disabled: false },
+                        { id: 5, text: 'Billing', shortcut: '⌘ B', disabled: false },
+                        { id: 6, text: 'Settings', shortcut: '⌘ S', disabled: false }
+                    ],
+                    filteredItems: []
                 }
             },
-           mounted()
-           {
-               
-           }
-        });    
+            mounted() {
+                this.filteredItems = [...this.items];
+                this.$nextTick(() => {
+                    //this.$refs.command.focus();
+                });
+            },
+            methods: {
+                filterItems() {
+                    if (!this.searchQuery.trim()) {
+                        this.filteredItems = [...this.items];
+                    } else {
+                        this.filteredItems = this.items.filter(item => {
+                            if (item.type === 'separator') return false;
+                            return item.text.toLowerCase().includes(this.searchQuery.toLowerCase());
+                        });
+                    }
+                    this.selectedIndex = 0;
+                },
+                getSelectableItems() {
+                    return this.filteredItems.filter(item => 
+                        item.type !== 'separator' && !item.disabled
+                    );
+                },
+                getSelectableIndex(itemIndex) {
+                    let selectableIndex = 0;
+                    for (let i = 0; i <= itemIndex; i++) {
+                        const item = this.filteredItems[i];
+                        if (item.type !== 'separator' && !item.disabled) {
+                            if (i === itemIndex) return selectableIndex;
+                            selectableIndex++;
+                        }
+                    }
+                    return -1;
+                },
+                handleKeydown(e) {
+                    const selectableItems = this.getSelectableItems();
+                    
+                    switch (e.key) {
+                        case 'ArrowDown':
+                            e.preventDefault();
+                            this.selectedIndex = Math.min(this.selectedIndex + 1, selectableItems.length - 1);
+                            break;
+                        case 'ArrowUp':
+                            e.preventDefault();
+                            this.selectedIndex = Math.max(this.selectedIndex - 1, 0);
+                            break;
+                        case 'Enter':
+                            e.preventDefault();
+                            if (selectableItems[this.selectedIndex]) {
+                                this.selectItem(selectableItems[this.selectedIndex]);
+                            }
+                            break;
+                        case 'Escape':
+                            e.preventDefault();
+                            //this.$emit('close');
+                            break;
+                    }
+                },
+                selectItem(item) {
+                    if (item.disabled) return;
+                    this.$emit('select', item);
+                    //this.$emit('close');
+                }
+            }
+        });
+
+        // Command Input Component
+        Vue.component('command-input', {
+            template: `
+                <input 
+                    class="command-input" 
+                    :placeholder="placeholder"
+                    :value="value"
+                    @input="$emit('input', $event.target.value)"
+                    ref="input">
+            `,
+            props: ['value', 'placeholder'],
+            mounted() {
+                this.$refs.input.focus();
+            }
+        });
+
+        // Command List Component
+        Vue.component('command-list', {
+            template: `<div class="command-list"><slot></slot></div>`
+        });
+
+        // Command Empty Component
+        Vue.component('command-empty', {
+            template: `<div class="command-empty"><slot></slot></div>`
+        });
+
+        // Command Item Component
+        Vue.component('command-item', {
+            template: `
+                <div 
+                    class="command-item"
+                    :class="{ disabled: disabled, selected: selected }"
+                    @click="$emit('click')"
+                    @mouseenter="$emit('mouseenter')">
+                    <slot></slot>
+                </div>
+            `,
+            props: ['disabled', 'selected']
+        });
+
+        // Command Shortcut Component
+        Vue.component('command-shortcut', {
+            template: `<span class="command-shortcut"><slot></slot></span>`
+        });
+
+        // Command Separator Component
+        Vue.component('command-separator', {
+            template: `<div class="command-separator"></div>`
+        });
+
+        // Main Vue Instance
+        new Vue({
+            el: '#app',
+            data: {
+                showCommand: true
+            },
+            methods: {
+                onSelect(item) {
+                    alert('Selected: ' + item.text);
+                }
+            }
+        });
     </script>
 
 
 <script>
-         const ctx = document.getElementById('myChart');
-
-         Chart.defaults.font.family = 'Instrument Sans';
-         Chart.defaults.font.size = 14;
-
-         //Change from 'bar' to 'line' etc
-         new Chart(ctx, {
-           type: 'bar',
-           data: {
-             labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-             datasets: [{
-               label: '# of Votes',
-               data: [12, 19, 3, 5, 2, 3],
-               borderWidth: 1,
-               borderColor: '#292F3E',
-               backgroundColor: '#292F3E',
-             }]
-           },
-           options: {
-             responsive: true,
-             scales: {
-               y: {
-                 beginAtZero: true
-               }
-             }
-           }
-         });
-      </script>
-
-
-<script>
-    $('#example').dataTable({
-        "iDisplayLength": 20
-    });
+         new ClipboardJS('.code-copy');
 </script>
+
+
+
+
+
 
 
 

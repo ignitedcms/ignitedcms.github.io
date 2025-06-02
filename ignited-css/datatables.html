@@ -29,23 +29,45 @@
      <link href="https://cdn.quilljs.com/1.0.0/quill.snow.css" rel="stylesheet">
 
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ <style>
 
-      <style>
       [v-cloak] {
          display: none;
       }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
 
-      .checked {
-         color: orange;
-      }
+        th {
+            border: 1px solid #dddddd;
+            color: #000;
+            background-color: #eee;
+            text-align: left;
+            padding: 8px;
+            cursor: pointer;
+        }
 
-      .splide__pagination__page.is-active {
-          background: #333;
-          transform: scale(1.4);
-          z-index: 1;
-      }
+        td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
 
-      </style>
+        tr:nth-child(even) {
+            background-color: #F7FAFC;
+        }
+
+        .pagination {
+            margin-top: 10px;
+        }
+
+        .pagination button {
+            cursor: pointer;
+            margin: 0 5px;
+        }
+    </style>
+      
 </head>
 
 <body class="h-screen v-screen bg-white dark:bg-dark">
@@ -174,16 +196,69 @@
 <div class="foo">
             
 	        <div class="row">
-        <div class="col-12 m-t">
-			<h4>Datatables</h4>
-         Powerful table and datagrids that include sorting, filtering (search)
-         and pagination.
-        </div>
+              <div class="col-12 m-t">
+                 <h4>Datatables</h4>
+                 Powerful table and datagrids that include sorting, filtering (search)
+                 and pagination.
+              </div>
          </div>
 	
     
     
-
+<div class="panel">
+<div class="row">
+   <div class="col h-e">
+      <select class="form-select" v-model="itemsPerPage" style="width:100px;"
+         aria-label="Default select example">
+         <option value="10" selected>10</option>
+         <option value="50">50</option>
+         <option value="100">100</option>
+      </select>
+      <input v-model="searchQuery" style="width:300px;" class="form-control" placeholder="Search..."
+         @input="searchTable">
+   </div>
+</div>
+<table>
+   <thead>
+      <tr class="font-thin">
+         <th @click="sortTable(0)" class="font-normal">
+            Id
+            <span>
+            &#8597;
+            </span>
+         </th>
+         <th @click="sortTable(1)" class="font-normal">
+            Name
+            <span>
+            &#8597;
+            </span>
+         </th>
+         <th @click="sortTable(2)" class="font-normal">
+            Email
+            <span>
+            &#8597;
+            </span>
+         </th>
+         <th @click="sortTable(3)" class="font-normal">
+            Dob
+            <span>
+            &#8597;
+            </span>
+         </th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr v-for="(item, index) in paginatedData" :key="index">
+         <td v-for="value in Object.values(item)">{{ value }}</td>
+      </tr>
+   </tbody>
+</table>
+<div class="pagination right p-t">
+   <button class="btn btn-white" @click="prevPage" :disabled="currentPage === 1">Previous</button>
+   <span>{{ currentPage }}</span>
+   <button class="btn btn-white" @click="nextPage" :disabled="currentPage === totalPages">Next</button>
+</div>
+</div>
 	
 	
 
@@ -193,54 +268,7 @@
 
 	
     
-         <div class="row">
-            <div class="col-12 m-t">
-               <div class="panel br drop-shadow">
-                  <table id="example" class="display" style="width:100%">
-                     <thead>
-                        <tr>
-                           <th>Company</th>
-                           <th>Contact</th>
-                           <th>Country</th>
-                        </tr>
-                     </thead>
-                     <tbody>
-
-                        <tr>
-                           <td>Alfreds Futterkiste</td>
-                           <td>Maria Anders</td>
-                           <td>Germany</td>
-                        </tr>
-                        <tr>
-                           <td>Centro comercial Moctezuma</td>
-                           <td>Francisco Chang</td>
-                           <td>Mexico</td>
-                        </tr>
-                        <tr>
-                           <td>Ernst Handel</td>
-                           <td>Roland Mendel</td>
-                           <td>Austria</td>
-                        </tr>
-                        <tr>
-                           <td>Island Trading</td>
-                           <td>Helen Bennett</td>
-                           <td>UK</td>
-                        </tr>
-                        <tr>
-                           <td>Laughing Bacchus Winecellars</td>
-                           <td>Yoshi Tannamuri</td>
-                           <td>Canada</td>
-                        </tr>
-                        <tr>
-                           <td>Magazzini Alimentari Riuniti</td>
-                           <td>Giovanni Rovelli</td>
-                           <td>Italy</td>
-                        </tr>
-                     </tbody>
-
-                  </table>
-               </div>            </div>
-         </div>
+         
 	
 
 	
@@ -317,8 +345,6 @@
 <script src="../resources/assets/js/quill.js"></script>
 <script src="../resources/assets/js/quill-vue.js"></script>
 
-<script src="../resources/assets/datatables/jquery.min.js"></script>
-<script src="../resources/assets/datatables/jquery.dataTables.min.js"></script>
 
 <script src="../resources/assets/js/sortable.js"></script>
 <script src="../resources/assets/js/splide.min.js"></script>
@@ -326,135 +352,108 @@
 <script src="../resources/assets/js/carousel.js"></script>
 
 <!-- end feather icons js lib -->
-
-<script>
-        /*                                                                          
-        |---------------------------------------------------------------            
-        | Base entry point                                                
-        |---------------------------------------------------------------            
-        |                                                                           
-        */       
-        Vue.use(window.VueQuillEditor);
-        var app = new Vue(
-        {
-           el: '#app',
-           data:
-           {
-              message: 'Add Items. . . ',
-              show: false,
-              dark:false,
-              foo:'hello',
-              bar: 'none',
-              otp:'',
-              items: [
-                    { id: 1, text: 'Item 1' },
-                    { id: 2, text: 'Item 2' },
-                    { id: 3, text: 'Item 3' },
-                    { id: 4, text: 'Item 4' },
-                    { id: 5, text: 'Item 5' }
+  <script>
+        new Vue({
+            el: '#app',
+            data: {
+                data: [
+                    {id: 1, name: 'Ethan Wilson', email: 'ethan.wilson@gmail.com', date: '1995-05-15'},
+                    {id: 2, name: 'Sophia Rodriguez', email: 'sophia.rodriguez@yahoo.com', date: '1988-10-22'},
+                    {id: 3, name: 'Mason Martinez', email: 'mason.martinez@hotmail.com', date: '2002-03-07'},
+                    {id: 4, name: 'Isabella Brown', email: 'isabella.brown@gmail.com', date: '1990-12-12'},
+                    {id: 5, name: 'Liam Davis', email: 'liam.davis@outlook.com', date: '2005-08-30'},
+                    {id: 6, name: 'Olivia Johnson', email: 'olivia.johnson@gmail.com', date: '1985-06-18'},
+                    {id: 7, name: 'Lucas Smith', email: 'lucas.smith@yahoo.com', date: '1998-04-25'},
+                    {id: 8, name: 'Ava Taylor', email: 'ava.taylor@hotmail.com', date: '2008-11-02'},
+                    {id: 9, name: 'Jackson Miller', email: 'jackson.miller@gmail.com', date: '1979-09-14'},
+                    {id: 10, name: 'Sophie Hall', email: 'sophie.hall@outlook.com', date: '1993-07-09'},
+                    {id: 11, name: 'Aiden Harris', email: 'aiden.harris@yahoo.com', date: '1983-02-28'},
+                    {id: 12, name: 'Amelia Clark', email: 'amelia.clark@hotmail.com', date: '2003-06-05'},
+                    {id: 13, name: 'Elijah Adams', email: 'elijah.adams@gmail.com', date: '1996-08-20'},
+                    {id: 14, name: 'Avery Martin', email: 'avery.martin@yahoo.com', date: '2000-01-17'},
+                    {id: 15, name: 'Abigail Harris', email: 'abigail.harris@hotmail.com', date: '1980-04-03'},
+                    {id: 16, name: 'Logan Adams', email: 'logan.adams@outlook.com', date: '1992-09-11'},
+                    {id: 17, name: 'Madison Evans', email: 'madison.evans@gmail.com', date: '2007-12-29'},
+                    {id: 18, name: 'Carter Brooks', email: 'carter.brooks@yahoo.com', date: '1987-03-26'},
+                    {id: 19, name: 'Evelyn Robinson', email: 'evelyn.robinson@hotmail.com', date: '2009-05-08'},
+                    {id: 20, name: 'Grayson White', email: 'grayson.white@gmail.com', date: '1999-10-14'}
                 ],
-              myquill: 'Hello',
-              editorOption: {
-                     modules: {
-                     toolbar: [
-                       ['bold', 'italic', 'underline' ],
-                       ['blockquote'],
-                       [{ 'header': 1 }, { 'header': 2 }],
-                       [{ 'list': 'ordered' }, { 'list': 'bullet' }],
-                       [{ 'align': [] }],
-                       ['clean'],
-                       ['link']
-                     ]
-                   },
-                   // theme: 'snow'
-                }
-           },
-           methods:
-           {
-            showToast() {
-                this.$refs.toast.showToast(3000);
-                this.$refs.toast2.showToast(4000);
+                sortOrders: {},
+                searchQuery: '',
+                currentPage: 1,
+                itemsPerPage: 10,
             },
-            toggleMenu(){
-              this.$refs.jx.toggle();
+            computed: {
+                filteredData() {
+                    const query = this.searchQuery.toLowerCase();
+                    return this.data.filter((item) => {
+                        return Object.values(item).some((value) => {
+                            return value.toString().toLowerCase().includes(query);
+                        });
+                    });
+                },
+                totalPages() {
+                    return Math.ceil(this.filteredData.length / this.itemsPerPage);
+                },
+                paginatedData() {
+                    const start = (this.currentPage - 1) * this.itemsPerPage;
+                    const end = start + this.itemsPerPage;
+                    return this.filteredData.slice(start, end);
+                },
+            },
+            methods: {
+                sortTable(columnIndex) {
+                    const currentOrder = this.sortOrders[columnIndex] || 'asc';
 
-             },
-             toggle_sidemenu()
-             {
-                this.show = !this.show;
-                if (this.show) 
-                {
-                    this.bar = 'block'
-                }
-                else
-                {
-                    this.bar = 'none'
-                }
-             },
-              away()
-              {
-                 this.show = false;
-                 this.bar = 'none'
-              },
-              onEditorBlur(quill) {
-                    console.log('editor blur!', quill)
+                    const newOrder = currentOrder === 'asc' ? 'desc' : 'asc';
+                    this.$set(this.sortOrders, columnIndex, newOrder);
+
+                    this.data.sort((a, b) => {
+                        const aValue = Object.values(a)[columnIndex];
+                        const bValue = Object.values(b)[columnIndex];
+
+                        // Use a custom comparison for the ID column
+                        if (columnIndex === 0) {
+                            return (newOrder === 'asc') ? (aValue - bValue) : (bValue - aValue);
+                        }
+
+                        // Use localeCompare for string comparison in other columns
+                        if (newOrder === 'asc') {
+                            return aValue.localeCompare(bValue);
+                        } else {
+                            return bValue.localeCompare(aValue);
+                        }
+                    });
                 },
-                onEditorFocus(quill) {
-                    console.log('editor focus!', quill)
+
+                searchTable() {
+                    // No need to update the data directly, as it's computed from searchQuery
+                    this.currentPage = 1; // Reset to the first page after searching
                 },
-                onEditorReady(quill) {
-                    console.log('editor ready!', quill)
-                }
-           },
-           computed: {
-                editor() {
-                    return this.$refs.quillEditor.quill
-                }
+                prevPage() {
+                    if (this.currentPage > 1) {
+                        this.currentPage--;
+                    }
+                },
+                nextPage() {
+                    if (this.currentPage < this.totalPages) {
+                        this.currentPage++;
+                    }
+                },
             },
-           mounted()
-           {
-               
-           }
-        });    
+            mounted() {
+                // Call the function to initially populate the table
+                // No need for createTable() in Vue, as the template is reactive
+            },
+        });
     </script>
 
 
-<script>
-         const ctx = document.getElementById('myChart');
-
-         Chart.defaults.font.family = 'Instrument Sans';
-         Chart.defaults.font.size = 14;
-
-         //Change from 'bar' to 'line' etc
-         new Chart(ctx, {
-           type: 'bar',
-           data: {
-             labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-             datasets: [{
-               label: '# of Votes',
-               data: [12, 19, 3, 5, 2, 3],
-               borderWidth: 1,
-               borderColor: '#292F3E',
-               backgroundColor: '#292F3E',
-             }]
-           },
-           options: {
-             responsive: true,
-             scales: {
-               y: {
-                 beginAtZero: true
-               }
-             }
-           }
-         });
-      </script>
 
 
-<script>
-    $('#example').dataTable({
-        "iDisplayLength": 20
-    });
-</script>
+
+
+
 
 
 

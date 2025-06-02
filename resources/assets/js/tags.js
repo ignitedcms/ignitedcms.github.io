@@ -17,7 +17,8 @@ Vue.component('tags-input', {
     data: function() {
         return {
             inputValue: '',
-            focusedTagIndex: -1
+            focusedTagIndex: -1,
+            uniqueId: Math.random().toString(36).substring(2) // Generate a unique ID
         }
     },
 
@@ -85,22 +86,28 @@ Vue.component('tags-input', {
     },
 
     template: `
-        <div class="border p-1.5 rounded-md">
-            <span v-for="(tag, index) in value"
+        <div class="border p-1.5 rounded-md bg-white dark:bg-dark dark:border-slate-600">
+            <div v-for="(tag, index) in value"
                   :key="index"
-                  class="ml-2 rounded-md p-0.5 inline-block bg-slate-100 text-black"
+                  class="ml-2 rounded-md py-0.5 px-1 inline-block bg-gray-100 text-sm text-black h-a dark:bg-black dark:text-white"
                   :class="{ 'ring-4 ring-gray-300 outline-none': focusedTagIndex === index }">
+                  <span>
                 {{ tag }}
-                <button class="bg-transparent border-none text-black cursor-pointer ml-1"
+                  </span>
+                <button class="bg-transparent border-none text-black cursor-pointer ml-1 p-0"
                         tabindex="-1"
-                        @click="removeTag(index)">×</button>
-            </span>
+                        @click="removeTag(index)">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4 pt-1 dark:text-white">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                        </svg>
+               </button>
+            </div>
             <input v-model="inputValue"
                    @keypress="onKeyPress"
                    @keydown="onKeyDown"
                    @focus="onInputFocus"
                    @blur="addTag"
-                   class="border-none outline-none px-0.5"
+                   class="border-none outline-none px-0.5 dark:bg-dark dark:text-white"
                    placeholder="Type and press Enter"
                    type="text">
         </div>

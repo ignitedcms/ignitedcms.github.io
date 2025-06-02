@@ -3836,10 +3836,6 @@ table.dataTable tfoot th {
   margin: 0px;
 }
 
-.m-0\.5 {
-  margin: 0.125rem;
-}
-
 .m-4 {
   margin: 1rem;
 }
@@ -3899,10 +3895,6 @@ table.dataTable tfoot th {
 
 .mb-4 {
   margin-bottom: 1rem;
-}
-
-.mb-5 {
-  margin-bottom: 1.25rem;
 }
 
 .mb-6 {
@@ -3977,10 +3969,6 @@ table.dataTable tfoot th {
   margin-top: 0.5rem;
 }
 
-.mt-2\.5 {
-  margin-top: 0.625rem;
-}
-
 .mt-3 {
   margin-top: 0.75rem;
 }
@@ -3999,6 +3987,14 @@ table.dataTable tfoot th {
 
 .mt-8 {
   margin-top: 2rem;
+}
+
+.mt-0\.5 {
+  margin-top: 0.125rem;
+}
+
+.mt-1\.5 {
+  margin-top: 0.375rem;
 }
 
 .block {
@@ -4228,10 +4224,6 @@ table.dataTable tfoot th {
   min-height: 400px;
 }
 
-.min-h-\[40px\] {
-  min-height: 40px;
-}
-
 .min-h-\[500px\] {
   min-height: 500px;
 }
@@ -4348,10 +4340,6 @@ table.dataTable tfoot th {
   width: 100vw;
 }
 
-.min-w-\[100px\] {
-  min-width: 100px;
-}
-
 .min-w-\[150px\] {
   min-width: 150px;
 }
@@ -4374,10 +4362,6 @@ table.dataTable tfoot th {
 
 .min-w-full {
   min-width: 100%;
-}
-
-.max-w-2xl {
-  max-width: 42rem;
 }
 
 .max-w-3xl {
@@ -4504,10 +4488,6 @@ table.dataTable tfoot th {
 
 .justify-between {
   justify-content: space-between;
-}
-
-.gap-1 {
-  gap: 0.25rem;
 }
 
 .gap-2 {
@@ -4790,6 +4770,11 @@ table.dataTable tfoot th {
   background-color: rgb(220 38 38 / var(--tw-bg-opacity));
 }
 
+.bg-slate-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(241 245 249 / var(--tw-bg-opacity));
+}
+
 .bg-slate-200 {
   --tw-bg-opacity: 1;
   background-color: rgb(226 232 240 / var(--tw-bg-opacity));
@@ -4816,16 +4801,6 @@ table.dataTable tfoot th {
 
 .bg-white\/10 {
   background-color: rgb(255 255 255 / 0.1);
-}
-
-.bg-gray-400 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(156 163 175 / var(--tw-bg-opacity));
-}
-
-.bg-slate-100 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(241 245 249 / var(--tw-bg-opacity));
 }
 
 .bg-opacity-100 {
@@ -4856,16 +4831,20 @@ table.dataTable tfoot th {
   padding: 0px;
 }
 
+.p-0\.5 {
+  padding: 0.125rem;
+}
+
 .p-1 {
   padding: 0.25rem;
 }
 
-.p-2 {
-  padding: 0.5rem;
+.p-1\.5 {
+  padding: 0.375rem;
 }
 
-.p-2\.5 {
-  padding: 0.625rem;
+.p-2 {
+  padding: 0.5rem;
 }
 
 .p-3 {
@@ -4888,14 +4867,6 @@ table.dataTable tfoot th {
   padding: 2rem;
 }
 
-.p-0\.5 {
-  padding: 0.125rem;
-}
-
-.p-1\.5 {
-  padding: 0.375rem;
-}
-
 .px-0\.5 {
   padding-left: 0.125rem;
   padding-right: 0.125rem;
@@ -4909,11 +4880,6 @@ table.dataTable tfoot th {
 .px-2 {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
-}
-
-.px-2\.5 {
-  padding-left: 0.625rem;
-  padding-right: 0.625rem;
 }
 
 .px-3 {
@@ -4954,6 +4920,11 @@ table.dataTable tfoot th {
 .py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
+}
+
+.py-0\.5 {
+  padding-top: 0.125rem;
+  padding-bottom: 0.125rem;
 }
 
 .pb-16 {
@@ -5053,10 +5024,6 @@ table.dataTable tfoot th {
   font-weight: 400;
 }
 
-.font-semibold {
-  font-weight: 600;
-}
-
 .font-thin {
   font-weight: 100;
 }
@@ -5107,11 +5074,6 @@ table.dataTable tfoot th {
 .text-gray-800 {
   --tw-text-opacity: 1;
   color: rgb(31 41 55 / var(--tw-text-opacity));
-}
-
-.text-gray-900 {
-  --tw-text-opacity: 1;
-  color: rgb(17 24 39 / var(--tw-text-opacity));
 }
 
 .text-red-700 {
@@ -5399,6 +5361,11 @@ table.dataTable tfoot th {
 .dark\:bg-white:is(.dark *) {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.dark\:bg-black:is(.dark *) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
 
 .dark\:text-black:is(.dark *) {
