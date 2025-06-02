@@ -172,80 +172,63 @@
 </ul>
          
 
+         <div class="foo">
 <div class="foo">
-   <div class="foo">
-
-      <div class="row">
-         <div class="col-12">
-            <h3>Select</h3>
-            Displays a list of options for the user to pick from.
-            Note, this uses the native html select element under the hood.
+            
+	        <div class="row">
+        <div class="col-12 m-t">
+			<h4>Date time picker</h4>
+         <p>Same as the datepicker except with accessible time options</p>
+        </div>
          </div>
-      </div>
+	
+    
+    
 
-<tabs>
-   <tab-item title="Preview">
-      <div class="panel  min-h-[300px] mt-8">
-<div class="form-group v-a h-a" style="min-height:300px;">
-                  <div class="form-group" style="width:300px;">
-                     <select-component v-model="sel">
-                        <select-item title="one" value="one">
-                        </select-item>
-                        <select-item title="two" value="two">
-                        </select-item>
-                        <select-item title="three" value="three">
-                        </select-item>
-                     </select-component>
-                     
-                     <div class="mt-2">
-                       Selected: {{sel}}
-                     </div>
-                  </div>
+	
+	
+
+	
+
+	
+
+	
+    
+    
+
+	
+	
+
+         <div class="row">
+            <div class="col-12 m-t">
+               <div class="panel">
+                  <p>Coming soon</p>
                </div>
-
-      </div>
-
-   </tab-item>
-   <tab-item title="Code" class="mt-8">
-      <code-block>&lt;select-component v-model=&quot;foo&quot;&gt;
-   &lt;select-item title=&quot;one&quot; value=&quot;one&quot;&gt;
-   &lt;/select-item&gt;
-   &lt;select-item title=&quot;two&quot; value=&quot;two&quot;&gt;
-   &lt;/select-item&gt;
-   &lt;select-item title=&quot;three&quot; value=&quot;three&quot;&gt;
-   &lt;/select-item&gt;
-&lt;/select-component&gt;</code-block>
-
-   </tab-item>
-</tabs>
-
-
-
-
-
+            </div>
+         </div>
+	
 
 <!--button nav-->
 <div class="h-e mt-8">
    <link-component
-   title="Scroll area"
-   url="scroll-area.html"
+   title="Datepicker"
+   url="datepickers.html"
    newtab="no"
    class="btn-white !no-underline">
 </link-component>
 <link-component
-   title="Separator"
-   url="separator.html"
+   title="Dropdowns"
+   url="dropdowns.html"
    newtab="no"
    class="btn-white !no-underline">
 </link-component>
 </div>   
+	
 
-
-
-      <div class="gap"></div>
-   </div>
-
-</div>
+  <div class="gap"></div>
+            </div>
+            
+         </div>
             
             
          </sidebar>
@@ -271,6 +254,7 @@
 <script src="../resources/assets/js/badges.js"></script>
 <script src="../resources/assets/js/breadcrumbs.js"></script>
 <script src="../resources/assets/js/avatar.js"></script>
+<script src="../resources/assets/js/forms.js"></script>
 <script src="../resources/assets/js/tooltip.js"></script>
 <script src="../resources/assets/js/popover.js"></script>
 <script src="../resources/assets/js/modals.js"></script>
@@ -300,10 +284,6 @@
 <script src="../resources/assets/js/splide.min.js"></script>
 <script src="../resources/assets/js/small-menu.js"></script>
 <script src="../resources/assets/js/carousel.js"></script>
-<script src="../resources/assets/js/forms.js"></script>
-
-<script src="../resources/assets/js/clipboard.min.js"></script>
-<script src="../resources/assets/js/code-block.js"></script>
 
 <!-- end feather icons js lib -->
 
@@ -323,7 +303,6 @@
               message: 'Add Items. . . ',
               show: false,
               dark:false,
-              sel: 'one',
               foo:'hello',
               bar: 'none',
               otp:'',
@@ -399,9 +378,6 @@
         });    
     </script>
 
-<script>
-         new ClipboardJS('.code-copy');
-</script>
 
 <script>
          const ctx = document.getElementById('myChart');
