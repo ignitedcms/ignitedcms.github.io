@@ -35,15 +35,46 @@
          display: none;
       }
 
-      .checked {
-         color: orange;
-      }
+        .tree {
+            margin-left: 20px;
+        }
+        .tree-item {
+            margin: 1px 0;
+        }
+        .tree-item button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            padding: 0px 0px;
+            width: 100%;
+            text-align: left;
+        }
+        .tree-item button:focus,
+        .tree-item.active > button {
+            outline: 2px solid #ccc;
+            background-color: #e0e0e0;
+        }
+        .tree-item[aria-expanded="true"] > ul {
+            display: block;
+        }
+        .tree-item[aria-expanded="false"] > ul {
+            display: none;
+        }
 
-      .splide__pagination__page.is-active {
-          background: #333;
-          transform: scale(1.4);
-          z-index: 1;
-      }
+        ul{
+           display: block;
+           margin-top: 1em;
+           margin-bottom: 1em;
+           margin-left: 0;
+           margin-right: 0;
+           padding-left: 20px;
+        }
+        li{
+           text-align: -webkit-match-parent;
+           display:block;
+        }
+
 
       </style>
 </head>
@@ -180,6 +211,49 @@
          collapsed or expanded, with full keyboard support.
       </div>
    </div>
+
+   <div class="border border-[--gray] p-4 rounded-md">
+      <div id="tree" class="tree" role="tree">
+         <div class="tree-item" role="treeitem" aria-expanded="false">
+            <button>+ Fruits</button>
+            <ul role="group">
+               <li class="tree-item" role="treeitem"><button>Apple</button></li>
+               <li class="tree-item" role="treeitem"><button>Banana</button></li>
+               <li class="tree-item" role="treeitem" aria-expanded="false">
+                  <button>+ Berries</button>
+                  <ul role="group">
+                     <li class="tree-item" role="treeitem"><button>Strawberry</button></li>
+                     <li class="tree-item" role="treeitem"><button>Blueberry</button></li>
+                  </ul>
+               </li>
+            </ul>
+         </div>
+         <div class="tree-item" role="treeitem" aria-expanded="false">
+            <button> + Vegetables</button>
+            <ul role="group">
+               <li class="tree-item" role="treeitem"><button>Carrot</button></li>
+               <li class="tree-item" role="treeitem"><button>Broccoli</button></li>
+            </ul>
+         </div>
+      </div>
+   </div>
+      
+   
+
+
+
+
+
+
+
+
+
+
+
+   <div class="panel mt-8">
+      <h3>Important</h3>
+      This  is a work in progress and subject to change
+   </div>
 	
     
 
@@ -269,7 +343,7 @@
 <script src="../resources/assets/js/clipboard.min.js"></script>
 <script src="../resources/assets/js/code-block.js"></script>
 
-<!-- end feather icons js lib -->
+ 
 
 <script>
         /*                                                                          
@@ -363,46 +437,112 @@
     </script>
 
 <script>
+        const tree = document.getElementById('tree');
+        let focusedItem = null;
+
+        function setActiveItem(item) {
+            if (focusedItem) {
+                focusedItem.classList.remove('active');
+            }
+            focusedItem = item;
+            focusedItem.classList.add('active');
+            focusedItem.querySelector('button').focus();
+        }
+
+        tree.addEventListener('click', (e) => {
+            const treeItem = e.target.closest('.tree-item');
+            if (treeItem && e.target.tagName === 'BUTTON') {
+                const expanded = treeItem.getAttribute('aria-expanded') === 'true';
+                treeItem.setAttribute('aria-expanded', !expanded);
+                setActiveItem(treeItem);
+            }
+        });
+
+        tree.addEventListener('keydown', (e) => {
+            if (!focusedItem) {
+                focusedItem = tree.querySelector('[role="treeitem"]');
+                setActiveItem(focusedItem);
+                return;
+            }
+
+            switch (e.key) {
+                case 'ArrowDown':
+                    e.preventDefault();
+                    focusNextItem();
+                    break;
+                case 'ArrowUp':
+                    e.preventDefault();
+                    focusPreviousItem();
+                    break;
+                case 'ArrowRight':
+                    e.preventDefault();
+                    expandTreeItem();
+                    break;
+                case 'ArrowLeft':
+                    e.preventDefault();
+                    collapseTreeItem();
+                    break;
+            }
+        });
+
+        function getVisibleItems() {
+            return Array.from(tree.querySelectorAll('[role="treeitem"]')).filter(item => {
+                let parent = item.parentElement.closest('[role="treeitem"]');
+                while (parent) {
+                    if (parent.getAttribute('aria-expanded') === 'false') {
+                        return false;
+                    }
+                    parent = parent.parentElement.closest('[role="treeitem"]');
+                }
+                return true;
+            });
+        }
+
+        function focusNextItem() {
+            const items = getVisibleItems();
+            const currentIndex = items.indexOf(focusedItem);
+            if (currentIndex < items.length - 1) {
+                setActiveItem(items[currentIndex + 1]);
+            }
+        }
+
+        function focusPreviousItem() {
+            const items = getVisibleItems();
+            const currentIndex = items.indexOf(focusedItem);
+            if (currentIndex > 0) {
+                setActiveItem(items[currentIndex - 1]);
+            }
+        }
+
+        function expandTreeItem() {
+            if (focusedItem.getAttribute('aria-expanded') === 'false') {
+                focusedItem.setAttribute('aria-expanded', 'true');
+            } else if (focusedItem.querySelector('[role="treeitem"]')) {
+                focusNextItem();
+            }
+        }
+
+        function collapseTreeItem() {
+            if (focusedItem.getAttribute('aria-expanded') === 'true') {
+                focusedItem.setAttribute('aria-expanded', 'false');
+            } else {
+                const parent = focusedItem.parentElement.closest('[role="treeitem"]');
+                if (parent) {
+                    setActiveItem(parent);
+                }
+            }
+        }
+    </script>
+
+<script>
          new ClipboardJS('.code-copy');
 </script>
 
 
-<script>
-         const ctx = document.getElementById('myChart');
-
-         Chart.defaults.font.family = 'Instrument Sans';
-         Chart.defaults.font.size = 14;
-
-         //Change from 'bar' to 'line' etc
-         new Chart(ctx, {
-           type: 'bar',
-           data: {
-             labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-             datasets: [{
-               label: '# of Votes',
-               data: [12, 19, 3, 5, 2, 3],
-               borderWidth: 1,
-               borderColor: '#292F3E',
-               backgroundColor: '#292F3E',
-             }]
-           },
-           options: {
-             responsive: true,
-             scales: {
-               y: {
-                 beginAtZero: true
-               }
-             }
-           }
-         });
-      </script>
 
 
-<script>
-    $('#example').dataTable({
-        "iDisplayLength": 20
-    });
-</script>
+
+
 
 
 
