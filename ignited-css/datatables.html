@@ -207,9 +207,9 @@
 	
     
     
-<div class="panel">
-<div class="row">
-   <div class="col h-e">
+<div class="panel overflow-auto">
+
+   <div class="h-e">
       <select class="form-select" v-model="itemsPerPage" style="width:100px;"
          aria-label="Default select example">
          <option value="10" selected>10</option>
@@ -219,8 +219,8 @@
       <input v-model="searchQuery" style="width:300px;" class="form-control" placeholder="Search..."
          @input="searchTable">
    </div>
-</div>
-<table>
+
+<table class="mt-4">
    <thead>
       <tr class="font-thin">
          <th @click="sortTable(0)" class="font-normal">
