@@ -51,7 +51,12 @@
 <body class="h-screen v-screen bg-white dark:bg-dark">
     <div class="main" id="app">
        
-   
+       <sticky-bar class="bg-white border-b border-slate-300">
+          <div class="flex justify-center">
+             Some important announcement
+          </div>
+
+       </sticky-bar>
 
    
 
@@ -123,7 +128,7 @@
    <li><a href="chart-js.html">Chart Js</a></li>
    <li><a href="datatables.html">Datatables</a></li>
    <li><a href="datepickers.html">Datepickers</a></li>
-<li><a href="date-time-picker.html">Date time picker</a></li>
+   <li><a href="date-time-picker.html">Date time picker</a></li>
    <li><a href="dropdowns.html">Dropdown menu </a></li>
    <li><a href="feeds.html">Feeds</a></li>
    <li><a href="file-uploads.html">Fileuploads</a></li>
@@ -155,7 +160,7 @@
    <li><a href="sortable-blocks.html">Sortable block</a></li>
    <li><a href="spinners.html">Spinners</a></li>
    <li><a href="stats.html">Stats</a></li>
-<li><a href="sticky-bar.html">Sticky bars</a></li>
+   <li><a href="sticky-bar.html">Sticky bars</a></li>
    <li><a href="switches.html">Switches</a></li>
    <li><a href="tabs.html">Tabs</a></li>
    <li><a href="tables.html">Tables </a></li>
@@ -163,6 +168,7 @@
    <li><a href="testimonials.html">Testimonials</a></li>
    <li><a href="textarea.html">Textarea</a></li>
    <li><a href="toasts.html">Toasts</a></li>
+<li><a href="toggle.html">Toggle</a></li>
    <li><a href="tooltips.html">Tooltips</a></li>
    <li><a href="trees.html">Trees </a></li>
    <li><a href="typo.html">Typography </a></li>
@@ -175,12 +181,20 @@
          <div class="foo">
 <div class="foo">
             
-	        <div class="row">
-        <div class="col-12 m-t">
-			<h4>Sticky bars</h4>
-         A top level bar to display important content
-        </div>
-         </div>
+   <div class="row">
+      <div class="col-12 m-t">
+         <h4>Sticky bars</h4>
+         A top level 'sticky' bar to display important information as seen
+         in the example here
+      </div>
+   </div>
+
+
+<code-block>&lt;sticky-bar class=&quot;bg-white border-b border-slate-300&quot;&gt;
+   &lt;div class=&quot;flex justify-center&quot;&gt;
+      Some important announcement
+   &lt;/div&gt;
+&lt;/sticky-bar&gt;</code-block>
 	
     
     
@@ -199,13 +213,7 @@
 	
 	
 
-         <div class="row">
-            <div class="col-12 m-t">
-               <div class="panel">
-                  <p>Coming soon</p>
-               </div>
-            </div>
-         </div>
+         
 	
 
 <!--button nav-->
@@ -284,6 +292,10 @@
 <script src="../resources/assets/js/splide.min.js"></script>
 <script src="../resources/assets/js/small-menu.js"></script>
 <script src="../resources/assets/js/carousel.js"></script>
+<script src="../resources/assets/js/sticky-bar.js"></script>
+
+<script src="../resources/assets/js/clipboard.min.js"></script>
+<script src="../resources/assets/js/code-block.js"></script>
 
 <!-- end feather icons js lib -->
 
@@ -380,41 +392,11 @@
 
 
 <script>
-         const ctx = document.getElementById('myChart');
-
-         Chart.defaults.font.family = 'Instrument Sans';
-         Chart.defaults.font.size = 14;
-
-         //Change from 'bar' to 'line' etc
-         new Chart(ctx, {
-           type: 'bar',
-           data: {
-             labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-             datasets: [{
-               label: '# of Votes',
-               data: [12, 19, 3, 5, 2, 3],
-               borderWidth: 1,
-               borderColor: '#292F3E',
-               backgroundColor: '#292F3E',
-             }]
-           },
-           options: {
-             responsive: true,
-             scales: {
-               y: {
-                 beginAtZero: true
-               }
-             }
-           }
-         });
-      </script>
-
-
-<script>
-    $('#example').dataTable({
-        "iDisplayLength": 20
-    });
+   new ClipboardJS('.code-copy');
 </script>
+
+
+
 
 
 
