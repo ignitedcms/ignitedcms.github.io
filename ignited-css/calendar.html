@@ -202,7 +202,7 @@
             v-model
          </table-cell>
          <table-cell>
-            Binds the calendar to a v-model property.
+            Establishes two-way data binding with the selected date(s). Updates automatically when user makes selections.
          </table-cell>
       </table-row>
       <table-row>
@@ -210,7 +210,7 @@
             name
          </table-cell>
          <table-cell>
-            Name attribute for the calendar. Automatically set when using <code>v-model</code>.
+            Binds to HTML name attribute
          </table-cell>
       </table-row>
       <table-row>
@@ -218,20 +218,20 @@
             value
          </table-cell>
          <table-cell>
-            Selected date(s).<br> Format depends on <code>mode</code>: single date (<code>Y-m-d</code>), multiple dates (comma-separated <code>Y-m-d</code>), or range (<code>Y-m-d/Y-m-d</code>).
+            Current date selection(s). Format varies by selection type: single date (YYYY-MM-DD), multiple dates (array of YYYY-MM-DD), or date span (YYYY-MM-DD to YYYY-MM-DD).
          </table-cell>
       </table-row>
       <table-row>
          <table-cell>
-            mode
+            selectionType
          </table-cell>
          <table-cell>
-            Selection mode. Options: <code>single</code> (default), <code>multiple</code>, <code>range</code>.
+            Determines how users can pick dates. Options: <code>single</code> (default), <code>multiple</code>, <code>range</code>.
          </table-cell>
       </table-row>
       <table-row>
          <table-cell>
-            min
+            earliestDate
          </table-cell>
          <table-cell>
             Earliest selectable date. Can be a date string or "today".
@@ -239,7 +239,7 @@
       </table-row>
       <table-row>
          <table-cell>
-            max
+            latestDate
          </table-cell>
          <table-cell>
             Latest selectable date. Can be a date string or "today".
@@ -247,7 +247,7 @@
       </table-row>
       <table-row>
          <table-cell>
-            size
+            calendarSize
          </table-cell>
          <table-cell>
             Calendar size. Options: <code>base</code> (default), <code>xs</code>, <code>sm</code>, <code>lg</code>, <code>xl</code>, <code>2xl</code>.
@@ -255,7 +255,7 @@
       </table-row>
       <table-row>
          <table-cell>
-            months
+            monthsVisible
          </table-cell>
          <table-cell>
             Number of months to display. Default: <code>1</code> for single/multiple modes, <code>2</code> for range mode.
@@ -263,7 +263,7 @@
       </table-row>
       <table-row>
          <table-cell>
-            min-range
+            minimumRange
          </table-cell>
          <table-cell>
             Minimum number of days that can be selected in range mode.
@@ -271,7 +271,7 @@
       </table-row>
       <table-row>
          <table-cell>
-            max-range
+            maximumRange
          </table-cell>
          <table-cell>
             Maximum number of days that can be selected in range mode.
@@ -279,7 +279,7 @@
       </table-row>
       <table-row>
          <table-cell>
-            navigation
+            navigationInformation
          </table-cell>
          <table-cell>
             If <code>false</code>, hides month navigation controls. Default: <code>true</code>.
@@ -302,24 +302,13 @@
          </table-cell>
       </table-row>
       <table-row>
-         <table-cell>
-            week-numbers
-         </table-cell>
-         <table-cell>
-            If <code>true</code>, displays week numbers in the calendar. Default: <code>false</code>.
-         </table-cell>
+         
+         
       </table-row>
+      
       <table-row>
          <table-cell>
-            selectable-header
-         </table-cell>
-         <table-cell>
-            If <code>true</code>, displays month and year dropdowns for quick navigation. Default: <code>false</code>.
-         </table-cell>
-      </table-row>
-      <table-row>
-         <table-cell>
-            with-today
+            withToday
          </table-cell>
          <table-cell>
             If <code>true</code>, displays a button to quickly navigate to today's date. Default: <code>false</code>.
@@ -350,7 +339,7 @@
    <table-body>
       <table-row>
          <table-cell>
-            today()
+            getCurrentDay()
          </table-cell>
          <table-cell>
             Create a DateRange for today.
@@ -358,7 +347,7 @@
       </table-row>
       <table-row>
          <table-cell>
-            yesterday()
+            getPreviousDay()
          </table-cell>
          <table-cell>
             Create a DateRange for yesterday.
@@ -366,7 +355,7 @@
       </table-row>
       <table-row>
          <table-cell>
-            thisWeek()
+            getCurrentWeek()
          </table-cell>
          <table-cell>
             Create a DateRange for the current week.
@@ -374,7 +363,7 @@
       </table-row>
       <table-row>
          <table-cell>
-            lastWeek()
+            getPreviousWeek()
          </table-cell>
          <table-cell>
             Create a DateRange for the previous week.
@@ -382,7 +371,7 @@
       </table-row>
       <table-row>
          <table-cell>
-            last7Days()
+            lastSevenDays()
          </table-cell>
          <table-cell>
             Create a DateRange for the last 7 days.
@@ -390,7 +379,7 @@
       </table-row>
       <table-row>
          <table-cell>
-            thisMonth()
+            getCurrentMonth()
          </table-cell>
          <table-cell>
             Create a DateRange for the current month.
@@ -398,7 +387,7 @@
       </table-row>
       <table-row>
          <table-cell>
-            lastMonth()
+            getPreviousMonth()
          </table-cell>
          <table-cell>
             Create a DateRange for the previous month.
@@ -406,7 +395,7 @@
       </table-row>
       <table-row>
          <table-cell>
-            thisYear()
+            getCurrentYear()
          </table-cell>
          <table-cell>
             Create a DateRange for the current year.
@@ -414,7 +403,7 @@
       </table-row>
       <table-row>
          <table-cell>
-            lastYear()
+            getPreviousYear()
          </table-cell>
          <table-cell>
             Create a DateRange for the previous year.
@@ -422,7 +411,7 @@
       </table-row>
       <table-row>
          <table-cell>
-            yearToDate()
+            getYearToDate()
          </table-cell>
          <table-cell>
             Create a DateRange from January 1st to today.
