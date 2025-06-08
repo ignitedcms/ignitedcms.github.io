@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="description" content="ignitedcms PHP cms">
+    <meta name="keywords" content="PHP,cms">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>IgnitedCMS | A modern minimal cms</title>
+    <!-- custom css specific to main css -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href='../resources/assets/css/output.css' />
+    <link rel="stylesheet" href='../resources/assets/datatables/datatables.css' />
+
+    <!-- vue 2 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+
+    <!-- sortable -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.4.2/Sortable.min.js"></script>
+
+     <!-- Include Quill stylesheet -->
+     <link href="https://cdn.quilljs.com/1.0.0/quill.snow.css" rel="stylesheet">
+
+      <style>
+      [v-cloak] {
+         display: none;
+      }
+      </style>
+</head>
+<body class="bg-white dark:bg-darker">
+    <div id="app" class="">
+      
+       
+      <div class="default-container">
+         <div class="row">
+            <div class="col h-e v-a">
+               <div>
+                  <a href="../index.html">
+                     <img src="../resources/assets/images/ignitedcms-logo.svg" class="w-[150px]"></img>
+                  </a>
+               </div>
+               
+
+               
+
+
+
+            </div>
+         </div>
+
+   
+
+    
+<div class="medium-container">
+    <div class="gap"></div>
+    
+    <div class="row">
+        <div class="col-12 m-t">
+            <h2>escooters and coffee shops</h2>
+        </div>
+    </div>
+    
+    <div class="row">
+     <div class="col-12 m-t">
+        The UK has a funny old view on escooters, which I happen to think is unreasonable.
+        Here's the thing, you're technically allowed to own an escooter, it is just you can't
+        ride them in public. Now given a choice, over an electric bike and and escooter, sometimes
+        it just makes sense to use an escooter. One, they are way more portable, compact, cheaper
+        and easier to maintain. It makes no sense to allow electric bikes, but not escooters. 
+        <br>
+        <br>
+        In fact, during the pandemic a lot of nurses and junior doctors who were using escooters to
+        commute to work were fined.
+        <br>
+        <br>
+        Escooters are the perfect item to take on a train journey too, it is ironic that electric bikes
+        are permitted but not escooters. Maybe it is just that the public image regarding escooters is one of being
+        a nusicance to society. I can understand that, the amount of people ignoring the rules and riding
+        recklessly on pavements. But honestly, the same can be said for electric bikes. I would love
+        to own an escooter again, but the risks you take on getting points on your driving license and confiscation 
+        is just not worth it.
+        <br>
+        <br>
+        Now onto coffee shops. This is a bit of a grim observation. But as I commute through town these days
+        I see so many premises closing down - going into administration. These are mainly clothing outlets or other
+        similar retail stores. But the humble coffee shop, in general seems to be doing quite well.
+
+        <br>
+        <br>
+        I guess the take-away is there will always be business for small food or beverage suppliers, people
+        will always buy something they tend to consume on a regular basis.
+
+        <br>
+        <br>
+
+        <a href="/index.html" class="underline">Go back</a>
+       </div>
+
+    </div>
+
+
+
+
+ </div>
+
+       <div class="gap"></div>
+</div>
+
+
+   
+</div>
+</div>
+
+
+ <!-- Click out must go before all other scripts -->
+<script src="../resources/assets/js/click-outside.js"></script>
+<script src="../resources/assets/js/tabs.js"></script>
+<script src="../resources/assets/js/buttons.js"></script>
+<script src="../resources/assets/js/badges.js"></script>
+<script src="../resources/assets/js/avatar.js"></script>
+<script src="../resources/assets/js/modals.js"></script>
+<script src="../resources/assets/js/dropdown.js"></script>
+<script src="../resources/assets/js/datepicker.js"></script>
+<script src="../resources/assets/js/accordions.js"></script>
+<script src="../resources/assets/js/switch.js"></script>
+<script src="../resources/assets/js/range-sliders.js"></script>
+<script src="../resources/assets/js/small-menu.js"></script>
+<script src="../resources/assets/js/toasts.js"></script>
+<script src="../resources/assets/js/menu.js"></script>
+<script src="../resources/assets/js/mobile-menu.js"></script>
+
+ <!-- Include the Quill library -->
+ <script src="../resources/assets/js/quill.js"></script>
+<script src="../resources/assets/js/quill-vue.js"></script>
+
+<script src="../resources/assets/datatables/jquery.min.js"></script>
+<script src="../resources/assets/datatables/jquery.dataTables.min.js"></script>
+
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            message: 'Hello',
+            show:false,
+            title: 'Sortable items',
+            things: [{
+                    title: "Item 1"
+                },
+                {
+                    title: "Item 2"
+                },
+                {
+                    title: "Item 3"
+                }
+            ]
+        },
+        methods: {
+            toggle () {
+                this.show = !this.show
+            },
+            toggleMenu()
+            {
+               this.$refs.jx.toggle();
+            },
+            addItem: function () {
+                var id = Math.floor((Math.random() * 100) + 4);
+                this.things.push({
+                    id: id,
+                    title: 'Random item ' + id
+                });
+            }
+        },
+                
+    })
+</script>
+
+<script>
+       $('#example').dataTable({
+          "iDisplayLength": 20
+       });
+    </script>
+
+
+
+
+<!-- end feather icons js lib -->
+<script src="https://unpkg.com/feather-icons"></script>
+<script>
+    feather.replace({
+        class: "font-primary",
+    });
+
+</script>
+
+<!-- Initialize Quill editor -->
+
+
+
+
+</body>
+
+</html>
